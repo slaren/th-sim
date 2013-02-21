@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<title>TH Battle sim</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="sim.js"></script>
+
+	<style type="text/css">
+		#battle {
+			width: 650px;
+		}
+		.unit_stack_list {
+			border: 1px solid black;
+			width: 100%;
+			height: 100px;
+		}
+		#battle_log {
+			border: 1px solid black;
+			width: 100%;
+			height: 200px;
+			overflow: auto;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="battle">
+		<div id="defender" class="unit_stack_list">
+			-- defender units
+		</div>
+		
+		<div id="battle_log">
+		</div>
+
+		<div id="attacker" class="unit_stack_list">
+			-- attacker units
+		</div>
+	</div>
+	<p>
+	</p>
+</body>
+</html>

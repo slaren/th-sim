@@ -1,0 +1,2147 @@
+{
+    "Archer": {
+        "levels": [
+            {
+                "attack": 3.0, 
+                "carry": 5, 
+                "cost": {
+                    "crop": 60, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1050, 
+                    "wood": 100
+                }, 
+                "hp": 80, 
+                "level": 1, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.2, 
+                "carry": 5, 
+                "cost": {
+                    "crop": 61, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1134, 
+                    "wood": 102
+                }, 
+                "hp": 84, 
+                "level": 2, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.3, 
+                "carry": 6, 
+                "cost": {
+                    "crop": 62, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1225, 
+                    "wood": 104
+                }, 
+                "hp": 88, 
+                "level": 3, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.5, 
+                "carry": 6, 
+                "cost": {
+                    "crop": 64, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1323, 
+                    "wood": 106
+                }, 
+                "hp": 93, 
+                "level": 4, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.6, 
+                "carry": 6, 
+                "cost": {
+                    "crop": 65, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1429, 
+                    "wood": 108
+                }, 
+                "hp": 97, 
+                "level": 5, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.8, 
+                "carry": 6, 
+                "cost": {
+                    "crop": 66, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1543, 
+                    "wood": 110
+                }, 
+                "hp": 102, 
+                "level": 6, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.0, 
+                "carry": 7, 
+                "cost": {
+                    "crop": 68, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1666, 
+                    "wood": 113
+                }, 
+                "hp": 107, 
+                "level": 7, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.2, 
+                "carry": 7, 
+                "cost": {
+                    "crop": 69, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1800, 
+                    "wood": 115
+                }, 
+                "hp": 113, 
+                "level": 8, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.4, 
+                "carry": 7, 
+                "cost": {
+                    "crop": 70, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1943, 
+                    "wood": 117
+                }, 
+                "hp": 118, 
+                "level": 9, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 12, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.7, 
+                "carry": 8, 
+                "cost": {
+                    "crop": 72, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2099, 
+                    "wood": 120
+                }, 
+                "hp": 124, 
+                "level": 10, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 12, 
+                "splash": 3, 
+                "upkeep": 1
+            }
+        ], 
+        "name": "Archer"
+    }, 
+    "Bowman": {
+        "levels": [
+            {
+                "attack": 2.0, 
+                "carry": 5, 
+                "cost": {
+                    "crop": 12, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1450, 
+                    "wood": 16
+                }, 
+                "hp": 70, 
+                "level": 1, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 9, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 2.2, 
+                "carry": 5, 
+                "cost": {
+                    "crop": 13, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1566, 
+                    "wood": 17
+                }, 
+                "hp": 76, 
+                "level": 2, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 9, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 2.3, 
+                "carry": 6, 
+                "cost": {
+                    "crop": 13, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1691, 
+                    "wood": 18
+                }, 
+                "hp": 82, 
+                "level": 3, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 2.5, 
+                "carry": 6, 
+                "cost": {
+                    "crop": 14, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1827, 
+                    "wood": 19
+                }, 
+                "hp": 88, 
+                "level": 4, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 2.7, 
+                "carry": 6, 
+                "cost": {
+                    "crop": 15, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1973, 
+                    "wood": 19
+                }, 
+                "hp": 95, 
+                "level": 5, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 2.9, 
+                "carry": 6, 
+                "cost": {
+                    "crop": 15, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 2131, 
+                    "wood": 20
+                }, 
+                "hp": 103, 
+                "level": 6, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.2, 
+                "carry": 7, 
+                "cost": {
+                    "crop": 16, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 2301, 
+                    "wood": 21
+                }, 
+                "hp": 111, 
+                "level": 7, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 12, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.4, 
+                "carry": 7, 
+                "cost": {
+                    "crop": 17, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 2485, 
+                    "wood": 23
+                }, 
+                "hp": 120, 
+                "level": 8, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 13, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.7, 
+                "carry": 7, 
+                "cost": {
+                    "crop": 18, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 2684, 
+                    "wood": 24
+                }, 
+                "hp": 130, 
+                "level": 9, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 13, 
+                "splash": 3, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.0, 
+                "carry": 8, 
+                "cost": {
+                    "crop": 19, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 2899, 
+                    "wood": 25
+                }, 
+                "hp": 140, 
+                "level": 10, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 14, 
+                "splash": 3, 
+                "upkeep": 1
+            }
+        ], 
+        "name": "Bowman"
+    }, 
+    "Catapult": {
+        "levels": [
+            {
+                "attack": 25.0, 
+                "carry": 0, 
+                "cost": {
+                    "crop": 180, 
+                    "gold": 120, 
+                    "iron": 150, 
+                    "labor": 12, 
+                    "time": 90000, 
+                    "wood": 750
+                }, 
+                "hp": 800, 
+                "level": 1, 
+                "position": 3, 
+                "range": 3, 
+                "speed": 2, 
+                "splash": 2, 
+                "upkeep": 5
+            }, 
+            {
+                "attack": 26.3, 
+                "carry": 0, 
+                "cost": {
+                    "crop": 184, 
+                    "gold": 122, 
+                    "iron": 153, 
+                    "labor": 12, 
+                    "time": 97200, 
+                    "wood": 765
+                }, 
+                "hp": 840, 
+                "level": 2, 
+                "position": 3, 
+                "range": 3, 
+                "speed": 2, 
+                "splash": 2, 
+                "upkeep": 5
+            }, 
+            {
+                "attack": 27.6, 
+                "carry": 0, 
+                "cost": {
+                    "crop": 187, 
+                    "gold": 125, 
+                    "iron": 156, 
+                    "labor": 12, 
+                    "time": 104976, 
+                    "wood": 780
+                }, 
+                "hp": 882, 
+                "level": 3, 
+                "position": 3, 
+                "range": 3, 
+                "speed": 2, 
+                "splash": 2, 
+                "upkeep": 5
+            }, 
+            {
+                "attack": 28.9, 
+                "carry": 0, 
+                "cost": {
+                    "crop": 191, 
+                    "gold": 127, 
+                    "iron": 159, 
+                    "labor": 13, 
+                    "time": 113374, 
+                    "wood": 796
+                }, 
+                "hp": 926, 
+                "level": 4, 
+                "position": 3, 
+                "range": 3, 
+                "speed": 2, 
+                "splash": 2, 
+                "upkeep": 5
+            }, 
+            {
+                "attack": 30.4, 
+                "carry": 0, 
+                "cost": {
+                    "crop": 195, 
+                    "gold": 130, 
+                    "iron": 162, 
+                    "labor": 13, 
+                    "time": 122444, 
+                    "wood": 812
+                }, 
+                "hp": 972, 
+                "level": 5, 
+                "position": 3, 
+                "range": 3, 
+                "speed": 2, 
+                "splash": 2, 
+                "upkeep": 5
+            }, 
+            {
+                "attack": 31.9, 
+                "carry": 0, 
+                "cost": {
+                    "crop": 199, 
+                    "gold": 132, 
+                    "iron": 166, 
+                    "labor": 13, 
+                    "time": 132240, 
+                    "wood": 828
+                }, 
+                "hp": 1021, 
+                "level": 6, 
+                "position": 3, 
+                "range": 3, 
+                "speed": 2, 
+                "splash": 2, 
+                "upkeep": 5
+            }, 
+            {
+                "attack": 33.5, 
+                "carry": 0, 
+                "cost": {
+                    "crop": 203, 
+                    "gold": 135, 
+                    "iron": 169, 
+                    "labor": 14, 
+                    "time": 142819, 
+                    "wood": 845
+                }, 
+                "hp": 1072, 
+                "level": 7, 
+                "position": 3, 
+                "range": 3, 
+                "speed": 2, 
+                "splash": 2, 
+                "upkeep": 5
+            }, 
+            {
+                "attack": 35.2, 
+                "carry": 0, 
+                "cost": {
+                    "crop": 207, 
+                    "gold": 138, 
+                    "iron": 172, 
+                    "labor": 14, 
+                    "time": 154244, 
+                    "wood": 862
+                }, 
+                "hp": 1126, 
+                "level": 8, 
+                "position": 3, 
+                "range": 3, 
+                "speed": 2, 
+                "splash": 2, 
+                "upkeep": 5
+            }, 
+            {
+                "attack": 36.9, 
+                "carry": 0, 
+                "cost": {
+                    "crop": 211, 
+                    "gold": 141, 
+                    "iron": 176, 
+                    "labor": 14, 
+                    "time": 166584, 
+                    "wood": 879
+                }, 
+                "hp": 1182, 
+                "level": 9, 
+                "position": 3, 
+                "range": 3, 
+                "speed": 2, 
+                "splash": 2, 
+                "upkeep": 5
+            }, 
+            {
+                "attack": 38.8, 
+                "carry": 0, 
+                "cost": {
+                    "crop": 215, 
+                    "gold": 143, 
+                    "iron": 179, 
+                    "labor": 14, 
+                    "time": 179910, 
+                    "wood": 896
+                }, 
+                "hp": 1241, 
+                "level": 10, 
+                "position": 3, 
+                "range": 3, 
+                "speed": 2, 
+                "splash": 2, 
+                "upkeep": 5
+            }
+        ], 
+        "name": "Catapult"
+    }, 
+    "Cavalry": {
+        "levels": [
+            {
+                "attack": 20.0, 
+                "carry": 10, 
+                "cost": {
+                    "crop": 250, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 3400, 
+                    "wood": 170
+                }, 
+                "hp": 160, 
+                "level": 1, 
+                "position": 1, 
+                "range": 2, 
+                "speed": 23, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 21.0, 
+                "carry": 11, 
+                "cost": {
+                    "crop": 255, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 3672, 
+                    "wood": 173
+                }, 
+                "hp": 168, 
+                "level": 2, 
+                "position": 1, 
+                "range": 2, 
+                "speed": 23, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 22.1, 
+                "carry": 11, 
+                "cost": {
+                    "crop": 260, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 3966, 
+                    "wood": 177
+                }, 
+                "hp": 176, 
+                "level": 3, 
+                "position": 1, 
+                "range": 2, 
+                "speed": 24, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 23.2, 
+                "carry": 12, 
+                "cost": {
+                    "crop": 265, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 4283, 
+                    "wood": 180
+                }, 
+                "hp": 185, 
+                "level": 4, 
+                "position": 1, 
+                "range": 2, 
+                "speed": 24, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 24.3, 
+                "carry": 12, 
+                "cost": {
+                    "crop": 271, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 4626, 
+                    "wood": 184
+                }, 
+                "hp": 194, 
+                "level": 5, 
+                "position": 1, 
+                "range": 2, 
+                "speed": 25, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 25.5, 
+                "carry": 13, 
+                "cost": {
+                    "crop": 276, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 4996, 
+                    "wood": 188
+                }, 
+                "hp": 204, 
+                "level": 6, 
+                "position": 1, 
+                "range": 2, 
+                "speed": 25, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 26.8, 
+                "carry": 13, 
+                "cost": {
+                    "crop": 282, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 5395, 
+                    "wood": 191
+                }, 
+                "hp": 214, 
+                "level": 7, 
+                "position": 1, 
+                "range": 2, 
+                "speed": 26, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 28.1, 
+                "carry": 14, 
+                "cost": {
+                    "crop": 287, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 5827, 
+                    "wood": 195
+                }, 
+                "hp": 225, 
+                "level": 8, 
+                "position": 1, 
+                "range": 2, 
+                "speed": 26, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 29.5, 
+                "carry": 15, 
+                "cost": {
+                    "crop": 293, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 6293, 
+                    "wood": 199
+                }, 
+                "hp": 236, 
+                "level": 9, 
+                "position": 1, 
+                "range": 2, 
+                "speed": 27, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 31.0, 
+                "carry": 16, 
+                "cost": {
+                    "crop": 299, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 6797, 
+                    "wood": 203
+                }, 
+                "hp": 248, 
+                "level": 10, 
+                "position": 1, 
+                "range": 2, 
+                "speed": 27, 
+                "splash": 1, 
+                "upkeep": 2
+            }
+        ], 
+        "name": "Cavalry"
+    }, 
+    "Fighter": {
+        "levels": [
+            {
+                "attack": 3.0, 
+                "carry": 25, 
+                "cost": {
+                    "crop": 14, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1300, 
+                    "wood": 10
+                }, 
+                "hp": 90, 
+                "level": 1, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 8, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.2, 
+                "carry": 26, 
+                "cost": {
+                    "crop": 15, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1404, 
+                    "wood": 11
+                }, 
+                "hp": 97, 
+                "level": 2, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 8, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.5, 
+                "carry": 28, 
+                "cost": {
+                    "crop": 15, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1516, 
+                    "wood": 11
+                }, 
+                "hp": 105, 
+                "level": 3, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 9, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 3.8, 
+                "carry": 29, 
+                "cost": {
+                    "crop": 16, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1638, 
+                    "wood": 12
+                }, 
+                "hp": 113, 
+                "level": 4, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 9, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.1, 
+                "carry": 30, 
+                "cost": {
+                    "crop": 17, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1769, 
+                    "wood": 12
+                }, 
+                "hp": 122, 
+                "level": 5, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.4, 
+                "carry": 32, 
+                "cost": {
+                    "crop": 18, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 1910, 
+                    "wood": 13
+                }, 
+                "hp": 132, 
+                "level": 6, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.8, 
+                "carry": 34, 
+                "cost": {
+                    "crop": 19, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 2063, 
+                    "wood": 13
+                }, 
+                "hp": 143, 
+                "level": 7, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 5.1, 
+                "carry": 35, 
+                "cost": {
+                    "crop": 20, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 2228, 
+                    "wood": 14
+                }, 
+                "hp": 154, 
+                "level": 8, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 5.6, 
+                "carry": 37, 
+                "cost": {
+                    "crop": 21, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 2406, 
+                    "wood": 15
+                }, 
+                "hp": 167, 
+                "level": 9, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 12, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 6.0, 
+                "carry": 39, 
+                "cost": {
+                    "crop": 22, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 2599, 
+                    "wood": 16
+                }, 
+                "hp": 180, 
+                "level": 10, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 12, 
+                "splash": 1, 
+                "upkeep": 1
+            }
+        ], 
+        "name": "Fighter"
+    }, 
+    "Gladiator": {
+        "levels": [
+            {
+                "attack": 6.0, 
+                "carry": 15, 
+                "cost": {
+                    "crop": 70, 
+                    "gold": 20, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1200, 
+                    "wood": 130
+                }, 
+                "hp": 120, 
+                "level": 1, 
+                "position": 1, 
+                "range": 3, 
+                "speed": 9, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 6.3, 
+                "carry": 16, 
+                "cost": {
+                    "crop": 71, 
+                    "gold": 20, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1296, 
+                    "wood": 133
+                }, 
+                "hp": 126, 
+                "level": 2, 
+                "position": 1, 
+                "range": 3, 
+                "speed": 9, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 6.6, 
+                "carry": 17, 
+                "cost": {
+                    "crop": 73, 
+                    "gold": 21, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1400, 
+                    "wood": 135
+                }, 
+                "hp": 132, 
+                "level": 3, 
+                "position": 1, 
+                "range": 3, 
+                "speed": 9, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 6.9, 
+                "carry": 17, 
+                "cost": {
+                    "crop": 74, 
+                    "gold": 21, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1512, 
+                    "wood": 138
+                }, 
+                "hp": 139, 
+                "level": 4, 
+                "position": 1, 
+                "range": 3, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 7.3, 
+                "carry": 18, 
+                "cost": {
+                    "crop": 76, 
+                    "gold": 22, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1633, 
+                    "wood": 141
+                }, 
+                "hp": 146, 
+                "level": 5, 
+                "position": 1, 
+                "range": 3, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 7.7, 
+                "carry": 19, 
+                "cost": {
+                    "crop": 77, 
+                    "gold": 22, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1763, 
+                    "wood": 144
+                }, 
+                "hp": 153, 
+                "level": 6, 
+                "position": 1, 
+                "range": 3, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 8.0, 
+                "carry": 20, 
+                "cost": {
+                    "crop": 79, 
+                    "gold": 23, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1904, 
+                    "wood": 146
+                }, 
+                "hp": 161, 
+                "level": 7, 
+                "position": 1, 
+                "range": 3, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 8.4, 
+                "carry": 21, 
+                "cost": {
+                    "crop": 80, 
+                    "gold": 23, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2057, 
+                    "wood": 149
+                }, 
+                "hp": 169, 
+                "level": 8, 
+                "position": 1, 
+                "range": 3, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 8.9, 
+                "carry": 22, 
+                "cost": {
+                    "crop": 82, 
+                    "gold": 23, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2221, 
+                    "wood": 152
+                }, 
+                "hp": 177, 
+                "level": 9, 
+                "position": 1, 
+                "range": 3, 
+                "speed": 11, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 9.3, 
+                "carry": 23, 
+                "cost": {
+                    "crop": 84, 
+                    "gold": 24, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2399, 
+                    "wood": 155
+                }, 
+                "hp": 186, 
+                "level": 10, 
+                "position": 1, 
+                "range": 3, 
+                "speed": 11, 
+                "splash": 1, 
+                "upkeep": 1
+            }
+        ], 
+        "name": "Gladiator"
+    }, 
+    "Helepolis": {
+        "levels": [
+            {
+                "attack": 12.0, 
+                "carry": 60, 
+                "cost": {
+                    "crop": 150, 
+                    "gold": 200, 
+                    "iron": 0, 
+                    "labor": 8, 
+                    "time": 44000, 
+                    "wood": 500
+                }, 
+                "hp": 400, 
+                "level": 1, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 4, 
+                "splash": 5, 
+                "upkeep": 4
+            }, 
+            {
+                "attack": 12.6, 
+                "carry": 63, 
+                "cost": {
+                    "crop": 153, 
+                    "gold": 204, 
+                    "iron": 0, 
+                    "labor": 8, 
+                    "time": 47520, 
+                    "wood": 510
+                }, 
+                "hp": 420, 
+                "level": 2, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 4, 
+                "splash": 5, 
+                "upkeep": 4
+            }, 
+            {
+                "attack": 13.2, 
+                "carry": 66, 
+                "cost": {
+                    "crop": 156, 
+                    "gold": 208, 
+                    "iron": 0, 
+                    "labor": 8, 
+                    "time": 51322, 
+                    "wood": 520
+                }, 
+                "hp": 441, 
+                "level": 3, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 4, 
+                "splash": 5, 
+                "upkeep": 4
+            }, 
+            {
+                "attack": 13.9, 
+                "carry": 69, 
+                "cost": {
+                    "crop": 159, 
+                    "gold": 212, 
+                    "iron": 0, 
+                    "labor": 8, 
+                    "time": 55427, 
+                    "wood": 531
+                }, 
+                "hp": 463, 
+                "level": 4, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 4, 
+                "splash": 5, 
+                "upkeep": 4
+            }, 
+            {
+                "attack": 14.6, 
+                "carry": 73, 
+                "cost": {
+                    "crop": 162, 
+                    "gold": 216, 
+                    "iron": 0, 
+                    "labor": 9, 
+                    "time": 59862, 
+                    "wood": 541
+                }, 
+                "hp": 486, 
+                "level": 5, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 4, 
+                "splash": 5, 
+                "upkeep": 4
+            }, 
+            {
+                "attack": 15.3, 
+                "carry": 77, 
+                "cost": {
+                    "crop": 166, 
+                    "gold": 221, 
+                    "iron": 0, 
+                    "labor": 9, 
+                    "time": 64650, 
+                    "wood": 552
+                }, 
+                "hp": 511, 
+                "level": 6, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 4, 
+                "splash": 5, 
+                "upkeep": 4
+            }, 
+            {
+                "attack": 16.1, 
+                "carry": 80, 
+                "cost": {
+                    "crop": 169, 
+                    "gold": 225, 
+                    "iron": 0, 
+                    "labor": 9, 
+                    "time": 69822, 
+                    "wood": 563
+                }, 
+                "hp": 536, 
+                "level": 7, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 5, 
+                "splash": 5, 
+                "upkeep": 4
+            }, 
+            {
+                "attack": 16.9, 
+                "carry": 84, 
+                "cost": {
+                    "crop": 172, 
+                    "gold": 230, 
+                    "iron": 0, 
+                    "labor": 9, 
+                    "time": 75408, 
+                    "wood": 574
+                }, 
+                "hp": 563, 
+                "level": 8, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 5, 
+                "splash": 5, 
+                "upkeep": 4
+            }, 
+            {
+                "attack": 17.7, 
+                "carry": 89, 
+                "cost": {
+                    "crop": 176, 
+                    "gold": 234, 
+                    "iron": 0, 
+                    "labor": 9, 
+                    "time": 81441, 
+                    "wood": 586
+                }, 
+                "hp": 591, 
+                "level": 9, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 5, 
+                "splash": 5, 
+                "upkeep": 4
+            }, 
+            {
+                "attack": 18.6, 
+                "carry": 93, 
+                "cost": {
+                    "crop": 179, 
+                    "gold": 239, 
+                    "iron": 0, 
+                    "labor": 10, 
+                    "time": 87956, 
+                    "wood": 598
+                }, 
+                "hp": 621, 
+                "level": 10, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 5, 
+                "splash": 5, 
+                "upkeep": 4
+            }
+        ], 
+        "name": "Helepolis"
+    }, 
+    "Hoplite": {
+        "levels": [
+            {
+                "attack": 8.0, 
+                "carry": 20, 
+                "cost": {
+                    "crop": 100, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1300, 
+                    "wood": 75
+                }, 
+                "hp": 90, 
+                "level": 1, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 8.4, 
+                "carry": 21, 
+                "cost": {
+                    "crop": 102, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1404, 
+                    "wood": 77
+                }, 
+                "hp": 95, 
+                "level": 2, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 8.8, 
+                "carry": 22, 
+                "cost": {
+                    "crop": 104, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1516, 
+                    "wood": 78
+                }, 
+                "hp": 99, 
+                "level": 3, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 9.3, 
+                "carry": 23, 
+                "cost": {
+                    "crop": 106, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1638, 
+                    "wood": 80
+                }, 
+                "hp": 104, 
+                "level": 4, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 12, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 9.7, 
+                "carry": 24, 
+                "cost": {
+                    "crop": 108, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1769, 
+                    "wood": 81
+                }, 
+                "hp": 109, 
+                "level": 5, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 12, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 10.2, 
+                "carry": 26, 
+                "cost": {
+                    "crop": 110, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1910, 
+                    "wood": 83
+                }, 
+                "hp": 115, 
+                "level": 6, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 12, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 10.7, 
+                "carry": 27, 
+                "cost": {
+                    "crop": 113, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2063, 
+                    "wood": 84
+                }, 
+                "hp": 121, 
+                "level": 7, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 12, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 11.3, 
+                "carry": 28, 
+                "cost": {
+                    "crop": 115, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2228, 
+                    "wood": 86
+                }, 
+                "hp": 127, 
+                "level": 8, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 13, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 11.8, 
+                "carry": 30, 
+                "cost": {
+                    "crop": 117, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2406, 
+                    "wood": 88
+                }, 
+                "hp": 133, 
+                "level": 9, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 13, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 12.4, 
+                "carry": 31, 
+                "cost": {
+                    "crop": 120, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2599, 
+                    "wood": 90
+                }, 
+                "hp": 140, 
+                "level": 10, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 13, 
+                "splash": 1, 
+                "upkeep": 1
+            }
+        ], 
+        "name": "Hoplite"
+    }, 
+    "Knight": {
+        "levels": [
+            {
+                "attack": 10.0, 
+                "carry": 40, 
+                "cost": {
+                    "crop": 300, 
+                    "gold": 40, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 3800, 
+                    "wood": 280
+                }, 
+                "hp": 280, 
+                "level": 1, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 18, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 10.5, 
+                "carry": 42, 
+                "cost": {
+                    "crop": 306, 
+                    "gold": 41, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 4104, 
+                    "wood": 286
+                }, 
+                "hp": 294, 
+                "level": 2, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 18, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 11.0, 
+                "carry": 44, 
+                "cost": {
+                    "crop": 312, 
+                    "gold": 42, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 4432, 
+                    "wood": 291
+                }, 
+                "hp": 309, 
+                "level": 3, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 19, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 11.6, 
+                "carry": 46, 
+                "cost": {
+                    "crop": 318, 
+                    "gold": 42, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 4787, 
+                    "wood": 297
+                }, 
+                "hp": 324, 
+                "level": 4, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 19, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 12.2, 
+                "carry": 49, 
+                "cost": {
+                    "crop": 325, 
+                    "gold": 43, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 5170, 
+                    "wood": 303
+                }, 
+                "hp": 340, 
+                "level": 5, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 19, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 12.8, 
+                "carry": 51, 
+                "cost": {
+                    "crop": 331, 
+                    "gold": 44, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 5583, 
+                    "wood": 309
+                }, 
+                "hp": 357, 
+                "level": 6, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 20, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 13.4, 
+                "carry": 54, 
+                "cost": {
+                    "crop": 338, 
+                    "gold": 45, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 6030, 
+                    "wood": 315
+                }, 
+                "hp": 375, 
+                "level": 7, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 20, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 14.1, 
+                "carry": 56, 
+                "cost": {
+                    "crop": 345, 
+                    "gold": 46, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 6513, 
+                    "wood": 322
+                }, 
+                "hp": 394, 
+                "level": 8, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 21, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 14.8, 
+                "carry": 59, 
+                "cost": {
+                    "crop": 351, 
+                    "gold": 47, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 7034, 
+                    "wood": 328
+                }, 
+                "hp": 414, 
+                "level": 9, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 21, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 15.5, 
+                "carry": 62, 
+                "cost": {
+                    "crop": 359, 
+                    "gold": 48, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 7596, 
+                    "wood": 335
+                }, 
+                "hp": 434, 
+                "level": 10, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 22, 
+                "splash": 1, 
+                "upkeep": 2
+            }
+        ], 
+        "name": "Knight"
+    }, 
+    "Ox Wagon": {
+        "levels": [
+            {
+                "attack": 2.0, 
+                "carry": 120, 
+                "cost": {
+                    "crop": 250, 
+                    "gold": 15, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 5600, 
+                    "wood": 100
+                }, 
+                "hp": 70, 
+                "level": 1, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 5, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 2.0, 
+                "carry": 138, 
+                "cost": {
+                    "crop": 255, 
+                    "gold": 15, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 6048, 
+                    "wood": 102
+                }, 
+                "hp": 74, 
+                "level": 2, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 5, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 2.0, 
+                "carry": 159, 
+                "cost": {
+                    "crop": 260, 
+                    "gold": 16, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 6532, 
+                    "wood": 104
+                }, 
+                "hp": 77, 
+                "level": 3, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 5, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 2.1, 
+                "carry": 183, 
+                "cost": {
+                    "crop": 265, 
+                    "gold": 16, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 7054, 
+                    "wood": 106
+                }, 
+                "hp": 81, 
+                "level": 4, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 5, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 2.1, 
+                "carry": 210, 
+                "cost": {
+                    "crop": 271, 
+                    "gold": 16, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 7619, 
+                    "wood": 108
+                }, 
+                "hp": 85, 
+                "level": 5, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 5, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 2.1, 
+                "carry": 241, 
+                "cost": {
+                    "crop": 276, 
+                    "gold": 17, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 8228, 
+                    "wood": 110
+                }, 
+                "hp": 89, 
+                "level": 6, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 6, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 2.1, 
+                "carry": 278, 
+                "cost": {
+                    "crop": 282, 
+                    "gold": 17, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 8886, 
+                    "wood": 113
+                }, 
+                "hp": 94, 
+                "level": 7, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 6, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 2.1, 
+                "carry": 319, 
+                "cost": {
+                    "crop": 287, 
+                    "gold": 17, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 9597, 
+                    "wood": 115
+                }, 
+                "hp": 98, 
+                "level": 8, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 6, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 2.2, 
+                "carry": 367, 
+                "cost": {
+                    "crop": 293, 
+                    "gold": 18, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 10365, 
+                    "wood": 117
+                }, 
+                "hp": 103, 
+                "level": 9, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 6, 
+                "splash": 1, 
+                "upkeep": 2
+            }, 
+            {
+                "attack": 2.2, 
+                "carry": 422, 
+                "cost": {
+                    "crop": 299, 
+                    "gold": 18, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 11194, 
+                    "wood": 120
+                }, 
+                "hp": 109, 
+                "level": 10, 
+                "position": 2, 
+                "range": 1, 
+                "speed": 6, 
+                "splash": 1, 
+                "upkeep": 2
+            }
+        ], 
+        "name": "Ox Wagon"
+    }, 
+    "Swordsman": {
+        "levels": [
+            {
+                "attack": 4.0, 
+                "carry": 30, 
+                "cost": {
+                    "crop": 80, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 950, 
+                    "wood": 60
+                }, 
+                "hp": 100, 
+                "level": 1, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 9, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.2, 
+                "carry": 32, 
+                "cost": {
+                    "crop": 82, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1026, 
+                    "wood": 61
+                }, 
+                "hp": 105, 
+                "level": 2, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 9, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.4, 
+                "carry": 33, 
+                "cost": {
+                    "crop": 83, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1108, 
+                    "wood": 62
+                }, 
+                "hp": 110, 
+                "level": 3, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 9, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.6, 
+                "carry": 35, 
+                "cost": {
+                    "crop": 85, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1197, 
+                    "wood": 64
+                }, 
+                "hp": 116, 
+                "level": 4, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 4.9, 
+                "carry": 36, 
+                "cost": {
+                    "crop": 87, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1292, 
+                    "wood": 65
+                }, 
+                "hp": 122, 
+                "level": 5, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 5.1, 
+                "carry": 38, 
+                "cost": {
+                    "crop": 88, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1396, 
+                    "wood": 66
+                }, 
+                "hp": 128, 
+                "level": 6, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 5.4, 
+                "carry": 40, 
+                "cost": {
+                    "crop": 90, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1508, 
+                    "wood": 68
+                }, 
+                "hp": 134, 
+                "level": 7, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 5.6, 
+                "carry": 42, 
+                "cost": {
+                    "crop": 92, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1628, 
+                    "wood": 69
+                }, 
+                "hp": 141, 
+                "level": 8, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 10, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 5.9, 
+                "carry": 44, 
+                "cost": {
+                    "crop": 94, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1758, 
+                    "wood": 70
+                }, 
+                "hp": 148, 
+                "level": 9, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 1, 
+                "upkeep": 1
+            }, 
+            {
+                "attack": 6.2, 
+                "carry": 47, 
+                "cost": {
+                    "crop": 96, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 1899, 
+                    "wood": 72
+                }, 
+                "hp": 155, 
+                "level": 10, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 11, 
+                "splash": 1, 
+                "upkeep": 1
+            }
+        ], 
+        "name": "Swordsman"
+    }
+}
