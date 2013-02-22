@@ -14,40 +14,8 @@
 	</div>
 
 	<div id="controls2">
-		<button>modify attacker</button>
-		<button>modify defender</butotn>
-	</div>
-
-	<!-- Fullscreen dialogs -->
-	<div id="unit_selector">
-		<b>?? units</b><br>
-		Available units:<br>
-		<div id="unit_selector_available_unit_list"></div>
-		Added units:<br>
-		<div id="unit_selector_selected_unit_list"></div>
-		Total cost: <div id="unit_selector_cost">100w 200c</div><br>
-		Total upkeep: <div id="unit_selector_upkeep">100</div><br>
-		<button>Done</button>
-	</div>
-
-	<div id="unit_selector_add_dialog">
-		<b>Add unit</b><br>
-		Unit: <div id="unit_selector_add_dialog_unit_name"></div>
-		Level: <select id="unit_selector_add_dialog_unit_level">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-			<option>6</option>
-			<option>7</option>
-			<option>8</option>
-			<option>9</option>
-			<option>10</option>
-		</select><br>
-		Amount: <input id="unit_selector_add_dialog_unit_amount" type="number" min="1" max="1000000" value="1"><br>
-		<button>Add</button>
-		<button>Cancel</button>
+		<button id="edit_attacker_button">edit attacker</button>
+		<button id="edit_defender_button">edit defender</butotn>
 	</div>
 
 	<div id="battle">
@@ -71,7 +39,44 @@
 		<ul>
 			<li>Technologies
 			<li>Buildings
+			<li>Retreat conditions
 		</ul>
 	</p>
+
+	<!-- Fullscreen dialogs -->
+	<div id="army_dialog">
+		<b><span id="army_dialog_type"></span> army</b><br>
+		Available units:<br>
+		<div id="army_dialog_available_unit_list"></div>
+		Added units:<br>
+		<div id="army_dialog_army_unit_list"></div>
+		<div style="bottom:0">
+			Total army cost: <span id="army_dialog_cost"></span><br>
+			Total army upkeep: <span id="army_dialog_upkeep">100</span><br>
+			<button id="army_dialog_close_button">Close</button>
+		</div>
+	</div>
+
+	<div id="army_add_dialog">
+		<b>Add unit</b><br>
+		<div id="army_add_dialog_unit_name"></div>
+		Level: <select id="army_add_dialog_unit_level">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select><br>
+		Amount: <input id="army_add_dialog_unit_amount" type="number" min="1" max="1000000" value="1"><br>
+		<button id="army_add_dialog_add_button">Add</button>
+		<button id="army_add_dialog_cancel_button">Cancel</button>
+	</div>
+
+	<div id="fullscreen_modal_background"></div>
 </body>
 </html>

@@ -3,15 +3,18 @@
 	font-size: 12px;
 	margin: 2px;
 }
+
 #battle {
 	width: 650px;
 }
+
 .unit_stack_list {
 	border: 1px solid black;
 	width: 100%;
 	height: 100px;
 	overflow: auto;
 }
+
 #battle_log {
 	border: 1px solid black;
 	width: 100%;
@@ -19,7 +22,10 @@
 	overflow: auto;
 	text-align: center;
 }
-#unit_selector {
+
+#army_dialog {
+	z-index: 2;
+	display: none;
 	position: fixed;
 	left: 50%;
 	top: 50%;
@@ -31,7 +37,15 @@
 	border: 1px solid black;
 	background-color: white;
 }
-#unit_selector_add_dialog {
+
+#army_dialog_army_unit_list {
+	overflow: auto;
+	height: 90px;
+}
+
+#army_add_dialog {
+	z-index: 3;
+	display: none;
 	position: fixed;
 	left: 50%;
 	top: 50%;
@@ -43,22 +57,44 @@
 	border: 1px solid black;
 	background-color: white;
 }
-#unit_selector_cost {
-	display: inline;
+
+#army_dialog_cost {
 }
-#unit_selector_upkeep {
-	display: inline;
+
+#army_dialog_upkeep {
 }
-.unit_selector_available_unit {
+
+.army_available_unit {
 	display: inline-block;
-	border: 1px solid black;
 	padding: 2px;
 	margin: 2px;
 }
+
+.army_added_unit {
+	border: solid 1px black;
+}
+
 .log_round_header {
 	font-weight: bold;
 }
+
 .log_damage {}
+
 .log_defeat {
 	color: red;
+}
+
+#fullscreen_modal_background {
+	z-index: 1;
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	background-color: black;
+	opacity: 0.5;
 }
