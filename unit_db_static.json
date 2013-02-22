@@ -1,0 +1,282 @@
+{
+    "Archer": {
+        "stack_size": [ 20, 22, 23, 25, 27, 29, 32, 34, 37, 40 ],
+        "damage_mod": {
+            "Fighter":      1.25,
+            "Swordsman":    1.25,
+            "Gladiator":    1.25,
+            "Hoplite":      1.25,
+            "Cavalry":      1.00,
+            "Bowman":       1.00,
+            "Archer":       1.00,
+            "Knight":       1.00,
+            "Cannon Tower": 0.01,
+            "Tower":        0.01,
+            "Helepolis":    0.01,
+            "Catapult":     0.01,
+            "Structures":   0.01,
+            "Ox Wagon":     1.00,
+            "Gates":        0.50
+        }
+    }, 
+    "Bowman": {
+        "stack_size": [ 20, 22, 23, 25, 27, 29, 32, 34, 37, 40 ],
+        "damage_mod": {
+            "Fighter":      1.25,
+            "Swordsman":    1.25,
+            "Gladiator":    1.25,
+            "Hoplite":      1.25,
+            "Cavalry":      1.00,
+            "Bowman":       1.00,
+            "Archer":       1.00,
+            "Knight":       1.00,
+            "Cannon Tower": 0.01,
+            "Tower":        0.01,
+            "Helepolis":    0.01,
+            "Catapult":     0.01,
+            "Structures":   0.01,
+            "Ox Wagon":     1.00,
+            "Gates":        0.50
+        }
+    },
+    "Cannon Tower": {
+        "stack_size": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+        "damage_mod": {
+            "Fighter":      0.25,
+            "Swordsman":    0.25,
+            "Gladiator":    0.25,
+            "Hoplite":      0.25,
+            "Cavalry":      0.25,
+            "Bowman":       0.25,
+            "Archer":       0.25,
+            "Knight":       0.25,
+            "Cannon Tower": 0.01,
+            "Tower":        0.01,
+            "Helepolis":    2.00,
+            "Catapult":     2.00,
+            "Structures":   0.01,
+            "Ox Wagon":     0.25,
+            "Gates":        1.00
+        }
+    }, 
+    "Catapult": {
+        "stack_size": [ 4, 4, 5, 5, 5, 6, 6, 7, 7, 8 ],
+        "damage_mod": {
+            "Fighter":      0.25,
+            "Swordsman":    0.25,
+            "Gladiator":    0.25,
+            "Hoplite":      0.25,
+            "Cavalry":      0.25,
+            "Bowman":       0.25,
+            "Archer":       0.25,
+            "Knight":       0.25,
+            "Cannon Tower": 1.00,
+            "Tower":        1.00,
+            "Helepolis":    1.00,
+            "Catapult":     1.00,
+            "Structures":   2.00,
+            "Ox Wagon":     0.25,
+            "Gates":        5.00
+        }
+    }, 
+    "Cavalry": {
+        "stack_size": [ 10, 11, 12, 13, 14, 15, 16, 17, 19, 20 ],
+        "damage_mod": {
+            "Fighter":      1.00,
+            "Swordsman":    1.00,
+            "Gladiator":    1.00,
+            "Hoplite":      1.00,
+            "Cavalry":      0.75,
+            "Bowman":       1.25,
+            "Archer":       1.25,
+            "Knight":       0.75,
+            "Cannon Tower": 0.25,
+            "Tower":        0.25,
+            "Helepolis":    0.25,
+            "Catapult":     0.25,
+            "Structures":   0.01,
+            "Ox Wagon":     0.75,
+            "Gates":        0.50
+        }
+    }, 
+    "Fighter": {
+        "stack_size": [ 20, 22, 23, 25, 27, 29, 32, 34, 37, 40 ],
+        "damage_mod": {
+            "Fighter":      1.00,
+            "Swordsman":    1.00,
+            "Gladiator":    1.00,
+            "Hoplite":      1.25,
+            "Cavalry":      0.75,
+            "Bowman":       1.00,
+            "Archer":       1.00,
+            "Knight":       0.75,
+            "Cannon Tower": 1.25,
+            "Tower":        0.50,
+            "Helepolis":    0.50,
+            "Catapult":     1.25,
+            "Structures":   0.01,
+            "Ox Wagon":     0.75,
+            "Gates":        1.25
+        }
+    }, 
+    "Gladiator": {
+        "stack_size": [ 20, 22, 23, 25, 27, 29, 32, 34, 37, 40 ],
+        "damage_mod": {
+            "Fighter":      1.00,
+            "Swordsman":    1.00,
+            "Gladiator":    1.00,
+            "Hoplite":      1.00,
+            "Cavalry":      1.00,
+            "Bowman":       0.75,
+            "Archer":       0.75,
+            "Knight":       1.25,
+            "Cannon Tower": 0.50,
+            "Tower":        1.25,
+            "Helepolis":    1.25,
+            "Catapult":     0.50,
+            "Structures":   0.05,
+            "Ox Wagon":     1.00,
+            "Gates":        0.50
+        }
+    }, 
+    "Helepolis": {
+        "stack_size": [ 4, 4, 5, 5, 5, 6, 6, 7, 7, 8 ],
+        "damage_mod": {
+            "Fighter":      1.00,
+            "Swordsman":    1.00,
+            "Gladiator":    1.00,
+            "Hoplite":      1.00,
+            "Cavalry":      1.00,
+            "Bowman":       1.25,
+            "Archer":       1.25,
+            "Knight":       1.25,
+            "Cannon Tower": 0.01,
+            "Tower":        0.01,
+            "Helepolis":    0.01,
+            "Catapult":     0.01,
+            "Structures":   0.01,
+            "Ox Wagon":     1.00,
+            "Gates":        1.25
+        }
+    }, 
+    "Hoplite": {
+        "stack_size": [ 10, 11, 12, 13, 14, 15, 16, 17, 19, 20 ],
+        "damage_mod": {
+            "Fighter":      0.75,
+            "Swordsman":    0.75,
+            "Gladiator":    0.75,
+            "Hoplite":      0.75,
+            "Cavalry":      1.50,
+            "Bowman":       1.00,
+            "Archer":       1.00,
+            "Knight":       2.00,
+            "Cannon Tower": 0.25,
+            "Tower":        0.25,
+            "Helepolis":    0.25,
+            "Catapult":     0.25,
+            "Structures":   0.01,
+            "Ox Wagon":     1.75,
+            "Gates":        0.75
+        }
+    }, 
+    "Knight": {
+        "stack_size": [ 5, 5, 6, 6, 7, 7, 8, 9, 9, 10 ],
+        "damage_mod": {
+            "Fighter":      1.00,
+            "Swordsman":    1.00,
+            "Gladiator":    1.25,
+            "Hoplite":      1.00,
+            "Cavalry":      1.00,
+            "Bowman":       1.00,
+            "Archer":       1.00,
+            "Knight":       1.25,
+            "Cannon Tower": 1.00,
+            "Tower":        1.00,
+            "Helepolis":    0.25,
+            "Catapult":     0.25,
+            "Structures":   0.25,
+            "Ox Wagon":     1.00,
+            "Gates":        0.75
+        }
+    }, 
+    "Ox Wagon": {
+        "stack_size": [ 10, 11, 12, 13, 14, 15, 16, 17, 19, 20 ],
+        "damage_mod": {
+            "Fighter":      1.00,
+            "Swordsman":    1.00,
+            "Gladiator":    1.00,
+            "Hoplite":      1.00,
+            "Cavalry":      1.00,
+            "Bowman":       1.00,
+            "Archer":       1.00,
+            "Knight":       1.00,
+            "Cannon Tower": 0.01,
+            "Tower":        0.01,
+            "Helepolis":    0.01,
+            "Catapult":     0.01,
+            "Structures":   0.01,
+            "Ox Wagon":     1.00,
+            "Gates":        1.00
+        }
+    },
+    "Structures": {
+        "stack_size": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+        "damage_mod": {
+            "Fighter":      1.00,
+            "Swordsman":    1.00,
+            "Gladiator":    1.00,
+            "Hoplite":      1.00,
+            "Cavalry":      1.00,
+            "Bowman":       1.00,
+            "Archer":       1.00,
+            "Knight":       1.00,
+            "Cannon Tower": 0.01,
+            "Tower":        0.01,
+            "Helepolis":    0.01,
+            "Catapult":     0.01,
+            "Structures":   0.01,
+            "Ox Wagon":     1.00,
+            "Gates":        1.00
+        }
+    }, 
+    "Swordsman": {
+        "stack_size": [ 20, 22, 23, 25, 27, 29, 32, 34, 37, 40 ],
+        "damage_mod": {
+            "Fighter":      1.00,
+            "Swordsman":    1.00,
+            "Gladiator":    1.00,
+            "Hoplite":      1.25,
+            "Cavalry":      0.75,
+            "Bowman":       1.00,
+            "Archer":       1.00,
+            "Knight":       0.75,
+            "Cannon Tower": 1.25,
+            "Tower":        0.50,
+            "Helepolis":    0.50,
+            "Catapult":     1.25,
+            "Structures":   0.01,
+            "Ox Wagon":     0.75,
+            "Gates":        1.00
+        }
+    },
+    "Tower": {
+        "stack_size": [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
+        "damage_mod": {
+            "Fighter":      0.75,
+            "Swordsman":    0.75,
+            "Gladiator":    1.00,
+            "Hoplite":      0.75,
+            "Cavalry":      0.75,
+            "Bowman":       1.00,
+            "Archer":       1.00,
+            "Knight":       1.00,
+            "Cannon Tower": 0.01,
+            "Tower":        0.01,
+            "Helepolis":    0.25,
+            "Catapult":     0.25,
+            "Structures":   0.01,
+            "Ox Wagon":     0.75,
+            "Gates":        1.00
+        }
+    }
+}

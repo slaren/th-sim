@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+	<title>TH Battle Sim</title>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="sim.js"></script>
+	<link rel="stylesheet" type="text/css" href="sim.css">
+</head>
+<body>
+	<div id="controls">
+		<button id="play_all_button">play all</button>
+		<button id="next_round_button">next round</button>
+		<button id="reset_button">reset</button>
+	</div>
+
+	<div id="controls2">
+		<button id="edit_attacker_button">edit attacker</button>
+		<button id="edit_defender_button">edit defender</butotn>
+	</div>
+
+	<div id="battle">
+		Defender:
+		<div id="defender" class="unit_stack_list"></div>		
+		<br>
+		<div id="battle_log"></div>
+		Attacker:
+		<div id="attacker" class="unit_stack_list"></div>
+	</div>
+	
+	<p>
+		<b>Note:</b><br>
+		There are still a few unknown details:
+		<ul>
+			<li>Chance to miss when fighting against a smaller army
+			<li>Order of attacks (currently random)
+			<li>Targets of splash damage (currently randomized every turn)
+		</ul>
+		In addition to that, the following aspects of combat are not yet implemented:
+		<ul>
+			<li>Technologies
+			<li>Buildings
+			<li>Retreat conditions
+		</ul>
+	</p>
+
+	<!-- Fullscreen dialogs -->
+	<div id="army_dialog">
+		<b><span id="army_dialog_type"></span> army</b><br>
+		Available units:<br>
+		<div id="army_dialog_available_unit_list"></div>
+		Added units:<br>
+		<div id="army_dialog_army_unit_list"></div>
+		<div style="bottom:0">
+			Total army cost: <span id="army_dialog_cost"></span><br>
+			Total army upkeep: <span id="army_dialog_upkeep">100</span><br>
+			<button id="army_dialog_close_button">Close</button>
+		</div>
+	</div>
+
+	<div id="army_add_dialog">
+		<b>Add unit</b><br>
+		<div id="army_add_dialog_unit_name"></div>
+		Level: <select id="army_add_dialog_unit_level">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select><br>
+		Amount: <input id="army_add_dialog_unit_amount" type="number" min="1" max="1000000" value="1"><br>
+		<button id="army_add_dialog_add_button">Add</button>
+		<button id="army_add_dialog_cancel_button">Cancel</button>
+	</div>
+
+	<div id="fullscreen_modal_background"></div>
+</body>
+</html>
