@@ -9,15 +9,15 @@ function sformat(str) {
 		});
 };
 
-function shuffle_array(myArray) {
-	var i = myArray.length, j, tempi, tempj;
-	if ( i == 0 ) return false;
-	while ( --i ) {
-		j = Math.floor( Math.random() * ( i + 1 ) );
-		tempi = myArray[i];
-		tempj = myArray[j];
-		myArray[i] = tempj;
-		myArray[j] = tempi;
+function shuffle_array(array) {
+	var i = array.length, j, tempi, tempj;
+	if (i == 0) return false;
+	while (--i) {
+		j = Math.floor(Math.random() * (i + 1));
+		tempi = array[i];
+		tempj = array[j];
+		array[i] = tempj;
+		array[j] = tempi;
 	}
 };
 
@@ -31,7 +31,7 @@ function simulator() {
 			$.getJSON("unit_db_static.json")
 				.success(function(data) {
 					for (unit in data) {
-						if(!sim.unit_db[unit])
+						if (!sim.unit_db[unit])
 							sim.unit_db[unit] = {};
 
 						for (field in data[unit]) {
@@ -49,7 +49,6 @@ function simulator() {
 		.error(function() {
 			alert("error loading unit data file");
 		});
-
 };
 
 simulator.prototype = {
@@ -81,14 +80,94 @@ simulator.prototype = {
 		this.stack_death_fn = stack_death;
 	},
 
+	get_army_cost: function(army) {
+		var crop = 0, gold = 0, iron = 0, labor = 0, time = 0, wood = 0;
+		var upkeep = 0;
+
+		for (var i in army) {
+			var unit = army[i];
+			var unit_lv = sim.unit_db[unit.unit].levels[unit.level];
+			crop += unit_lv.cost.crop * unit.count;
+			gold += unit_lv.cost.gold * unit.count;
+			iron += unit_lv.cost.iron * unit.count;
+			labor+= unit_lv.cost.labor * unit.count;
+			time += unit_lv.cost.time * unit.count;
+			wood += unit_lv.cost.wood * unit.count;
+			upkeep += unit_lv.upkeep * unit.count;
+		}
+
+		return {
+			"crop": crop,
+			"gold": gold,
+			"iron": iron,
+			"labor": labor,
+			"time": time,
+			"wood": wood,
+			"upkeep": upkeep
+		};
+	},
+
+	get_army_upkeep: function(army) {
+		var upkeep = 0;
+
+		for (var i in army) {
+			var unit = army[i];
+			var unit_lv = this.unit_db[unit.unit].levels[unit.level];
+			upkeep += unit_lv.upkeep * unit.count;
+		}
+
+		return upkeep;
+	},
+
+	get_miss_chance: function(attacker, defender) {
+		var attacker_upkeep = this.get_army_upkeep(attacker);
+		var defender_upkeep = this.get_army_upkeep(defender);
+		var delta = Math.max(0, attacker_upkeep / defender_upkeep);
+		var effectiveness = attacker_upkeep > 200 ?  1 : defender_upkeep / 200;
+		var miss;
+
+		if (delta < 1)
+			miss = 0;
+		else if (delta < 1.25)
+			miss = 10;
+		else if (delta < 1.5)
+			miss = 17;
+		else if (delta < 2)
+			miss = 22;
+		else if (delta < 3.5)
+			miss = 30;
+		else if (delta < 5)
+			miss = 40;
+		else if (delta < 7)
+			miss = 48;
+		else if (delta < 10)
+			miss = 55;
+		else
+			miss = 60;
+
+		return (miss * effectiveness).toFixed(0) / 100.0;
+	},
+
 	do_round: function() {
 		shuffle_array(this.attacker_stacks);
 		shuffle_array(this.defender_stacks);
 
 		// todo: shuffle only at the start of the battle
 		// alternating between attackers and defenders
-		// randomize order of attacks
-		// defender attacks first
+		// order: FighterBowmenSwordsmenArcherHopliteGladiatorCavalryKnightHelepolisCatapultOx Wagon
+/*
+		1 Fighter
+		2 Bowmen
+		3 Swordsmen
+		4 Archer
+		5 Hoplite
+		6 Gladiator
+		7 Cavalry
+		8 Knight
+		9 Helepolis
+		10 Catapult
+		11 Ox Wagon
+*/
 		var order = []
 		for (var i = 0; i < (this.attacker_stacks.length + this.defender_stacks.length); ++i)
 			order[i] = i;
@@ -96,15 +175,15 @@ simulator.prototype = {
 
 		for (var i = 0; i < order.length; ++i) {
 			var nstack = order[i];
-			if(nstack < this.attacker_stacks.length) {
+			if (nstack < this.attacker_stacks.length) {
 				var stack = this.attacker_stacks[nstack];
-				if(stack.count > 0) {
+				if (stack.count > 0) {
 					this.do_attack(stack, this.defender_stacks, true);
 				}
 			}
 			else {
 				var stack = this.defender_stacks[nstack - this.attacker_stacks.length];
-				if(stack.count > 0) {
+				if (stack.count > 0) {
 					this.do_attack(stack, this.attacker_stacks, false);
 				}
 			}
@@ -114,13 +193,13 @@ simulator.prototype = {
 		// sequential order of attacks
 		for (var i = 0; i < this.attacker_stacks.length; ++i) {
 			var stack = this.attacker_stacks[i];
-			if(stack.count > 0) {
+			if (stack.count > 0) {
 				this.do_attack(stack, this.defender_stacks, true);
 			}
 		}
 		for (var i = 0; i < this.defender_stacks.length; ++i) {
 			var stack = this.defender_stacks[i];
-			if(stack.count > 0) {
+			if (stack.count > 0) {
 				this.do_attack(stack, this.attacker_stacks, false);
 			}
 		}
@@ -162,7 +241,7 @@ simulator.prototype = {
 			mt_unit_lv = mt_unit.levels[mt_stack.level - 1];
 		}
 
-		if(mt_stack) {
+		if (mt_stack) {
 			targets[0] = mt_stack;
 			// find splash targets
 			for (var nt = 1; nt < splash; ++nt) {
@@ -308,20 +387,24 @@ $(function() {
 			function(stack, t_stack, damage, is_attacker) {
 				if (t_stack) {
 					if (is_attacker) {
-						$("#battle_log").append(sformat("{4}x{5} <= {3} <= {1}x{2}<br>", 
+						$("#battle_log").append(sformat("<img src='{7}'> {5}x{6} <= {4} <= <img src='{3}'> {1}x{2}<br>", 
 							stack.unit,
 							stack.count,
+							sim.unit_db[stack.unit].image,
 							damage.toFixed(1),
 							t_stack.unit,
-							t_stack.count));
+							t_stack.count,
+							sim.unit_db[t_stack.unit].image));
 					}
 					else {
-						$("#battle_log").append(sformat("{1}x{2} => {3} => {4}x{5}<br>", 
+						$("#battle_log").append(sformat("<img src='{3}'> {1}x{2} => {4} => <img src='{7}'> {5}x{6}<br>", 
 							stack.unit,
 							stack.count,
+							sim.unit_db[stack.unit].image,
 							damage.toFixed(1),
 							t_stack.unit,
-							t_stack.count));
+							t_stack.count,
+							sim.unit_db[t_stack.unit].image));
 					}
 				}
 				else {
@@ -369,9 +452,6 @@ $(function() {
 		}
 
 		function populate_army_dialog_army(army) {
-			var crop = 0, gold = 0, iron = 0, labor = 0, time = 0, wood = 0;
-			var upkeep = 0;
-
 			$("#army_dialog_army_unit_list").empty();
 			for (var i in army) {
 				var unit = army[i];
@@ -380,30 +460,65 @@ $(function() {
 				el.prepend(button)
 				$("#army_dialog_army_unit_list").append(el);
 				button.click((function(army, i) { return function(i) { remove_current_army_unit(i); }; })(i));
-
-				var unit_lv = sim.unit_db[unit.unit].levels[unit.level];
-				crop += unit_lv.cost.crop * unit.count;
-				gold += unit_lv.cost.gold * unit.count;
-				iron += unit_lv.cost.iron * unit.count;
-				labor+= unit_lv.cost.labor * unit.count;
-				time += unit_lv.cost.time * unit.count;
-				wood += unit_lv.cost.wood * unit.count;
-				upkeep += unit_lv.upkeep * unit.count;
 			}
 
-			$("#army_dialog_cost").text(sformat("{1}l {2}g {3}w {4}c {5}i", labor, gold, wood, crop, iron));
-			$("#army_dialog_upkeep").text(upkeep);
+			var cost = sim.get_army_cost(army);
+			$("#army_dialog_cost").text(sformat("{1}l {2}g {3}w {4}c {5}i", cost.labor, cost.gold, cost.wood, cost.crop, cost.iron));
+			$("#army_dialog_upkeep").text(cost.upkeep);
 			
-			serialize_test(army);
+			update_url();
 		}
 
-		function serialize_test(army) {
+		function update_url() {
+			window.location.hash = serialize_state();
+		}
+
+		function serialize_state() {
+			return sformat("{1}-{2}", serialize_army(attacker), serialize_army(defender));
+		}
+
+		function serialize_army(army) {
 			var strs = [];
 			for (var i in army) {
 				var unit = army[i];
 				strs.push(sformat("{1}{2}x{3}", unit.unit, unit.level, unit.count))
 			}
-			window.location = "#" + strs.join("~");
+			return strs.join("~");
+		}
+
+		function deserialize_state() {
+			var data = window.location.hash.substr(1);
+			var data_armies = data.split("-");
+			if (data_armies.length == 2) {
+				attacker = deserialize_army(data_armies[0]);
+				defender = deserialize_army(data_armies[1]);
+			}
+		}
+
+		function deserialize_army(army_data) {
+			var re = /(.+)(\d+)x(\d+)/
+			var units = army_data.split("~");
+			var army = []
+
+			for (var i in units) {
+				var unit_data = units[i];
+				var result = re.exec(unit_data)
+
+				if (result.length == 4) {
+					var unit = {
+						unit: result[1],
+						level: parseInt(result[2], 10),
+						count: parseInt(result[3], 10)
+					};
+
+					if (sim.unit_db[unit.unit] != null && unit.level >= 1 && unit.level <= 10 &&
+						unit.count > 0 && unit.count < 1000000) {
+						army.push(unit);
+					}
+				}
+			}
+
+			return army;
 		}
 
 		function show_army_add_dialog(unit) {
@@ -429,11 +544,14 @@ $(function() {
 			reset_battle();
 		}
 
+		// load state
+		deserialize_state();
+
 		// fill available unit list
 		for (var i in sim.unit_db) {
 			var unit = sim.unit_db[i];
 			if (unit.name) {
-				var button = $(sformat("<button class='army_available_unit'>{1}</button>", unit.name));
+				var button = $(sformat("<button class='army_available_unit'><img src='{2}'>{1}</button>", unit.name, unit.image));
 				button.click((function(unit) { return function() { show_army_add_dialog(unit.name); } })(unit));
 
 				$("#army_dialog_available_unit_list").append(button); 
@@ -467,7 +585,8 @@ $(function() {
 
 		reset_battle();
 
-		// button callbacks
+		// ui callbacks
+		$("")
 		$("#reset_button").click(function() {
 			reset_battle();
 		});
@@ -483,7 +602,7 @@ $(function() {
 		});
 
 		$("#next_round_button").click(function() {
-			if(current_round <= 20 && sim.is_in_combat()) {
+			if (current_round <= 20 && sim.is_in_combat()) {
 				run_round();
 				$("#battle_log").animate({ scrollTop: $("#battle_log")[0].scrollHeight }, "fast");
 			}
@@ -512,6 +631,10 @@ $(function() {
 
 		$("#army_add_dialog_cancel_button").click(function() {
 			close_toplevel_dialog();
+		});
+
+		$(document).on("hashchange", function() {
+			deserialize_state();
 		});
 
 		$(document).keydown(function(e) {
