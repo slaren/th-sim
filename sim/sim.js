@@ -85,7 +85,10 @@ simulator.prototype = {
 		shuffle_array(this.attacker_stacks);
 		shuffle_array(this.defender_stacks);
 
+		// todo: shuffle only at the start of the battle
+		// alternating between attackers and defenders
 		// randomize order of attacks
+		// defender attacks first
 		var order = []
 		for (var i = 0; i < (this.attacker_stacks.length + this.defender_stacks.length); ++i)
 			order[i] = i;
@@ -390,6 +393,17 @@ $(function() {
 
 			$("#army_dialog_cost").text(sformat("{1}l {2}g {3}w {4}c {5}i", labor, gold, wood, crop, iron));
 			$("#army_dialog_upkeep").text(upkeep);
+			
+			serialize_test(army);
+		}
+
+		function serialize_test(army) {
+			var strs = [];
+			for (var i in army) {
+				var unit = army[i];
+				strs.push(sformat("{1}{2}x{3}", unit.unit, unit.level, unit.count))
+			}
+			window.location = "#" + strs.join("~");
 		}
 
 		function show_army_add_dialog(unit) {
@@ -491,7 +505,7 @@ $(function() {
 			var name = $("#army_add_dialog_unit_name").text();
 			var level = $("#army_add_dialog_unit_level").val();
 			var count = $("#army_add_dialog_unit_amount").val();
-			console.log(name, level, count);
+
 			add_current_army_unit(name, level, count);
 			close_toplevel_dialog();
 		});
