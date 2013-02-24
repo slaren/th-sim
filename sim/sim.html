@@ -47,14 +47,15 @@
 	<!-- Fullscreen dialogs -->
 	<div id="army_dialog">
 		<b><span id="army_dialog_type"></span> army</b><br>
-		Available units:<br>
 		<div id="army_dialog_available_unit_list"></div>
 		Added units:<br>
 		<div id="army_dialog_army_unit_list"></div>
-		<div style="bottom:0">
-			Total army cost: <span id="army_dialog_cost"></span><br>
-			Total army upkeep: <span id="army_dialog_upkeep">100</span><br>
+		<div style="bottom: 0; width: 100%; position: absolute">
 			<button id="army_dialog_close_button">Close</button>
+			<span style="right:0; width:100%">
+				Cost: <span id="army_dialog_cost"></span>
+				Upkeep: <span id="army_dialog_upkeep"></span>
+			</span>
 		</div>
 	</div>
 

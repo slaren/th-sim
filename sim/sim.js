@@ -19,6 +19,7 @@ function shuffle_array(array) {
 		array[i] = tempj;
 		array[j] = tempi;
 	}
+	return array;
 };
 
 function simulator() {
@@ -60,11 +61,15 @@ simulator.prototype = {
 	},
 
 	set_attacker: function(attacker) {
-		this.attacker_stacks = this.make_stacks(attacker);
+		var r = this.make_stacks(attacker);
+		this.attacker_stacks = r[0]
+		this.shuffled_attacker_stacks = r[1]
 	},
 
 	set_defender: function(defender) {
-		this.defender_stacks = this.make_stacks(defender);
+		var r = this.make_stacks(defender);
+		this.defender_stacks = r[0];
+		this.shuffled_defender_stacks = r[1];
 	},
 
 	get_attacker_stacks: function () {
@@ -119,7 +124,14 @@ simulator.prototype = {
 		return upkeep;
 	},
 
-	get_miss_chance: function(attacker, defender) {
+	get_miss_chance: function(is_attacker) {
+		if (is_attacker)
+			return this.get_army_miss_chance(this.attacker_stacks, this.defender_stacks);
+		else
+			return this.get_army_miss_chance(this.defender_stacks, this.attacker_stacks);
+	},
+
+	get_army_miss_chance: function(attacker, defender) {
 		var attacker_upkeep = this.get_army_upkeep(attacker);
 		var defender_upkeep = this.get_army_upkeep(defender);
 		var delta = Math.max(0, attacker_upkeep / defender_upkeep);
@@ -149,13 +161,40 @@ simulator.prototype = {
 	},
 
 	do_round: function() {
-		shuffle_array(this.attacker_stacks);
-		shuffle_array(this.defender_stacks);
+		// alternating ordered attack order
+		var ia = 0, id = 0;
+		function get_next_valid_stack(stacks, pos) {
+			if (pos === null)
+				return null;
+
+			for (; pos < stacks.length; ++pos) {
+				if (stacks[pos].count > 0) {
+					return pos;
+				}
+			}
+			return null;
+		}
+
+		while (ia != null || id != null) {
+			// defender attack
+			id = get_next_valid_stack(this.defender_stacks, id);
+			if (id !== null) {
+				this.do_attack(this.defender_stacks[id], this.shuffled_attacker_stacks, false);
+				++id;
+			}
+			// attacker attack
+			ia = get_next_valid_stack(this.attacker_stacks, ia);
+			if (ia !== null) { 
+				this.do_attack(this.attacker_stacks[ia], this.shuffled_defender_stacks, true);
+				++ia;
+			}
+		}
+
 
 		// todo: shuffle only at the start of the battle
 		// alternating between attackers and defenders
 		// order: FighterBowmenSwordsmenArcherHopliteGladiatorCavalryKnightHelepolisCatapultOx Wagon
-/*
+		/*
 		1 Fighter
 		2 Bowmen
 		3 Swordsmen
@@ -167,7 +206,13 @@ simulator.prototype = {
 		9 Helepolis
 		10 Catapult
 		11 Ox Wagon
-*/
+		*/
+
+		/*
+		// random attack order
+		shuffle_array(this.attacker_stacks);
+		shuffle_array(this.defender_stacks);
+
 		var order = []
 		for (var i = 0; i < (this.attacker_stacks.length + this.defender_stacks.length); ++i)
 			order[i] = i;
@@ -188,6 +233,7 @@ simulator.prototype = {
 				}
 			}
 		}
+		*/
 
 		/*
 		// sequential order of attacks
@@ -212,33 +258,26 @@ simulator.prototype = {
 		var splash = a_unit.levels[a_stack.level - 1].splash;
 		var targets = [];
 		var mt_stack, mt_unit, mt_unit_lv
-		if (!a_stack.targets || a_stack.targets.length == 0 || a_stack.targets[0].count == 0) {
-			// choose new main target
-			for (var i = 0; i < target_stacks.length; ++i) {
-				var d_stack = target_stacks[i];
-				var d_unit = this.unit_db[d_stack.unit];
-				var d_unit_lv = d_unit.levels[d_stack.level - 1];
-				
-				if (d_stack.count == 0)
-					continue;
+		// find a main target
+		for (var i = 0; i < target_stacks.length; ++i) {
+			var d_stack = target_stacks[i];
+			var d_unit = this.unit_db[d_stack.unit];
+			var d_unit_lv = d_unit.levels[d_stack.level - 1];
+			
+			if (d_stack.count == 0)
+				continue;
 
-				if (
-					!mt_stack ||
-					// choose by range
-					(a_unit_lv.range < mt_unit_lv.position && a_unit_lv.range >= d_unit_lv.position) ||
-					// choose by damage modifier
-					(a_unit.damage_mod[d_stack.unit] > a_unit.damage_mod[mt_stack.unit])) {
+			if (
+				!mt_stack ||
+				// choose by range
+				(a_unit_lv.range < mt_unit_lv.position && a_unit_lv.range >= d_unit_lv.position) ||
+				// choose by damage modifier
+				(a_unit.damage_mod[d_stack.unit] > a_unit.damage_mod[mt_stack.unit])) {
 
-					mt_stack = d_stack;
-					mt_unit = d_unit;
-					mt_unit_lv = d_unit_lv;
-				}
+				mt_stack = d_stack;
+				mt_unit = d_unit;
+				mt_unit_lv = d_unit_lv;
 			}
-		}
-		else {
-			mt_stack = a_stack.targets[0];
-			mt_unit = this.unit_db[mt_stack.unit];
-			mt_unit_lv = mt_unit.levels[mt_stack.level - 1];
 		}
 
 		if (mt_stack) {
@@ -277,8 +316,6 @@ simulator.prototype = {
 			}
 		}
 
-		a_stack.targets = targets;
-
 		return targets;
 	},
 		
@@ -293,13 +330,18 @@ simulator.prototype = {
 			return;
 
 		// got target, do damage
+		var miss_chance = this.get_miss_chance(is_attacker);
+
 		for (var i = 0; i < t_stacks.length; ++i) {
 			var t_stack = t_stacks[i];
 			var t_unit = this.unit_db[t_stack.unit];
 			var t_unit_lv = t_unit.levels[t_stack.level - 1];
-
+			var is_miss = Math.random() < miss_chance;
 			var dmod = a_unit.damage_mod[t_stack.unit];
 			var damage = a_stack.count * a_unit_lv.attack * dmod;
+			if (is_miss) {
+				damage *= 0.5;
+			}
 
 			if (this.damage_fn) {
 				this.damage_fn(a_stack, t_stack, damage, is_attacker);
@@ -329,6 +371,12 @@ simulator.prototype = {
 
 	// private
 	make_stacks: function(units) {
+		// sort units by their attack order first
+		var sim = this;
+		units.sort(function(a, b) {
+			return sim.unit_db[a.unit].attack_order - sim.unit_db[b.unit].attack_order;
+		});
+
 		var stacks = [];
 		for (var i = 0; i < units.length; ++i) {
 			var unit = units[i];
@@ -347,11 +395,14 @@ simulator.prototype = {
 					hp: hp_max,
 					damage_dealt: 0,
 				};
-				stacks[stacks.length] = stack;
+				stacks.push(stack);
 				count_left = count_left - count;
 			}
 		}
-		return stacks;
+
+		// make a shuffled copy for target selection
+		var shuffled = shuffle_array(stacks.slice())
+		return [ stacks, shuffled ];
 	},
 
 	reset_stacks_hp: function(stacks) {
@@ -419,9 +470,6 @@ $(function() {
 		// ui stuff
 		function display_stacks(stacks, div) {
 			div.empty();
-			stacks.sort(function(a, b) {
-				return b.unit < a.unit;
-			})
 			for (var i = 0; i < stacks.length; ++i) {
 				var stack = stacks[i];
 				div.append(sformat("<div>{1} (lv.{2}) x{3} (hp: {4}/{5} damage dealt: {6})</div>", stack.unit, stack.level, stack.count, 
@@ -469,8 +517,19 @@ $(function() {
 			update_url();
 		}
 
+		var prev_ser_state;
 		function update_url() {
-			window.location.hash = serialize_state();
+			prev_ser_state = serialize_state();
+			window.location.hash = prev_ser_state;
+		}
+
+		function update_from_url() {
+			var data = window.location.hash.substr(1);
+			if (data != prev_ser_state) {
+				deserialize_state(data);
+				reset_battle();
+				prev_ser_state = data;
+			}
 		}
 
 		function serialize_state() {
@@ -486,8 +545,7 @@ $(function() {
 			return strs.join("~");
 		}
 
-		function deserialize_state() {
-			var data = window.location.hash.substr(1);
+		function deserialize_state(data) {
 			var data_armies = data.split("-");
 			if (data_armies.length == 2) {
 				attacker = deserialize_army(data_armies[0]);
@@ -502,9 +560,9 @@ $(function() {
 
 			for (var i in units) {
 				var unit_data = units[i];
-				var result = re.exec(unit_data)
+				var result = re.exec(unit_data);
 
-				if (result.length == 4) {
+				if (result && result.length == 4) {
 					var unit = {
 						unit: result[1],
 						level: parseInt(result[2], 10),
@@ -545,13 +603,13 @@ $(function() {
 		}
 
 		// load state
-		deserialize_state();
+		update_from_url();
 
 		// fill available unit list
 		for (var i in sim.unit_db) {
 			var unit = sim.unit_db[i];
 			if (unit.name) {
-				var button = $(sformat("<button class='army_available_unit'><img src='{2}'>{1}</button>", unit.name, unit.image));
+				var button = $(sformat("<button class='army_available_unit'><img src='{2}'><br>{1}</button>", unit.name, unit.image));
 				button.click((function(unit) { return function() { show_army_add_dialog(unit.name); } })(unit));
 
 				$("#army_dialog_available_unit_list").append(button); 
@@ -586,7 +644,6 @@ $(function() {
 		reset_battle();
 
 		// ui callbacks
-		$("")
 		$("#reset_button").click(function() {
 			reset_battle();
 		});
@@ -602,7 +659,7 @@ $(function() {
 		});
 
 		$("#next_round_button").click(function() {
-			if (current_round <= 20 && sim.is_in_combat()) {
+			if (sim.is_in_combat()) {
 				run_round();
 				$("#battle_log").animate({ scrollTop: $("#battle_log")[0].scrollHeight }, "fast");
 			}
@@ -633,8 +690,8 @@ $(function() {
 			close_toplevel_dialog();
 		});
 
-		$(document).on("hashchange", function() {
-			deserialize_state();
+		$(window).on("hashchange", function() {
+			update_from_url();
 		});
 
 		$(document).keydown(function(e) {
