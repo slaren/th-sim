@@ -30,9 +30,9 @@
 	left: 50%;
 	top: 50%;
 	width: 400px;
-	height: 250px;
+	height: 300px;
 	margin-left: -200px;
-	margin-top: -125px;
+	margin-top: -150px;
 	padding: 5px;
 	border: 1px solid black;
 	background-color: white;
@@ -40,7 +40,7 @@
 
 #army_dialog_army_unit_list {
 	overflow: auto;
-	height: 90px;
+	height: 95px;
 }
 
 #army_add_dialog {
@@ -68,6 +68,8 @@
 	display: inline-block;
 	padding: 2px;
 	margin: 2px;
+	height: 64px;
+	text-align: center;
 }
 
 .army_added_unit {
