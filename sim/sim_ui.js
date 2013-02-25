@@ -121,12 +121,35 @@ $(function() {
 			div.empty();
 			for (var i = 0; i < stacks.length; ++i) {
 				var stack = stacks[i];
-				div.append(sformat("<div class='unit_stack' title='{1} (lv.{2}) (hp: {5}/{6} damage done: {7})\n{8}'><img class='unit_stack_image' src='{4}'><span class'unit_stack_text'>{3}</span></div>",
+				div.append(sformat("<div class='unit_stack' title='{1} (lv.{2}) (hp: {5}/{6} damage done: {7})\n{8}'><img class='unit_stack_image' src='{4}'><span class='unit_stack_text'>{3}</span></div>",
 				    stack.unit, stack.level, stack.count, sim.get_unit_info(stack.unit).image, 
 					stack.hp.toFixed(1), stack.hp_max.toFixed(1), stack.damage_dealt.toFixed(1),
 					(stack.count - stack.count_max) || ""));
 			}
 		};
+
+		function display_losses(losses, div) {
+			div.empty();
+			if (losses.length > 0) {
+				div.append($("<span>Losses:</span>"));
+				for (var i = 0; i < losses.length; ++i) {
+					var stack = losses[i];
+					div.append(sformat("<div class='unit_stack_loss' title='{1} (lv.{2})'><img class='unit_stack_loss_image' src='{4}'><span class='unit_stack_loss_text'>{3}</span></div>",
+					    stack.unit, stack.level, stack.count, sim.get_unit_info(stack.unit).image));
+				}
+				div.append("<span>&nbsp;=&nbsp;&nbsp;</span>")
+				var cost = sim.get_army_cost(losses);
+				div.append(format_cost(cost));
+			}
+		}
+
+		function update_battle_display() {
+			display_stacks(sim.get_attacker_stacks(), $("#attacker"));
+			display_stacks(sim.get_defender_stacks(), $("#defender"));
+
+			display_losses(sim.get_army_losses(sim.get_attacker_stacks()), $("#attacker_summary"));
+			display_losses(sim.get_army_losses(sim.get_defender_stacks()), $("#defender_summary"));
+		}
 
 		function close_toplevel_dialog() {
 			if ($("#army_add_dialog:visible").length > 0) {
@@ -149,7 +172,7 @@ $(function() {
 		};
 
 		function format_cost(cost) {
-			return sformat("<span>{1}<span class='resource-labor'></span> {2}<span class='resource-gold'></span> {3}<span class='resource-wood'></span> {4}<span class='resource-crop'></span> {5}<span class='resource-iron'></span></span>", cost.labor, cost.gold, cost.wood, cost.crop, cost.iron);
+			return sformat("<span class='cost'>{1}<span class='resource-labor'></span>{2}<span class='resource-gold'></span>{3}<span class='resource-wood'></span>{4}<span class='resource-crop'></span>{5}<span class='resource-iron'></span></span>", cost.labor, cost.gold, cost.wood, cost.crop, cost.iron);
 		}
 
 		function zero_pad(n, len) {
@@ -262,8 +285,7 @@ $(function() {
 			sim.set_attacker(attacker);
 			sim.set_defender(defender);
 
-			display_stacks(sim.get_attacker_stacks(), $("#attacker"));
-			display_stacks(sim.get_defender_stacks(), $("#defender"));
+			update_battle_display();
 			
 			$("#battle_log").empty();
 			
@@ -274,8 +296,7 @@ $(function() {
 			$("#battle_log").append(sformat("<div class='log_round_header'>Round {1}</div>", current_round))
 			sim.do_round();
 
-			display_stacks(sim.get_attacker_stacks(), $("#attacker"));
-			display_stacks(sim.get_defender_stacks(), $("#defender"));
+			update_battle_display();
 
 			current_round++;
 		}

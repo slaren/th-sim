@@ -22,11 +22,20 @@
 
 	<div id="battle">
 		Defender:
-		<div id="defender" class="unit_stack_list"></div>		
-		<br>
+		<div class="unit_stack_list_container">
+			<div id="defender" class="unit_stack_list">
+			</div>
+		</div>		
+		<div id="defender_summary" class="unit_stack_list_summary">
+		</div>
 		<div id="battle_log"></div>
 		Attacker:
-		<div id="attacker" class="unit_stack_list"></div>
+		<div class="unit_stack_list_container">
+			<div id="attacker" class="unit_stack_list">
+			</div>
+		</div>		
+		<div id="attacker_summary" class="unit_stack_list_summary">
+		</div>
 	</div>
 	
 	<p>
@@ -92,8 +101,6 @@
 				<td>Amount:</td><td><input id="army_add_dialog_unit_amount" type="number" min="1" max="1000000" value="1"></td>
 			</tr>
 		</table>
-
-
 		<button id="army_add_dialog_add_button">Add</button>
 		<button id="army_add_dialog_cancel_button">Cancel</button>
 	</div>
