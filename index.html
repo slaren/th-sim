@@ -33,21 +33,26 @@
 		The following aspects of combat are not yet implemented:
 		<ul>
 			<li>Technologies
-			<li>Buildings
 			<li>Retreat conditions
 		</ul>
 	</p>
 
 	<!-- Fullscreen dialogs -->
 	<div id="army_dialog">
-		<b><span id="army_dialog_type"></span> army</b><br>
-		<div id="army_dialog_available_unit_list"></div>
-		Added units:<br>
+		<b><span id="army_dialog_type"></span> army</b>
+		<span>
+			<a style="text-decoration: underline;color:blue;cursor:pointer" onclick="$('#army_dialog_available_unit_list').show();$('#army_dialog_available_structure_list').hide();">Units</a>
+			<a style="text-decoration: underline;color:blue;cursor:pointer" onclick="$('#army_dialog_available_unit_list').hide();$('#army_dialog_available_structure_list').show();">Structures</a>
+		</span><br>
+		<div style="margin:0;border:0;padding:0;width:450px; display:inline-block;" id="army_dialog_available_list">
+			<div id="army_dialog_available_unit_list"></div>
+			<div id="army_dialog_available_structure_list"></div>
+		</div>
 		<div id="army_dialog_army_unit_list"></div>
 		<div style="bottom: 0; width: 100%; position: absolute">
 			<button id="army_dialog_close_button">Close</button>
-			<span style="right:0; width:100%">
-				Cost: <span id="army_dialog_cost"></span>
+			<span style="position: absolute; right: 10px">
+				Army cost:<span id="army_dialog_cost"></span>
 				Upkeep: <span id="army_dialog_upkeep"></span>
 			</span>
 		</div>
@@ -56,18 +61,7 @@
 	<div id="army_add_dialog">
 		<b>Add unit</b><br>
 		<div id="army_add_dialog_unit_name"></div>
-		Level: <select id="army_add_dialog_unit_level">
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10">10</option>
-		</select><br>
+		Level: <select id="army_add_dialog_unit_level"></select><br>
 		Amount: <input id="army_add_dialog_unit_amount" type="number" min="1" max="1000000" value="1"><br>
 		<button id="army_add_dialog_add_button">Add</button>
 		<button id="army_add_dialog_cancel_button">Cancel</button>
