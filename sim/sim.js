@@ -500,11 +500,11 @@ $(function() {
 
 		function update_url() {
 			prev_ser_state = serialize_state();
-			window.location.hash = prev_ser_state;
+			window.location.hash = encodeURIComponent(prev_ser_state);
 		};
 
 		function update_from_url() {
-			var data = window.location.hash.substr(1);
+			var data = decodeURIComponent(window.location.hash.substr(1));
 			if (data != prev_ser_state) {
 				prev_ser_state = data;
 				deserialize_state(data);
