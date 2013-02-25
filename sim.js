@@ -95,20 +95,51 @@ simulator.prototype = {
 		this.stack_death_fn = stack_death;
 	},
 
+	get_army_losses: function(army) {
+		var losses = [];
+		// sum and join stacks
+		for (var i in army) {
+			var stack = army[i];
+			if (stack.count < stack.count_max) {
+				if (!losses[stack.unit])
+					losses[stack.unit] = [];
+				if (!losses[stack.unit][stack.level])
+					losses[stack.unit][stack.level] = 0; 
+				losses[stack.unit][stack.level] += stack.count_max - stack.count;
+			}
+		}
+		// convert to army format
+		var losses_army = [];
+		for (var unit in losses) {
+			for (var level in losses[unit]) {
+				var stack = {
+					"unit": unit,
+					"level": level,
+					"count": losses[unit][level] 
+				};
+				losses_army.push(stack);
+			}
+		}
+		// sort
+		this.sort_army(losses_army);
+
+		return losses_army;
+	},
+
 	get_army_cost: function(army) {
 		var crop = 0, gold = 0, iron = 0, labor = 0, time = 0, wood = 0;
 		var upkeep = 0;
 
 		for (var i in army) {
-			var unit = army[i];
-			var unit_lv = this.get_unit_info(unit.unit).levels[unit.level - 1];
-			crop += unit_lv.cost.crop * unit.count;
-			gold += unit_lv.cost.gold * unit.count;
-			iron += unit_lv.cost.iron * unit.count;
-			labor+= unit_lv.cost.labor * unit.count;
-			time += unit_lv.cost.time * unit.count;
-			wood += unit_lv.cost.wood * unit.count;
-			upkeep += (unit_lv.upkeep || 0) * unit.count;
+			var stack = army[i];
+			var unit_lv = this.get_unit_info(stack.unit).levels[stack.level - 1];
+			crop += unit_lv.cost.crop * stack.count;
+			gold += unit_lv.cost.gold * stack.count;
+			iron += unit_lv.cost.iron * stack.count;
+			labor+= unit_lv.cost.labor * stack.count;
+			time += unit_lv.cost.time * stack.count;
+			wood += unit_lv.cost.wood * stack.count;
+			upkeep += (unit_lv.upkeep || 0) * stack.count;
 		}
 
 		return {
@@ -372,6 +403,8 @@ simulator.prototype = {
 				damage *= 0.5;
 			}
 
+			damage = Math.min(t_stack.hp, damage);
+
 			if (this.damage_fn) {
 				this.damage_fn(a_stack, t_stack, damage, is_attacker);
 			}
@@ -398,13 +431,17 @@ simulator.prototype = {
 		return a_stacks_active > 0 && d_stacks_active > 0;
 	},
 
+	sort_army: function(army) {
+		var sim = this;
+		army.sort(function(a, b) {
+			return sim.get_unit_info(a.unit).attack_order - sim.get_unit_info(b.unit).attack_order;
+		});
+	},
+
 	// private
 	make_stacks: function(units) {
 		// sort units by their attack order first
-		var sim = this;
-		units.sort(function(a, b) {
-			return sim.get_unit_info(a.unit).attack_order - sim.get_unit_info(b.unit).attack_order;
-		});
+		this.sort_army(units);
 
 		var stacks = [];
 		for (var i = 0; i < units.length; ++i) {
