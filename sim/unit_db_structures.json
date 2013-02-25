@@ -1,0 +1,4367 @@
+{
+    "Armory": {
+        "levels": [
+            {
+                "attack": 20.0, 
+                "cost": {
+                    "crop": 400, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 12150, 
+                    "wood": 510
+                }, 
+                "hp": 2720, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 22.0, 
+                "cost": {
+                    "crop": 700, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 16810, 
+                    "wood": 820
+                }, 
+                "hp": 2960, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 25.0, 
+                "cost": {
+                    "crop": 1060, 
+                    "gold": 490, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 22510, 
+                    "wood": 1210
+                }, 
+                "hp": 3360, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 29.0, 
+                "cost": {
+                    "crop": 1480, 
+                    "gold": 1050, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 29470, 
+                    "wood": 1700
+                }, 
+                "hp": 3840, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 32.0, 
+                "cost": {
+                    "crop": 1970, 
+                    "gold": 1710, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 37960, 
+                    "wood": 2320
+                }, 
+                "hp": 4240, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 35.0, 
+                "cost": {
+                    "crop": 2550, 
+                    "gold": 2480, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 48340, 
+                    "wood": 3100
+                }, 
+                "hp": 4720, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 40.0, 
+                "cost": {
+                    "crop": 3230, 
+                    "gold": 3360, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 61020, 
+                    "wood": 4080
+                }, 
+                "hp": 5280, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 44.0, 
+                "cost": {
+                    "crop": 4020, 
+                    "gold": 4400, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 76500, 
+                    "wood": 5310
+                }, 
+                "hp": 5840, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 49.0, 
+                "cost": {
+                    "crop": 4950, 
+                    "gold": 5600, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 95410, 
+                    "wood": 6870
+                }, 
+                "hp": 6480, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 54.0, 
+                "cost": {
+                    "crop": 6050, 
+                    "gold": 6990, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 118510, 
+                    "wood": 8820
+                }, 
+                "hp": 7200, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Armory", 
+        "type": "structure"
+    }, 
+    "Barrack": {
+        "levels": [
+            {
+                "attack": 17.0, 
+                "cost": {
+                    "crop": 180, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2700, 
+                    "wood": 120
+                }, 
+                "hp": 1400, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 19.0, 
+                "cost": {
+                    "crop": 320, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 4120, 
+                    "wood": 280
+                }, 
+                "hp": 1550, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 22.0, 
+                "cost": {
+                    "crop": 480, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 5910, 
+                    "wood": 470
+                }, 
+                "hp": 1800, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 25.0, 
+                "cost": {
+                    "crop": 690, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 8170, 
+                    "wood": 720
+                }, 
+                "hp": 2100, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 28.0, 
+                "cost": {
+                    "crop": 940, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 11000, 
+                    "wood": 1030
+                }, 
+                "hp": 2350, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 32.0, 
+                "cost": {
+                    "crop": 1240, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 14570, 
+                    "wood": 1420
+                }, 
+                "hp": 2650, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 36.0, 
+                "cost": {
+                    "crop": 1620, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 19070, 
+                    "wood": 1920
+                }, 
+                "hp": 3000, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 40.0, 
+                "cost": {
+                    "crop": 2070, 
+                    "gold": 360, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 24720, 
+                    "wood": 2540
+                }, 
+                "hp": 3350, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 45.0, 
+                "cost": {
+                    "crop": 2630, 
+                    "gold": 790, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 31840, 
+                    "wood": 3320
+                }, 
+                "hp": 3750, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 50.0, 
+                "cost": {
+                    "crop": 3310, 
+                    "gold": 1330, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 40800, 
+                    "wood": 4300
+                }, 
+                "hp": 4200, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 56.0, 
+                "cost": {
+                    "crop": 4140, 
+                    "gold": 1980, 
+                    "iron": 240, 
+                    "labor": 0, 
+                    "time": 52070, 
+                    "wood": 5540
+                }, 
+                "hp": 4650, 
+                "level": 11, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 62.0, 
+                "cost": {
+                    "crop": 5150, 
+                    "gold": 2780, 
+                    "iron": 540, 
+                    "labor": 0, 
+                    "time": 66270, 
+                    "wood": 7100
+                }, 
+                "hp": 5150, 
+                "level": 12, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 68.0, 
+                "cost": {
+                    "crop": 6380, 
+                    "gold": 3750, 
+                    "iron": 910, 
+                    "labor": 0, 
+                    "time": 84130, 
+                    "wood": 9060
+                }, 
+                "hp": 5700, 
+                "level": 13, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 75.0, 
+                "cost": {
+                    "crop": 7900, 
+                    "gold": 4930, 
+                    "iron": 1350, 
+                    "labor": 0, 
+                    "time": 106610, 
+                    "wood": 11530
+                }, 
+                "hp": 6250, 
+                "level": 14, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 83.0, 
+                "cost": {
+                    "crop": 9740, 
+                    "gold": 6380, 
+                    "iron": 1900, 
+                    "labor": 0, 
+                    "time": 134900, 
+                    "wood": 14640
+                }, 
+                "hp": 6900, 
+                "level": 15, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }
+        ], 
+        "name": "Barrack", 
+        "type": "structure"
+    }, 
+    "Blacksmith": {
+        "levels": [
+            {
+                "attack": 27.0, 
+                "cost": {
+                    "crop": 750, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 48600, 
+                    "wood": 1100
+                }, 
+                "hp": 3600, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 29.0, 
+                "cost": {
+                    "crop": 1250, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 56520, 
+                    "wood": 1730
+                }, 
+                "hp": 3840, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 32.0, 
+                "cost": {
+                    "crop": 1830, 
+                    "gold": 0, 
+                    "iron": 340, 
+                    "labor": 0, 
+                    "time": 65020, 
+                    "wood": 2450
+                }, 
+                "hp": 4240, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 35.0, 
+                "cost": {
+                    "crop": 2510, 
+                    "gold": 0, 
+                    "iron": 700, 
+                    "labor": 0, 
+                    "time": 74140, 
+                    "wood": 3290
+                }, 
+                "hp": 4720, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 38.0, 
+                "cost": {
+                    "crop": 3290, 
+                    "gold": 0, 
+                    "iron": 1080, 
+                    "labor": 0, 
+                    "time": 83910, 
+                    "wood": 4240
+                }, 
+                "hp": 5120, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 42.0, 
+                "cost": {
+                    "crop": 4200, 
+                    "gold": 0, 
+                    "iron": 1480, 
+                    "labor": 0, 
+                    "time": 94400, 
+                    "wood": 5350
+                }, 
+                "hp": 5600, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 46.0, 
+                "cost": {
+                    "crop": 5260, 
+                    "gold": 0, 
+                    "iron": 1900, 
+                    "labor": 0, 
+                    "time": 105640, 
+                    "wood": 6620
+                }, 
+                "hp": 6160, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 50.0, 
+                "cost": {
+                    "crop": 6490, 
+                    "gold": 0, 
+                    "iron": 2350, 
+                    "labor": 0, 
+                    "time": 117700, 
+                    "wood": 8070
+                }, 
+                "hp": 6720, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 55.0, 
+                "cost": {
+                    "crop": 7920, 
+                    "gold": 0, 
+                    "iron": 2810, 
+                    "labor": 0, 
+                    "time": 130640, 
+                    "wood": 9750
+                }, 
+                "hp": 7360, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 61.0, 
+                "cost": {
+                    "crop": 9580, 
+                    "gold": 0, 
+                    "iron": 3300, 
+                    "labor": 0, 
+                    "time": 144510, 
+                    "wood": 11680
+                }, 
+                "hp": 8080, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Blacksmith", 
+        "type": "structure"
+    }, 
+    "Cannon Tower": {
+        "levels": [
+            {
+                "attack": 14.0, 
+                "cost": {
+                    "crop": 200, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 7200, 
+                    "wood": 320
+                }, 
+                "hp": 4200, 
+                "level": 1, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 16.0, 
+                "cost": {
+                    "crop": 310, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 8550, 
+                    "wood": 480
+                }, 
+                "hp": 4650, 
+                "level": 2, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 18.0, 
+                "cost": {
+                    "crop": 450, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 10120, 
+                    "wood": 680
+                }, 
+                "hp": 5400, 
+                "level": 3, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 21.0, 
+                "cost": {
+                    "crop": 620, 
+                    "gold": 30, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 11940, 
+                    "wood": 950
+                }, 
+                "hp": 6300, 
+                "level": 4, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 24.0, 
+                "cost": {
+                    "crop": 840, 
+                    "gold": 60, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 14060, 
+                    "wood": 1280
+                }, 
+                "hp": 7050, 
+                "level": 5, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 27.0, 
+                "cost": {
+                    "crop": 1100, 
+                    "gold": 100, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 16520, 
+                    "wood": 1720
+                }, 
+                "hp": 7950, 
+                "level": 6, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 30.0, 
+                "cost": {
+                    "crop": 1420, 
+                    "gold": 150, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 19380, 
+                    "wood": 2270
+                }, 
+                "hp": 9000, 
+                "level": 7, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 34.0, 
+                "cost": {
+                    "crop": 1820, 
+                    "gold": 210, 
+                    "iron": 60, 
+                    "labor": 0, 
+                    "time": 22710, 
+                    "wood": 2990
+                }, 
+                "hp": 10050, 
+                "level": 8, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 38.0, 
+                "cost": {
+                    "crop": 2310, 
+                    "gold": 290, 
+                    "iron": 130, 
+                    "labor": 0, 
+                    "time": 26570, 
+                    "wood": 3900
+                }, 
+                "hp": 11250, 
+                "level": 9, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 42.0, 
+                "cost": {
+                    "crop": 2920, 
+                    "gold": 380, 
+                    "iron": 230, 
+                    "labor": 0, 
+                    "time": 31050, 
+                    "wood": 5080
+                }, 
+                "hp": 12600, 
+                "level": 10, 
+                "position": 2, 
+                "range": 3, 
+                "speed": 0, 
+                "splash": 4
+            }
+        ], 
+        "name": "Cannon Tower", 
+        "type": "structure"
+    }, 
+    "Farm": {
+        "levels": [
+            {
+                "attack": 12.0, 
+                "cost": {
+                    "crop": 70, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 180, 
+                    "wood": 80
+                }, 
+                "hp": 800, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 14.0, 
+                "cost": {
+                    "crop": 140, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 550, 
+                    "wood": 200
+                }, 
+                "hp": 920, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 17.0, 
+                "cost": {
+                    "crop": 230, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2070, 
+                    "wood": 360
+                }, 
+                "hp": 1120, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 20.0, 
+                "cost": {
+                    "crop": 340, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 3410, 
+                    "wood": 560
+                }, 
+                "hp": 1360, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 23.0, 
+                "cost": {
+                    "crop": 490, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 5180, 
+                    "wood": 810
+                }, 
+                "hp": 1560, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 27.0, 
+                "cost": {
+                    "crop": 680, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 7520, 
+                    "wood": 1120
+                }, 
+                "hp": 1800, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 31.0, 
+                "cost": {
+                    "crop": 920, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 10620, 
+                    "wood": 1520
+                }, 
+                "hp": 2080, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 35.0, 
+                "cost": {
+                    "crop": 1230, 
+                    "gold": 100, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 14710, 
+                    "wood": 2010
+                }, 
+                "hp": 2360, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 40.0, 
+                "cost": {
+                    "crop": 1630, 
+                    "gold": 250, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 20130, 
+                    "wood": 2640
+                }, 
+                "hp": 2680, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 46.0, 
+                "cost": {
+                    "crop": 2140, 
+                    "gold": 470, 
+                    "iron": 70, 
+                    "labor": 0, 
+                    "time": 27310, 
+                    "wood": 3420
+                }, 
+                "hp": 3040, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 51.0, 
+                "cost": {
+                    "crop": 2800, 
+                    "gold": 810, 
+                    "iron": 140, 
+                    "labor": 0, 
+                    "time": 36800, 
+                    "wood": 4410
+                }, 
+                "hp": 3400, 
+                "level": 11, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 57.0, 
+                "cost": {
+                    "crop": 3640, 
+                    "gold": 1300, 
+                    "iron": 230, 
+                    "labor": 0, 
+                    "time": 49350, 
+                    "wood": 5660
+                }, 
+                "hp": 3800, 
+                "level": 12, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 64.0, 
+                "cost": {
+                    "crop": 4720, 
+                    "gold": 2040, 
+                    "iron": 330, 
+                    "labor": 0, 
+                    "time": 65970, 
+                    "wood": 7220
+                }, 
+                "hp": 4240, 
+                "level": 13, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 70.0, 
+                "cost": {
+                    "crop": 6110, 
+                    "gold": 3150, 
+                    "iron": 450, 
+                    "labor": 0, 
+                    "time": 87950, 
+                    "wood": 9200
+                }, 
+                "hp": 4680, 
+                "level": 14, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 78.0, 
+                "cost": {
+                    "crop": 7900, 
+                    "gold": 4800, 
+                    "iron": 590, 
+                    "labor": 0, 
+                    "time": 117040, 
+                    "wood": 11680
+                }, 
+                "hp": 5200, 
+                "level": 15, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Farm", 
+        "type": "structure"
+    }, 
+    "Foundry": {
+        "levels": [
+            {
+                "attack": 17.0, 
+                "cost": {
+                    "crop": 220, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 4050, 
+                    "wood": 290
+                }, 
+                "hp": 2240, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 19.0, 
+                "cost": {
+                    "crop": 490, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 6790, 
+                    "wood": 640
+                }, 
+                "hp": 2480, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 22.0, 
+                "cost": {
+                    "crop": 820, 
+                    "gold": 210, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 10150, 
+                    "wood": 1080
+                }, 
+                "hp": 2880, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 25.0, 
+                "cost": {
+                    "crop": 1230, 
+                    "gold": 440, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 14240, 
+                    "wood": 1600
+                }, 
+                "hp": 3360, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 28.0, 
+                "cost": {
+                    "crop": 1730, 
+                    "gold": 680, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 19240, 
+                    "wood": 2250
+                }, 
+                "hp": 3760, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 32.0, 
+                "cost": {
+                    "crop": 2330, 
+                    "gold": 920, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 25350, 
+                    "wood": 3040
+                }, 
+                "hp": 4240, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 36.0, 
+                "cost": {
+                    "crop": 3070, 
+                    "gold": 1190, 
+                    "iron": 170, 
+                    "labor": 0, 
+                    "time": 32810, 
+                    "wood": 4000
+                }, 
+                "hp": 4800, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 40.0, 
+                "cost": {
+                    "crop": 3980, 
+                    "gold": 1460, 
+                    "iron": 360, 
+                    "labor": 0, 
+                    "time": 41920, 
+                    "wood": 5170
+                }, 
+                "hp": 5360, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 45.0, 
+                "cost": {
+                    "crop": 5080, 
+                    "gold": 1750, 
+                    "iron": 590, 
+                    "labor": 0, 
+                    "time": 53050, 
+                    "wood": 6610
+                }, 
+                "hp": 6000, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 50.0, 
+                "cost": {
+                    "crop": 6430, 
+                    "gold": 2050, 
+                    "iron": 850, 
+                    "labor": 0, 
+                    "time": 66650, 
+                    "wood": 8360
+                }, 
+                "hp": 6720, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Foundry", 
+        "type": "structure"
+    }, 
+    "Lumbermill": {
+        "levels": [
+            {
+                "attack": 12.0, 
+                "cost": {
+                    "crop": 90, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 180, 
+                    "wood": 60
+                }, 
+                "hp": 800, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 14.0, 
+                "cost": {
+                    "crop": 190, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 550, 
+                    "wood": 110
+                }, 
+                "hp": 920, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 17.0, 
+                "cost": {
+                    "crop": 330, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2070, 
+                    "wood": 190
+                }, 
+                "hp": 1120, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 20.0, 
+                "cost": {
+                    "crop": 500, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 3410, 
+                    "wood": 290
+                }, 
+                "hp": 1360, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 23.0, 
+                "cost": {
+                    "crop": 720, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 5180, 
+                    "wood": 430
+                }, 
+                "hp": 1560, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 27.0, 
+                "cost": {
+                    "crop": 1000, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 7520, 
+                    "wood": 600
+                }, 
+                "hp": 1800, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 31.0, 
+                "cost": {
+                    "crop": 1360, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 10620, 
+                    "wood": 840
+                }, 
+                "hp": 2080, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 35.0, 
+                "cost": {
+                    "crop": 1830, 
+                    "gold": 190, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 14710, 
+                    "wood": 1150
+                }, 
+                "hp": 2360, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 40.0, 
+                "cost": {
+                    "crop": 2420, 
+                    "gold": 420, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 20130, 
+                    "wood": 1560
+                }, 
+                "hp": 2680, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 46.0, 
+                "cost": {
+                    "crop": 3190, 
+                    "gold": 680, 
+                    "iron": 130, 
+                    "labor": 0, 
+                    "time": 27310, 
+                    "wood": 2110
+                }, 
+                "hp": 3040, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 51.0, 
+                "cost": {
+                    "crop": 4170, 
+                    "gold": 990, 
+                    "iron": 280, 
+                    "labor": 0, 
+                    "time": 36800, 
+                    "wood": 2830
+                }, 
+                "hp": 3400, 
+                "level": 11, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 57.0, 
+                "cost": {
+                    "crop": 5440, 
+                    "gold": 1350, 
+                    "iron": 460, 
+                    "labor": 0, 
+                    "time": 49350, 
+                    "wood": 3780
+                }, 
+                "hp": 3800, 
+                "level": 12, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 64.0, 
+                "cost": {
+                    "crop": 7060, 
+                    "gold": 1760, 
+                    "iron": 670, 
+                    "labor": 0, 
+                    "time": 65970, 
+                    "wood": 5050
+                }, 
+                "hp": 4240, 
+                "level": 13, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 70.0, 
+                "cost": {
+                    "crop": 9140, 
+                    "gold": 2240, 
+                    "iron": 910, 
+                    "labor": 0, 
+                    "time": 87950, 
+                    "wood": 6720
+                }, 
+                "hp": 4680, 
+                "level": 14, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 78.0, 
+                "cost": {
+                    "crop": 11810, 
+                    "gold": 2800, 
+                    "iron": 1190, 
+                    "labor": 0, 
+                    "time": 117040, 
+                    "wood": 8930
+                }, 
+                "hp": 5200, 
+                "level": 15, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Lumbermill", 
+        "type": "structure"
+    }, 
+    "Market": {
+        "levels": [
+            {
+                "attack": 23.0, 
+                "cost": {
+                    "crop": 590, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 24300, 
+                    "wood": 760
+                }, 
+                "hp": 2145, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 25.0, 
+                "cost": {
+                    "crop": 980, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 29980, 
+                    "wood": 1260
+                }, 
+                "hp": 2310, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 28.0, 
+                "cost": {
+                    "crop": 1450, 
+                    "gold": 240, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 36580, 
+                    "wood": 1880
+                }, 
+                "hp": 2585, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 32.0, 
+                "cost": {
+                    "crop": 2030, 
+                    "gold": 500, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 44250, 
+                    "wood": 2630
+                }, 
+                "hp": 2915, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 35.0, 
+                "cost": {
+                    "crop": 2740, 
+                    "gold": 790, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 53160, 
+                    "wood": 3550
+                }, 
+                "hp": 3190, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 38.0, 
+                "cost": {
+                    "crop": 3600, 
+                    "gold": 1100, 
+                    "iron": 80, 
+                    "labor": 0, 
+                    "time": 63510, 
+                    "wood": 4670
+                }, 
+                "hp": 3520, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 43.0, 
+                "cost": {
+                    "crop": 4650, 
+                    "gold": 1460, 
+                    "iron": 210, 
+                    "labor": 0, 
+                    "time": 75530, 
+                    "wood": 6040
+                }, 
+                "hp": 3905, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 47.0, 
+                "cost": {
+                    "crop": 5940, 
+                    "gold": 1850, 
+                    "iron": 430, 
+                    "labor": 0, 
+                    "time": 89510, 
+                    "wood": 7710
+                }, 
+                "hp": 4290, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 52.0, 
+                "cost": {
+                    "crop": 7510, 
+                    "gold": 2280, 
+                    "iron": 790, 
+                    "labor": 0, 
+                    "time": 105740, 
+                    "wood": 9750
+                }, 
+                "hp": 4730, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 57.0, 
+                "cost": {
+                    "crop": 9430, 
+                    "gold": 2750, 
+                    "iron": 1380, 
+                    "labor": 0, 
+                    "time": 124600, 
+                    "wood": 12250
+                }, 
+                "hp": 5225, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Market", 
+        "type": "structure"
+    }, 
+    "Refinery": {
+        "levels": [
+            {
+                "attack": 31.0, 
+                "cost": {
+                    "crop": 1800, 
+                    "gold": 800, 
+                    "iron": 0, 
+                    "labor": 20, 
+                    "time": 48000, 
+                    "wood": 2320
+                }, 
+                "hp": 2080, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 33.0, 
+                "cost": {
+                    "crop": 1910, 
+                    "gold": 930, 
+                    "iron": 0, 
+                    "labor": 20, 
+                    "time": 53320, 
+                    "wood": 2450
+                }, 
+                "hp": 2200, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 36.0, 
+                "cost": {
+                    "crop": 2050, 
+                    "gold": 1090, 
+                    "iron": 50, 
+                    "labor": 20, 
+                    "time": 58850, 
+                    "wood": 2620
+                }, 
+                "hp": 2400, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 40.0, 
+                "cost": {
+                    "crop": 2230, 
+                    "gold": 1290, 
+                    "iron": 110, 
+                    "labor": 30, 
+                    "time": 64600, 
+                    "wood": 2840
+                }, 
+                "hp": 2640, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 43.0, 
+                "cost": {
+                    "crop": 2460, 
+                    "gold": 1530, 
+                    "iron": 170, 
+                    "labor": 30, 
+                    "time": 70600, 
+                    "wood": 3110
+                }, 
+                "hp": 2840, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 46.0, 
+                "cost": {
+                    "crop": 2760, 
+                    "gold": 1820, 
+                    "iron": 230, 
+                    "labor": 30, 
+                    "time": 76830, 
+                    "wood": 3470
+                }, 
+                "hp": 3080, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 50.0, 
+                "cost": {
+                    "crop": 3150, 
+                    "gold": 2180, 
+                    "iron": 300, 
+                    "labor": 30, 
+                    "time": 83330, 
+                    "wood": 3930
+                }, 
+                "hp": 3360, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 55.0, 
+                "cost": {
+                    "crop": 3640, 
+                    "gold": 2620, 
+                    "iron": 370, 
+                    "labor": 30, 
+                    "time": 90080, 
+                    "wood": 4520
+                }, 
+                "hp": 3640, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 59.0, 
+                "cost": {
+                    "crop": 4270, 
+                    "gold": 3160, 
+                    "iron": 440, 
+                    "labor": 40, 
+                    "time": 97120, 
+                    "wood": 5280
+                }, 
+                "hp": 3960, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 65.0, 
+                "cost": {
+                    "crop": 5080, 
+                    "gold": 3810, 
+                    "iron": 510, 
+                    "labor": 40, 
+                    "time": 104430, 
+                    "wood": 6250
+                }, 
+                "hp": 4320, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 70.0, 
+                "cost": {
+                    "crop": 6120, 
+                    "gold": 4610, 
+                    "iron": 590, 
+                    "labor": 40, 
+                    "time": 112050, 
+                    "wood": 7490
+                }, 
+                "hp": 4680, 
+                "level": 11, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 76.0, 
+                "cost": {
+                    "crop": 7460, 
+                    "gold": 5580, 
+                    "iron": 680, 
+                    "labor": 50, 
+                    "time": 119980, 
+                    "wood": 9090
+                }, 
+                "hp": 5080, 
+                "level": 12, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 83.0, 
+                "cost": {
+                    "crop": 9180, 
+                    "gold": 6770, 
+                    "iron": 770, 
+                    "labor": 50, 
+                    "time": 128230, 
+                    "wood": 11150
+                }, 
+                "hp": 5520, 
+                "level": 13, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 89.0, 
+                "cost": {
+                    "crop": 11380, 
+                    "gold": 8230, 
+                    "iron": 860, 
+                    "labor": 50, 
+                    "time": 136820, 
+                    "wood": 13790
+                }, 
+                "hp": 5960, 
+                "level": 14, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 97.0, 
+                "cost": {
+                    "crop": 14210, 
+                    "gold": 10000, 
+                    "iron": 960, 
+                    "labor": 60, 
+                    "time": 145760, 
+                    "wood": 17180
+                }, 
+                "hp": 6480, 
+                "level": 15, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Refinery", 
+        "type": "structure"
+    }, 
+    "Stable": {
+        "levels": [
+            {
+                "attack": 20.0, 
+                "cost": {
+                    "crop": 660, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 24300, 
+                    "wood": 800
+                }, 
+                "hp": 1700, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 22.0, 
+                "cost": {
+                    "crop": 920, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 27460, 
+                    "wood": 1130
+                }, 
+                "hp": 1850, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 25.0, 
+                "cost": {
+                    "crop": 1220, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 31120, 
+                    "wood": 1520
+                }, 
+                "hp": 2100, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 29.0, 
+                "cost": {
+                    "crop": 1560, 
+                    "gold": 160, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 35390, 
+                    "wood": 1960
+                }, 
+                "hp": 2400, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 32.0, 
+                "cost": {
+                    "crop": 1950, 
+                    "gold": 330, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 40340, 
+                    "wood": 2470
+                }, 
+                "hp": 2650, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 35.0, 
+                "cost": {
+                    "crop": 2390, 
+                    "gold": 530, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 46090, 
+                    "wood": 3060
+                }, 
+                "hp": 2950, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 40.0, 
+                "cost": {
+                    "crop": 2890, 
+                    "gold": 740, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 52770, 
+                    "wood": 3730
+                }, 
+                "hp": 3300, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 44.0, 
+                "cost": {
+                    "crop": 3460, 
+                    "gold": 980, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 60540, 
+                    "wood": 4500
+                }, 
+                "hp": 3650, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 49.0, 
+                "cost": {
+                    "crop": 4120, 
+                    "gold": 1240, 
+                    "iron": 220, 
+                    "labor": 0, 
+                    "time": 69560, 
+                    "wood": 5400
+                }, 
+                "hp": 4050, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 54.0, 
+                "cost": {
+                    "crop": 4860, 
+                    "gold": 1530, 
+                    "iron": 490, 
+                    "labor": 0, 
+                    "time": 80040, 
+                    "wood": 6420
+                }, 
+                "hp": 4500, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 59.0, 
+                "cost": {
+                    "crop": 5700, 
+                    "gold": 1850, 
+                    "iron": 810, 
+                    "labor": 0, 
+                    "time": 92220, 
+                    "wood": 7600
+                }, 
+                "hp": 4950, 
+                "level": 11, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 65.0, 
+                "cost": {
+                    "crop": 6670, 
+                    "gold": 2200, 
+                    "iron": 1210, 
+                    "labor": 0, 
+                    "time": 106370, 
+                    "wood": 8960
+                }, 
+                "hp": 5450, 
+                "level": 12, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 72.0, 
+                "cost": {
+                    "crop": 7760, 
+                    "gold": 2590, 
+                    "iron": 1690, 
+                    "labor": 0, 
+                    "time": 122810, 
+                    "wood": 10520
+                }, 
+                "hp": 6000, 
+                "level": 13, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 79.0, 
+                "cost": {
+                    "crop": 9010, 
+                    "gold": 3020, 
+                    "iron": 2290, 
+                    "labor": 0, 
+                    "time": 141900, 
+                    "wood": 12310
+                }, 
+                "hp": 6550, 
+                "level": 14, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 86.0, 
+                "cost": {
+                    "crop": 10430, 
+                    "gold": 3490, 
+                    "iron": 3010, 
+                    "labor": 0, 
+                    "time": 164090, 
+                    "wood": 14370
+                }, 
+                "hp": 7200, 
+                "level": 15, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }
+        ], 
+        "name": "Stable", 
+        "type": "structure"
+    }, 
+    "Stronghold Gate": {
+        "levels": [
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 1000, 
+                "level": 1, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 2000, 
+                "level": 2, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 3000, 
+                "level": 3, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 4000, 
+                "level": 4, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 5000, 
+                "level": 5, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 6000, 
+                "level": 6, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 7000, 
+                "level": 7, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 8000, 
+                "level": 8, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 9000, 
+                "level": 9, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 10000, 
+                "level": 10, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 11000, 
+                "level": 11, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 12000, 
+                "level": 12, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 13000, 
+                "level": 13, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 14000, 
+                "level": 14, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 15000, 
+                "level": 15, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 16000, 
+                "level": 16, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 17000, 
+                "level": 17, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 18000, 
+                "level": 18, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 19000, 
+                "level": 19, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 0.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 0, 
+                    "wood": 0
+                }, 
+                "hp": 20000, 
+                "level": 20, 
+                "position": 1, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Stronghold Gate", 
+        "type": "structure"
+    }, 
+    "Tower": {
+        "levels": [
+            {
+                "attack": 14.0, 
+                "cost": {
+                    "crop": 200, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 3600, 
+                    "wood": 320
+                }, 
+                "hp": 4200, 
+                "level": 1, 
+                "position": 2, 
+                "range": 2, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 16.0, 
+                "cost": {
+                    "crop": 310, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 4800, 
+                    "wood": 480
+                }, 
+                "hp": 4650, 
+                "level": 2, 
+                "position": 2, 
+                "range": 2, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 18.0, 
+                "cost": {
+                    "crop": 450, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 6190, 
+                    "wood": 680
+                }, 
+                "hp": 5400, 
+                "level": 3, 
+                "position": 2, 
+                "range": 2, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 21.0, 
+                "cost": {
+                    "crop": 620, 
+                    "gold": 30, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 7810, 
+                    "wood": 950
+                }, 
+                "hp": 6300, 
+                "level": 4, 
+                "position": 2, 
+                "range": 2, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 24.0, 
+                "cost": {
+                    "crop": 840, 
+                    "gold": 60, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 9700, 
+                    "wood": 1280
+                }, 
+                "hp": 7050, 
+                "level": 5, 
+                "position": 2, 
+                "range": 2, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 27.0, 
+                "cost": {
+                    "crop": 1100, 
+                    "gold": 100, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 11880, 
+                    "wood": 1720
+                }, 
+                "hp": 7950, 
+                "level": 6, 
+                "position": 2, 
+                "range": 2, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 30.0, 
+                "cost": {
+                    "crop": 1420, 
+                    "gold": 150, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 14420, 
+                    "wood": 2270
+                }, 
+                "hp": 9000, 
+                "level": 7, 
+                "position": 2, 
+                "range": 2, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 34.0, 
+                "cost": {
+                    "crop": 1820, 
+                    "gold": 210, 
+                    "iron": 60, 
+                    "labor": 0, 
+                    "time": 17370, 
+                    "wood": 2990
+                }, 
+                "hp": 10050, 
+                "level": 8, 
+                "position": 2, 
+                "range": 2, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 38.0, 
+                "cost": {
+                    "crop": 2310, 
+                    "gold": 290, 
+                    "iron": 130, 
+                    "labor": 0, 
+                    "time": 20800, 
+                    "wood": 3900
+                }, 
+                "hp": 11250, 
+                "level": 9, 
+                "position": 2, 
+                "range": 2, 
+                "speed": 0, 
+                "splash": 4
+            }, 
+            {
+                "attack": 42.0, 
+                "cost": {
+                    "crop": 2920, 
+                    "gold": 380, 
+                    "iron": 230, 
+                    "labor": 0, 
+                    "time": 24790, 
+                    "wood": 5080
+                }, 
+                "hp": 12600, 
+                "level": 10, 
+                "position": 2, 
+                "range": 2, 
+                "speed": 0, 
+                "splash": 4
+            }
+        ], 
+        "name": "Tower", 
+        "type": "structure"
+    }, 
+    "Town Center": {
+        "levels": [
+            {
+                "attack": 12.0, 
+                "cost": {
+                    "crop": 0, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 43200, 
+                    "wood": 0
+                }, 
+                "hp": 1600, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 14.0, 
+                "cost": {
+                    "crop": 180, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 600, 
+                    "wood": 250
+                }, 
+                "hp": 1840, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 17.0, 
+                "cost": {
+                    "crop": 270, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 3000, 
+                    "wood": 370
+                }, 
+                "hp": 2240, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 20.0, 
+                "cost": {
+                    "crop": 400, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 11200, 
+                    "wood": 540
+                }, 
+                "hp": 2720, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 23.0, 
+                "cost": {
+                    "crop": 580, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 15400, 
+                    "wood": 740
+                }, 
+                "hp": 3120, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 27.0, 
+                "cost": {
+                    "crop": 830, 
+                    "gold": 70, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 20000, 
+                    "wood": 1010
+                }, 
+                "hp": 3600, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 31.0, 
+                "cost": {
+                    "crop": 1190, 
+                    "gold": 180, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 25200, 
+                    "wood": 1350
+                }, 
+                "hp": 4160, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 35.0, 
+                "cost": {
+                    "crop": 1710, 
+                    "gold": 340, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 30800, 
+                    "wood": 1790
+                }, 
+                "hp": 4720, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 40.0, 
+                "cost": {
+                    "crop": 2430, 
+                    "gold": 580, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 37100, 
+                    "wood": 2360
+                }, 
+                "hp": 5360, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 46.0, 
+                "cost": {
+                    "crop": 3470, 
+                    "gold": 940, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 44000, 
+                    "wood": 3080
+                }, 
+                "hp": 6080, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 51.0, 
+                "cost": {
+                    "crop": 4930, 
+                    "gold": 1470, 
+                    "iron": 130, 
+                    "labor": 0, 
+                    "time": 51600, 
+                    "wood": 4010
+                }, 
+                "hp": 6800, 
+                "level": 11, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 57.0, 
+                "cost": {
+                    "crop": 7010, 
+                    "gold": 2260, 
+                    "iron": 270, 
+                    "labor": 0, 
+                    "time": 60100, 
+                    "wood": 5200
+                }, 
+                "hp": 7600, 
+                "level": 12, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 64.0, 
+                "cost": {
+                    "crop": 9960, 
+                    "gold": 3450, 
+                    "iron": 420, 
+                    "labor": 0, 
+                    "time": 69400, 
+                    "wood": 6740
+                }, 
+                "hp": 8480, 
+                "level": 13, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 70.0, 
+                "cost": {
+                    "crop": 14150, 
+                    "gold": 5220, 
+                    "iron": 600, 
+                    "labor": 0, 
+                    "time": 79700, 
+                    "wood": 8710
+                }, 
+                "hp": 9360, 
+                "level": 14, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 78.0, 
+                "cost": {
+                    "crop": 20090, 
+                    "gold": 7850, 
+                    "iron": 790, 
+                    "labor": 0, 
+                    "time": 91100, 
+                    "wood": 11230
+                }, 
+                "hp": 10400, 
+                "level": 15, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Town Center", 
+        "type": "structure"
+    }, 
+    "Trading Post": {
+        "levels": [
+            {
+                "attack": 20.0, 
+                "cost": {
+                    "crop": 380, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 12150, 
+                    "wood": 450
+                }, 
+                "hp": 1870, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 22.0, 
+                "cost": {
+                    "crop": 560, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 16100, 
+                    "wood": 550
+                }, 
+                "hp": 2035, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 25.0, 
+                "cost": {
+                    "crop": 780, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 20460, 
+                    "wood": 670
+                }, 
+                "hp": 2310, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 29.0, 
+                "cost": {
+                    "crop": 1050, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 25280, 
+                    "wood": 820
+                }, 
+                "hp": 2640, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 32.0, 
+                "cost": {
+                    "crop": 1380, 
+                    "gold": 160, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 30600, 
+                    "wood": 1010
+                }, 
+                "hp": 2915, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 35.0, 
+                "cost": {
+                    "crop": 1780, 
+                    "gold": 330, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 36490, 
+                    "wood": 1230
+                }, 
+                "hp": 3245, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 40.0, 
+                "cost": {
+                    "crop": 2270, 
+                    "gold": 520, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 43000, 
+                    "wood": 1500
+                }, 
+                "hp": 3630, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 44.0, 
+                "cost": {
+                    "crop": 2870, 
+                    "gold": 740, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 50190, 
+                    "wood": 1830
+                }, 
+                "hp": 4015, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 49.0, 
+                "cost": {
+                    "crop": 3600, 
+                    "gold": 970, 
+                    "iron": 130, 
+                    "labor": 0, 
+                    "time": 58130, 
+                    "wood": 2240
+                }, 
+                "hp": 4455, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 54.0, 
+                "cost": {
+                    "crop": 4490, 
+                    "gold": 1230, 
+                    "iron": 270, 
+                    "labor": 0, 
+                    "time": 66910, 
+                    "wood": 2740
+                }, 
+                "hp": 4950, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 59.0, 
+                "cost": {
+                    "crop": 5580, 
+                    "gold": 1520, 
+                    "iron": 430, 
+                    "labor": 0, 
+                    "time": 76620, 
+                    "wood": 3340
+                }, 
+                "hp": 5445, 
+                "level": 11, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 65.0, 
+                "cost": {
+                    "crop": 6910, 
+                    "gold": 1840, 
+                    "iron": 610, 
+                    "labor": 0, 
+                    "time": 87350, 
+                    "wood": 4090
+                }, 
+                "hp": 5995, 
+                "level": 12, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 72.0, 
+                "cost": {
+                    "crop": 8540, 
+                    "gold": 2190, 
+                    "iron": 810, 
+                    "labor": 0, 
+                    "time": 99200, 
+                    "wood": 4990
+                }, 
+                "hp": 6600, 
+                "level": 13, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 79.0, 
+                "cost": {
+                    "crop": 10520, 
+                    "gold": 2570, 
+                    "iron": 1020, 
+                    "labor": 0, 
+                    "time": 112300, 
+                    "wood": 6100
+                }, 
+                "hp": 7205, 
+                "level": 14, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 86.0, 
+                "cost": {
+                    "crop": 12950, 
+                    "gold": 3000, 
+                    "iron": 1260, 
+                    "labor": 0, 
+                    "time": 126780, 
+                    "wood": 7450
+                }, 
+                "hp": 7920, 
+                "level": 15, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Trading Post", 
+        "type": "structure"
+    }, 
+    "Training Ground": {
+        "levels": [
+            {
+                "attack": 14.0, 
+                "cost": {
+                    "crop": 180, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 900, 
+                    "wood": 120
+                }, 
+                "hp": 1150, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 16.0, 
+                "cost": {
+                    "crop": 320, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 2770, 
+                    "wood": 280
+                }, 
+                "hp": 1300, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 19.0, 
+                "cost": {
+                    "crop": 480, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 5170, 
+                    "wood": 470
+                }, 
+                "hp": 1550, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 22.0, 
+                "cost": {
+                    "crop": 690, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 6970, 
+                    "wood": 720
+                }, 
+                "hp": 1850, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 25.0, 
+                "cost": {
+                    "crop": 940, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 9310, 
+                    "wood": 1030
+                }, 
+                "hp": 2100, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 29.0, 
+                "cost": {
+                    "crop": 1240, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 12350, 
+                    "wood": 1420
+                }, 
+                "hp": 2400, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 33.0, 
+                "cost": {
+                    "crop": 1620, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 16290, 
+                    "wood": 1920
+                }, 
+                "hp": 2750, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 37.0, 
+                "cost": {
+                    "crop": 2070, 
+                    "gold": 360, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 21400, 
+                    "wood": 2540
+                }, 
+                "hp": 3100, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 42.0, 
+                "cost": {
+                    "crop": 2630, 
+                    "gold": 790, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 28020, 
+                    "wood": 3320
+                }, 
+                "hp": 3500, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 47.0, 
+                "cost": {
+                    "crop": 3310, 
+                    "gold": 1330, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 36610, 
+                    "wood": 4300
+                }, 
+                "hp": 3950, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 53.0, 
+                "cost": {
+                    "crop": 4140, 
+                    "gold": 1980, 
+                    "iron": 240, 
+                    "labor": 0, 
+                    "time": 47760, 
+                    "wood": 5540
+                }, 
+                "hp": 4400, 
+                "level": 11, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 59.0, 
+                "cost": {
+                    "crop": 5150, 
+                    "gold": 2780, 
+                    "iron": 540, 
+                    "labor": 0, 
+                    "time": 62210, 
+                    "wood": 7100
+                }, 
+                "hp": 4900, 
+                "level": 12, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 65.0, 
+                "cost": {
+                    "crop": 6380, 
+                    "gold": 3750, 
+                    "iron": 910, 
+                    "labor": 0, 
+                    "time": 80950, 
+                    "wood": 9060
+                }, 
+                "hp": 5450, 
+                "level": 13, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 72.0, 
+                "cost": {
+                    "crop": 7900, 
+                    "gold": 4930, 
+                    "iron": 1350, 
+                    "labor": 0, 
+                    "time": 105260, 
+                    "wood": 11530
+                }, 
+                "hp": 6000, 
+                "level": 14, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 80.0, 
+                "cost": {
+                    "crop": 9740, 
+                    "gold": 6380, 
+                    "iron": 1900, 
+                    "labor": 0, 
+                    "time": 136790, 
+                    "wood": 14640
+                }, 
+                "hp": 6650, 
+                "level": 15, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }
+        ], 
+        "name": "Training Ground", 
+        "type": "structure"
+    }, 
+    "Tribal Carnival": {
+        "levels": [
+            {
+                "attack": 75.0, 
+                "cost": {
+                    "crop": 2400, 
+                    "gold": 400, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 43200, 
+                    "wood": 2400
+                }, 
+                "hp": 3000, 
+                "level": 1, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Tribal Carnival", 
+        "type": "structure"
+    }, 
+    "Tribal Fair": {
+        "levels": [
+            {
+                "attack": 39.0, 
+                "cost": {
+                    "crop": 800, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 28800, 
+                    "wood": 800
+                }, 
+                "hp": 1560, 
+                "level": 1, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Tribal Fair", 
+        "type": "structure"
+    }, 
+    "Tribal Festival": {
+        "levels": [
+            {
+                "attack": 144.0, 
+                "cost": {
+                    "crop": 9600, 
+                    "gold": 1600, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 86400, 
+                    "wood": 9600
+                }, 
+                "hp": 5760, 
+                "level": 1, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Tribal Festival", 
+        "type": "structure"
+    }, 
+    "Tribal Gathering": {
+        "levels": [
+            {
+                "attack": 20.0, 
+                "cost": {
+                    "crop": 200, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 14400, 
+                    "wood": 200
+                }, 
+                "hp": 800, 
+                "level": 1, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "Tribal Gathering", 
+        "type": "structure"
+    }, 
+    "University": {
+        "levels": [
+            {
+                "attack": 17.0, 
+                "cost": {
+                    "crop": 300, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 3600, 
+                    "wood": 270
+                }, 
+                "hp": 2240, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 19.0, 
+                "cost": {
+                    "crop": 510, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 6770, 
+                    "wood": 480
+                }, 
+                "hp": 2480, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 22.0, 
+                "cost": {
+                    "crop": 780, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 10280, 
+                    "wood": 730
+                }, 
+                "hp": 2880, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 25.0, 
+                "cost": {
+                    "crop": 1100, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 14160, 
+                    "wood": 1050
+                }, 
+                "hp": 3360, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 28.0, 
+                "cost": {
+                    "crop": 1500, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 18440, 
+                    "wood": 1450
+                }, 
+                "hp": 3760, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 32.0, 
+                "cost": {
+                    "crop": 2000, 
+                    "gold": 370, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 23180, 
+                    "wood": 1950
+                }, 
+                "hp": 4240, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 36.0, 
+                "cost": {
+                    "crop": 2610, 
+                    "gold": 780, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 28410, 
+                    "wood": 2570
+                }, 
+                "hp": 4800, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 40.0, 
+                "cost": {
+                    "crop": 3360, 
+                    "gold": 1220, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 34200, 
+                    "wood": 3350
+                }, 
+                "hp": 5360, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 45.0, 
+                "cost": {
+                    "crop": 4290, 
+                    "gold": 1690, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 40590, 
+                    "wood": 4310
+                }, 
+                "hp": 6000, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 50.0, 
+                "cost": {
+                    "crop": 5440, 
+                    "gold": 2210, 
+                    "iron": 120, 
+                    "labor": 0, 
+                    "time": 47660, 
+                    "wood": 5510
+                }, 
+                "hp": 6720, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 56.0, 
+                "cost": {
+                    "crop": 6850, 
+                    "gold": 2770, 
+                    "iron": 240, 
+                    "labor": 0, 
+                    "time": 55460, 
+                    "wood": 7010
+                }, 
+                "hp": 7440, 
+                "level": 11, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 62.0, 
+                "cost": {
+                    "crop": 8600, 
+                    "gold": 3370, 
+                    "iron": 380, 
+                    "labor": 0, 
+                    "time": 64090, 
+                    "wood": 8870
+                }, 
+                "hp": 8240, 
+                "level": 12, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 68.0, 
+                "cost": {
+                    "crop": 10750, 
+                    "gold": 4030, 
+                    "iron": 540, 
+                    "labor": 0, 
+                    "time": 73630, 
+                    "wood": 11200
+                }, 
+                "hp": 9120, 
+                "level": 13, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 75.0, 
+                "cost": {
+                    "crop": 13410, 
+                    "gold": 4740, 
+                    "iron": 710, 
+                    "labor": 0, 
+                    "time": 84170, 
+                    "wood": 14090
+                }, 
+                "hp": 10000, 
+                "level": 14, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }, 
+            {
+                "attack": 83.0, 
+                "cost": {
+                    "crop": 16690, 
+                    "gold": 5510, 
+                    "iron": 900, 
+                    "labor": 0, 
+                    "time": 95820, 
+                    "wood": 17700
+                }, 
+                "hp": 11040, 
+                "level": 15, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 1
+            }
+        ], 
+        "name": "University", 
+        "type": "structure"
+    }, 
+    "Vineyard": {
+        "levels": [
+            {
+                "attack": 10.0, 
+                "cost": {
+                    "crop": 10, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 600, 
+                    "wood": 20
+                }, 
+                "hp": 1000, 
+                "level": 1, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 11.0, 
+                "cost": {
+                    "crop": 17, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 600, 
+                    "wood": 34
+                }, 
+                "hp": 1000, 
+                "level": 2, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 12.0, 
+                "cost": {
+                    "crop": 24, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 600, 
+                    "wood": 48
+                }, 
+                "hp": 1000, 
+                "level": 3, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 13.0, 
+                "cost": {
+                    "crop": 31, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 2, 
+                    "time": 600, 
+                    "wood": 62
+                }, 
+                "hp": 1000, 
+                "level": 4, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 14.0, 
+                "cost": {
+                    "crop": 39, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 600, 
+                    "wood": 77
+                }, 
+                "hp": 1000, 
+                "level": 5, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 15.0, 
+                "cost": {
+                    "crop": 46, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 600, 
+                    "wood": 92
+                }, 
+                "hp": 1000, 
+                "level": 6, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 16.0, 
+                "cost": {
+                    "crop": 54, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 600, 
+                    "wood": 108
+                }, 
+                "hp": 1000, 
+                "level": 7, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 17.0, 
+                "cost": {
+                    "crop": 62, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 600, 
+                    "wood": 124
+                }, 
+                "hp": 1000, 
+                "level": 8, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 18.0, 
+                "cost": {
+                    "crop": 70, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 1, 
+                    "time": 600, 
+                    "wood": 140
+                }, 
+                "hp": 1000, 
+                "level": 9, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 19.0, 
+                "cost": {
+                    "crop": 79, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 600, 
+                    "wood": 157
+                }, 
+                "hp": 1000, 
+                "level": 10, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 20.0, 
+                "cost": {
+                    "crop": 87, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 600, 
+                    "wood": 174
+                }, 
+                "hp": 1000, 
+                "level": 11, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 21.0, 
+                "cost": {
+                    "crop": 96, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 600, 
+                    "wood": 192
+                }, 
+                "hp": 1000, 
+                "level": 12, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 22.0, 
+                "cost": {
+                    "crop": 105, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 600, 
+                    "wood": 210
+                }, 
+                "hp": 1000, 
+                "level": 13, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 23.0, 
+                "cost": {
+                    "crop": 114, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 600, 
+                    "wood": 228
+                }, 
+                "hp": 1000, 
+                "level": 14, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 24.0, 
+                "cost": {
+                    "crop": 124, 
+                    "gold": 0, 
+                    "iron": 0, 
+                    "labor": 0, 
+                    "time": 600, 
+                    "wood": 247
+                }, 
+                "hp": 1000, 
+                "level": 15, 
+                "position": 3, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }
+        ], 
+        "name": "Vineyard", 
+        "type": "structure"
+    }, 
+    "Workshop": {
+        "levels": [
+            {
+                "attack": 23.0, 
+                "cost": {
+                    "crop": 1500, 
+                    "gold": 700, 
+                    "iron": 200, 
+                    "labor": 0, 
+                    "time": 42000, 
+                    "wood": 1800
+                }, 
+                "hp": 1950, 
+                "level": 1, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 25.0, 
+                "cost": {
+                    "crop": 1860, 
+                    "gold": 800, 
+                    "iron": 310, 
+                    "labor": 0, 
+                    "time": 47640, 
+                    "wood": 2220
+                }, 
+                "hp": 2100, 
+                "level": 2, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 28.0, 
+                "cost": {
+                    "crop": 2260, 
+                    "gold": 900, 
+                    "iron": 430, 
+                    "labor": 0, 
+                    "time": 53510, 
+                    "wood": 2690
+                }, 
+                "hp": 2350, 
+                "level": 3, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 32.0, 
+                "cost": {
+                    "crop": 2720, 
+                    "gold": 1020, 
+                    "iron": 560, 
+                    "labor": 0, 
+                    "time": 59620, 
+                    "wood": 3210
+                }, 
+                "hp": 2650, 
+                "level": 4, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 35.0, 
+                "cost": {
+                    "crop": 3220, 
+                    "gold": 1150, 
+                    "iron": 710, 
+                    "labor": 0, 
+                    "time": 65980, 
+                    "wood": 3790
+                }, 
+                "hp": 2900, 
+                "level": 5, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 38.0, 
+                "cost": {
+                    "crop": 3780, 
+                    "gold": 1290, 
+                    "iron": 870, 
+                    "labor": 0, 
+                    "time": 72610, 
+                    "wood": 4440
+                }, 
+                "hp": 3200, 
+                "level": 6, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 43.0, 
+                "cost": {
+                    "crop": 4410, 
+                    "gold": 1450, 
+                    "iron": 1050, 
+                    "labor": 0, 
+                    "time": 79500, 
+                    "wood": 5170
+                }, 
+                "hp": 3550, 
+                "level": 7, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 47.0, 
+                "cost": {
+                    "crop": 5110, 
+                    "gold": 1620, 
+                    "iron": 1250, 
+                    "labor": 0, 
+                    "time": 86670, 
+                    "wood": 5980
+                }, 
+                "hp": 3900, 
+                "level": 8, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 52.0, 
+                "cost": {
+                    "crop": 5890, 
+                    "gold": 1820, 
+                    "iron": 1470, 
+                    "labor": 0, 
+                    "time": 94130, 
+                    "wood": 6880
+                }, 
+                "hp": 4300, 
+                "level": 9, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 57.0, 
+                "cost": {
+                    "crop": 6760, 
+                    "gold": 2030, 
+                    "iron": 1710, 
+                    "labor": 0, 
+                    "time": 101900, 
+                    "wood": 7890
+                }, 
+                "hp": 4750, 
+                "level": 10, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 62.0, 
+                "cost": {
+                    "crop": 7730, 
+                    "gold": 2270, 
+                    "iron": 1980, 
+                    "labor": 0, 
+                    "time": 109990, 
+                    "wood": 9020
+                }, 
+                "hp": 5200, 
+                "level": 11, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 68.0, 
+                "cost": {
+                    "crop": 8820, 
+                    "gold": 2530, 
+                    "iron": 2280, 
+                    "labor": 0, 
+                    "time": 118400, 
+                    "wood": 10280
+                }, 
+                "hp": 5700, 
+                "level": 12, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 75.0, 
+                "cost": {
+                    "crop": 10030, 
+                    "gold": 2820, 
+                    "iron": 2600, 
+                    "labor": 0, 
+                    "time": 127160, 
+                    "wood": 11680
+                }, 
+                "hp": 6250, 
+                "level": 13, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 82.0, 
+                "cost": {
+                    "crop": 11380, 
+                    "gold": 3140, 
+                    "iron": 2960, 
+                    "labor": 0, 
+                    "time": 136280, 
+                    "wood": 13250
+                }, 
+                "hp": 6800, 
+                "level": 14, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }, 
+            {
+                "attack": 89.0, 
+                "cost": {
+                    "crop": 12890, 
+                    "gold": 3490, 
+                    "iron": 3360, 
+                    "labor": 0, 
+                    "time": 145770, 
+                    "wood": 15000
+                }, 
+                "hp": 7450, 
+                "level": 15, 
+                "position": 4, 
+                "range": 1, 
+                "speed": 0, 
+                "splash": 2
+            }
+        ], 
+        "name": "Workshop", 
+        "type": "structure"
+    }
+}

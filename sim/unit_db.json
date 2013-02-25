@@ -587,7 +587,7 @@
     "Cavalry": {
         "levels": [
             {
-                "attack": 20.0, 
+                "attack": 18.0, 
                 "carry": 10, 
                 "cost": {
                     "crop": 250, 
@@ -606,7 +606,7 @@
                 "upkeep": 2
             }, 
             {
-                "attack": 21.0, 
+                "attack": 18.9, 
                 "carry": 11, 
                 "cost": {
                     "crop": 255, 
@@ -625,7 +625,7 @@
                 "upkeep": 2
             }, 
             {
-                "attack": 22.1, 
+                "attack": 19.8, 
                 "carry": 11, 
                 "cost": {
                     "crop": 260, 
@@ -644,7 +644,7 @@
                 "upkeep": 2
             }, 
             {
-                "attack": 23.2, 
+                "attack": 20.8, 
                 "carry": 12, 
                 "cost": {
                     "crop": 265, 
@@ -663,7 +663,7 @@
                 "upkeep": 2
             }, 
             {
-                "attack": 24.3, 
+                "attack": 21.9, 
                 "carry": 12, 
                 "cost": {
                     "crop": 271, 
@@ -682,7 +682,7 @@
                 "upkeep": 2
             }, 
             {
-                "attack": 25.5, 
+                "attack": 23.0, 
                 "carry": 13, 
                 "cost": {
                     "crop": 276, 
@@ -701,7 +701,7 @@
                 "upkeep": 2
             }, 
             {
-                "attack": 26.8, 
+                "attack": 24.1, 
                 "carry": 13, 
                 "cost": {
                     "crop": 282, 
@@ -720,7 +720,7 @@
                 "upkeep": 2
             }, 
             {
-                "attack": 28.1, 
+                "attack": 25.3, 
                 "carry": 14, 
                 "cost": {
                     "crop": 287, 
@@ -739,7 +739,7 @@
                 "upkeep": 2
             }, 
             {
-                "attack": 29.5, 
+                "attack": 26.6, 
                 "carry": 15, 
                 "cost": {
                     "crop": 293, 
@@ -758,7 +758,7 @@
                 "upkeep": 2
             }, 
             {
-                "attack": 31.0, 
+                "attack": 27.9, 
                 "carry": 16, 
                 "cost": {
                     "crop": 299, 

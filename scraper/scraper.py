@@ -17,7 +17,12 @@ source_dir = "html_src"
 units = {}
 
 for filename in os.listdir(source_dir):
-	tree = html.parse(os.path.join(source_dir, filename))
+	ff = os.path.join(source_dir, filename)
+
+	if not os.path.isfile(ff):
+		continue
+
+	tree = html.parse(ff)
 
 	name = tree.xpath("/html/body/div/div[2]/div[2]/div[2]/div[2]/h2")[0].text
 	print >> sys.stderr, name
@@ -59,7 +64,7 @@ for filename in os.listdir(source_dir):
 				"gold": int(gold),
 				"wood": int(wood),
 				"crop": int(crop),
-				"iron": int(iron),
+					"iron": int(iron),
 			},
 			"hp": int(hp),
 			"splash": get_num(splash),
