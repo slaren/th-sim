@@ -77,6 +77,6 @@ parse_structure(tree, "TRIBAL_FAIR", "Tribal Fair", structures)
 parse_structure(tree, "TRIBAL_CARNIVAL", "Tribal Carnival", structures)
 parse_structure(tree, "TRIBAL_FESTIVAL", "Tribal Festival", structures)
 parse_structure(tree, "GRAPE_FIELD", "Vineyard", structures)
-parse_structure(tree, "STRONGHOLD_GATE", "Stronghold Gate", structures)
+# parse_structure(tree, "STRONGHOLD_GATE", "Stronghold Gate", structures)
 
 print(json.dumps(structures, sort_keys=True, indent=4))

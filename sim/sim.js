@@ -550,7 +550,7 @@ $(function() {
 					};
 
 					var info = sim.get_unit_info(unit.unit);
-					if (info != null && unit.level >= 1 && info.levels[unit.level - 1] != null &&
+					if (info != null && unit.level >= 1 && info.levels && info.levels[unit.level - 1] != null &&
 						unit.count > 0 && unit.count < 1000000) {
 						army.push(unit);
 					}
