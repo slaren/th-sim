@@ -1,12 +1,3 @@
-function sformat(str) {
-	var args = arguments;
-	return str.replace(/{(\d+)}/g, function(match, number) { 
-		return typeof args[number] != 'undefined'
-			? args[number]
-			: match;
-		});
-};
-
 function shuffle_array(array) {
 	var i = array.length, j, tempi, tempj;
 	if (i == 0) return false;

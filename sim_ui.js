@@ -1,4 +1,13 @@
 (function() {
+function sformat(str) {
+	var args = arguments;
+	return str.replace(/{(\d+)}/g, function(match, number) { 
+		return typeof args[number] != 'undefined'
+			? args[number]
+			: match;
+		});
+};
+
 //////////////////////////////////////////////////////////////////////////////
 // UI
 //////////////////////////////////////////////////////////////////////////////
@@ -112,9 +121,10 @@ $(function() {
 			div.empty();
 			for (var i = 0; i < stacks.length; ++i) {
 				var stack = stacks[i];
-				div.append(sformat("<div class='unit_stack' title='{1} (lv.{2}) (hp: {5}/{6} damage done: {7})'><img class='unit_stack_image' src='{4}'><span class'unit_stack_text'>{3}</span></div>",
+				div.append(sformat("<div class='unit_stack' title='{1} (lv.{2}) (hp: {5}/{6} damage done: {7})\n{8}'><img class='unit_stack_image' src='{4}'><span class'unit_stack_text'>{3}</span></div>",
 				    stack.unit, stack.level, stack.count, sim.get_unit_info(stack.unit).image, 
-					stack.hp.toFixed(1), stack.hp_max.toFixed(1), stack.damage_dealt.toFixed(1)));
+					stack.hp.toFixed(1), stack.hp_max.toFixed(1), stack.damage_dealt.toFixed(1),
+					(stack.count - stack.count_max) || ""));
 			}
 		};
 
@@ -138,6 +148,25 @@ $(function() {
 			$("#army_dialog").show();
 		};
 
+		function format_cost(cost) {
+			return sformat("<span>{1}<span class='resource-labor'></span> {2}<span class='resource-gold'></span> {3}<span class='resource-wood'></span> {4}<span class='resource-crop'></span> {5}<span class='resource-iron'></span></span>", cost.labor, cost.gold, cost.wood, cost.crop, cost.iron);
+		}
+
+		function zero_pad(n, len) {
+			var zerostr = "";
+			for (var i = 0; i < len; ++i) zerostr += "0";
+			var tmp = n.toString(10);
+			var tmp2 = zerostr.concat(tmp);
+			return tmp2.substring(tmp2.length - len);
+		}
+
+		function format_time(time) {
+			var h = time / 3600;
+			var m = (time % 3600) / 60;
+			var s = time % 60;
+			return sformat("{1}:{2}:{3}", zero_pad(Math.floor(h), 2), zero_pad(Math.floor(m), 2), zero_pad(Math.floor(s), 2)); 
+		}
+
 		function populate_army_dialog_army(army) {
 			$("#army_dialog_army_unit_list").empty();
 			for (var i in army) {
@@ -152,12 +181,30 @@ $(function() {
 			}
 
 			var cost = sim.get_army_cost(army);
-			$("#army_dialog_cost").empty().append(
-				$(sformat("<span>{1}<span class='resource-labor'></span> {2}<span class='resource-gold'></span> {3}<span class='resource-wood'></span> {4}<span class='resource-crop'></span> {5}<span class='resource-iron'></span></span>", cost.labor, cost.gold, cost.wood, cost.crop, cost.iron)));
+			$("#army_dialog_cost").empty().append($(format_cost(cost)));
 			$("#army_dialog_upkeep").text(cost.upkeep);
 			
 			update_url();
 		};
+
+		function update_army_add_dialog_unit_stats() {
+			var name = $("#army_add_dialog_unit_name").text();
+			var level = $("#army_add_dialog_unit_level").val() || 1;
+
+			var ui = sim.get_unit_info(name);
+			var lv = ui.levels[level - 1];
+
+			$("#army_add_dialog_unit_cost").empty().append(format_cost(lv.cost))
+			$("#army_add_dialog_unit_time").text(format_time(lv.cost.time));
+			$("#army_add_dialog_unit_hp").text(lv.hp);
+			$("#army_add_dialog_unit_attack").text(lv.attack);
+			$("#army_add_dialog_unit_range").text(lv.range);
+			$("#army_add_dialog_unit_speed").text(lv.speed);
+			$("#army_add_dialog_unit_splash").text(lv.splash);
+			$("#army_add_dialog_unit_carry").text(lv.carry);
+			$("#army_add_dialog_unit_position").text(lv.position);
+			$("#army_add_dialog_unit_upkeep").text(lv.upkeep);
+		}
 
 		function show_army_add_dialog(unit) {
 			// fill level drop down
@@ -166,8 +213,14 @@ $(function() {
 				var el = $(sformat("<option value='{1}'>{1}</option>", i));
 				$("#army_add_dialog_unit_level").append(el);
 			}
-			$("#fullscreen_modal_background").css("z-index", 2);
+
+			// fill unit data
+			var ui = sim.get_unit_info(unit)
 			$("#army_add_dialog_unit_name").text(unit);
+			$("#army_add_dialog_unit_image").attr("src", ui.image);
+			update_army_add_dialog_unit_stats();
+
+			$("#fullscreen_modal_background").css("z-index", 2);
 			$("#army_add_dialog").show();
 		}
 
@@ -261,6 +314,10 @@ $(function() {
 
 		$("#army_dialog_close_button").click(function() {
 			close_toplevel_dialog();
+		});
+
+		$("#army_add_dialog_unit_level").change(function() {
+			update_army_add_dialog_unit_stats();
 		});
 
 		$("#army_add_dialog_add_button").click(function() {

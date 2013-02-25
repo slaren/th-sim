@@ -60,10 +60,40 @@
 	</div>
 
 	<div id="army_add_dialog">
-		<b>Add unit</b><br>
-		<div id="army_add_dialog_unit_name"></div>
-		Level: <select id="army_add_dialog_unit_level"></select><br>
-		Amount: <input id="army_add_dialog_unit_amount" type="number" min="1" max="1000000" value="1"><br>
+		<div style="float:right">
+			<span class='prop-time'></span> <span id="army_add_dialog_unit_time">??</span><br>
+			<span id="army_add_dialog_unit_cost"></span>
+			<br><br>
+			<table>
+				<tr>
+					<td>HP</td><td id="army_add_dialog_unit_hp">?hp</td><td>Splash</td><td id="army_add_dialog_unit_splash">?splash</td>
+				</tr>
+				<tr>
+					<td>Attack</td><td id="army_add_dialog_unit_attack">?atk</td><td>Carry</td><td id="army_add_dialog_unit_carry">?carry</td>
+				</tr>
+				<tr>
+					<td>Range</td><td id="army_add_dialog_unit_range">?rng</td><td>Position</td><td id="army_add_dialog_unit_position">?pos</td>
+				</tr>
+				<tr>
+					<td>Speed</td><td id="army_add_dialog_unit_speed">?sp</td><td>Upkeep</td><td id="army_add_dialog_unit_upkeep">?upk</td>
+				</tr>
+			</table>
+		</div>
+		<center>
+			<img id="army_add_dialog_unit_image">
+			<div id="army_add_dialog_unit_name"></div>
+		</center>
+
+		<table>
+			<tr>
+				<td>Level:</td><td><select id="army_add_dialog_unit_level"></select></td>
+			</tr>
+			<tr>
+				<td>Amount:</td><td><input id="army_add_dialog_unit_amount" type="number" min="1" max="1000000" value="1"></td>
+			</tr>
+		</table>
+
+
 		<button id="army_add_dialog_add_button">Add</button>
 		<button id="army_add_dialog_cancel_button">Cancel</button>
 	</div>
