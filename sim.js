@@ -396,7 +396,8 @@ simulator.prototype = {
 			var t_stack = t_stacks[i];
 			var t_unit = this.get_unit_info(t_stack.unit);
 			var t_unit_lv = t_unit.levels[t_stack.level - 1];
-			var is_miss = Math.random() < miss_chance;
+			console.log(miss_chance)
+			var is_miss = Math.random() <= miss_chance;
 			var dmod = this.get_damage_mod(a_stack.unit, t_stack.unit);
 			var damage = a_stack.count * a_unit_lv.attack * dmod;
 			if (is_miss) {
