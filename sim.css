@@ -16,7 +16,10 @@ table {
 	margin: 0;
 }
 
-.prop-time, .resource-labor, .resource-gold, .resource-wood, .resource-crop, .resource-iron {
+.prop-time,
+.resource-labor, .resource-gold, .resource-wood, .resource-crop, .resource-iron,
+.combat-attack, .combat-defend, .combat-left, .combat-right
+ {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
@@ -25,12 +28,36 @@ table {
 	padding: 0;
 }
 
+.combat-attack {
+	margin-left: 10px;
+	margin-right: 10px;
+	background: url('img/attack.png')
+}
+
+.combat-defend {
+	margin-left: 10px;
+	margin-right: 10px;
+	background: url('img/defend.png')
+}
+
+.combat-left {
+	margin-left: 10px;
+	margin-right: 10px;
+	background: url('img/left.png')
+}
+
+.combat-right {
+	margin-left: 10px;
+	margin-right: 10px;
+	background: url('img/right.png')
+}
+
 .prop-time {
-	background: url('http://tribalhero.com/img/db/icons/props/clock.png');
+	background: url('http://tribalhero.com/img/db/icons/props/clock.png')
 }
 
 .resource-labor {
-	background: url('http://tribalhero.com/img/db/icons/resources/labor.png') 0 0;
+	background: url('http://tribalhero.com/img/db/icons/resources/labor.png')
 }
 
 .resource-gold {
@@ -165,6 +192,7 @@ table {
 }
 
 .log_round_header {
+	font-size: 13px;
 	font-weight: bold;
 }
 
