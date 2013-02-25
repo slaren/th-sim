@@ -201,9 +201,9 @@ $(function() {
 			$("#army_add_dialog_unit_range").text(lv.range);
 			$("#army_add_dialog_unit_speed").text(lv.speed);
 			$("#army_add_dialog_unit_splash").text(lv.splash);
-			$("#army_add_dialog_unit_carry").text(lv.carry);
+			$("#army_add_dialog_unit_carry").text(lv.carry || "N/A");
 			$("#army_add_dialog_unit_position").text(lv.position);
-			$("#army_add_dialog_unit_upkeep").text(lv.upkeep);
+			$("#army_add_dialog_unit_upkeep").text(lv.upkeep || "N/A");
 		}
 
 		function show_army_add_dialog(unit) {
