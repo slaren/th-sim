@@ -276,6 +276,16 @@ simulator.prototype = {
 		return unit_info;
 	},
 
+	get_damage_mod: function(a_unit, d_unit) {
+		var ai = this.get_unit_info(a_unit);
+		var di = this.get_unit_info(d_unit);
+
+		if (di.type == "structure")
+			return ai.damage_mod["Structures"];
+		else
+			return ai.damage_mod[d_unit];
+	},
+
 	get_stack_targets: function(a_stack, target_stacks) {
 		var a_unit = this.get_unit_info(a_stack.unit);
 		var a_unit_lv = a_unit.levels[a_stack.level - 1];
@@ -297,7 +307,7 @@ simulator.prototype = {
 				// choose by range
 				(a_unit_lv.range < mt_unit_lv.position && a_unit_lv.range >= d_unit_lv.position) ||
 				// choose by damage modifier
-				(a_unit.damage_mod[d_stack.unit] > a_unit.damage_mod[mt_stack.unit])) {
+				(this.get_damage_mod(a_stack.unit, d_stack.unit) > this.get_damage_mod(a_stack.unit, mt_stack.unit))) {
 
 				mt_stack = d_stack;
 				mt_unit = d_unit;
@@ -326,7 +336,7 @@ simulator.prototype = {
 							// choose by range
 							(a_unit_lv.range < t_unit_lv.position && a_unit_lv.range >= d_unit_lv.position) ||
 							// choose by damage modifier
-							(a_unit.damage_mod[d_stack.unit] > a_unit.damage_mod[t_stack.unit])) {
+							(this.get_damage_mod(a_stack.unit, d_stack.unit) > this.get_damage_mod(a_stack.unit, t_stack.unit))) {
 							t_stack = d_stack;
 							t_unit = d_unit;
 							t_unit_lv = d_unit_lv
@@ -365,7 +375,7 @@ simulator.prototype = {
 			var t_unit = this.get_unit_info(t_stack.unit);
 			var t_unit_lv = t_unit.levels[t_stack.level - 1];
 			var is_miss = Math.random() < miss_chance;
-			var dmod = a_unit.damage_mod[t_stack.unit];
+			var dmod = this.get_damage_mod(a_stack.unit, t_stack.unit);
 			var damage = a_stack.count * a_unit_lv.attack * dmod;
 			if (is_miss) {
 				damage *= 0.5;
