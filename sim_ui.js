@@ -23,7 +23,7 @@ $(function() {
 			function(stack, t_stack, damage, is_attacker) {
 				if (t_stack) {
 					if (is_attacker) {
-						$("#battle_log").append(sformat("<div class='log_line log_damage'><img class='log_unit_image' src='{7}'> {5}x{6} (defender) <span class='combat-attack'></span> {4} <span class='combat-left'></span> <img class='log_unit_image' src='{3}'> {1}x{2} (attacker)</div>", 
+						$("#battle_log").append(sformat("<div class='log_line log_damage'><img class='log_unit_image' src='{7}'> {5}×{6} (defender) <span class='combat-attack'></span> {4} <span class='combat-left'></span> <img class='log_unit_image' src='{3}'> {1}×{2} (attacker)</div>", 
 							stack.unit,
 							stack.count,
 							sim.get_unit_info(stack.unit).image,
@@ -33,7 +33,7 @@ $(function() {
 							sim.get_unit_info(t_stack.unit).image));
 					}
 					else {
-						$("#battle_log").append(sformat("<div class='log_line log_damage'><img class='log_unit_image' src='{3}'> {1}x{2} (defender) <span class='combat-defend'></span> {4} <span class='combat-right'></span> <img class='log_unit_image' src='{7}'> {5}x{6} (attacker)</div>", 
+						$("#battle_log").append(sformat("<div class='log_line log_damage'><img class='log_unit_image' src='{3}'> {1}×{2} (defender) <span class='combat-defend'></span> {4} <span class='combat-right'></span> <img class='log_unit_image' src='{7}'> {5}×{6} (attacker)</div>", 
 							stack.unit,
 							stack.count,
 							sim.get_unit_info(stack.unit).image,
