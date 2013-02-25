@@ -280,7 +280,7 @@ simulator.prototype = {
 		var ai = this.get_unit_info(a_unit);
 		var di = this.get_unit_info(d_unit);
 
-		if (di.type == "structure")
+		if (!ai.damage_mod[d_unit] && di.type == "structure")
 			return ai.damage_mod["Structures"];
 		else
 			return ai.damage_mod[d_unit];
