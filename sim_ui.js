@@ -55,6 +55,7 @@ $(function() {
 		// ui stuff
 		var current_army;
 		var prev_ser_state;
+		var army_add_edit_index;
 
 		function update_url() {
 			prev_ser_state = serialize_state();
@@ -149,6 +150,8 @@ $(function() {
 
 			display_losses(sim.get_army_losses(sim.get_attacker_stacks()), $("#attacker_summary"));
 			display_losses(sim.get_army_losses(sim.get_defender_stacks()), $("#defender_summary"));
+
+			$("#combat_time").text(format_time(sim.get_combat_time()));
 		}
 
 		function close_toplevel_dialog() {
@@ -161,6 +164,29 @@ $(function() {
 				$("#fullscreen_modal_background").hide();
 			}
 		};
+
+		function accept_toplevel_dialog() {
+			if ($("#army_add_dialog:visible").length > 0) {
+				var name = $("#army_add_dialog_unit_name").text();
+				var level = $("#army_add_dialog_unit_level").val();
+				var count = parseInt($("#army_add_dialog_unit_amount").val(), 10);
+
+				if (isNaN(count)) {
+					$("#army_add_dialog_unit_amount")[0].focus();
+					$("#army_add_dialog_unit_amount")[0].select();
+					return;
+				}
+
+				if (army_add_edit_index != undefined) {
+					edit_current_army_unit(army_add_edit_index, level, count);
+					close_toplevel_dialog();
+				}
+				else {
+					add_current_army_unit(name, level, count);
+					close_toplevel_dialog();
+				}
+			}
+		}
 
 		function show_army_dialog(army, is_attacker) {
 			current_army = army;
@@ -194,13 +220,16 @@ $(function() {
 			$("#army_dialog_army_unit_list").empty();
 			for (var i in army) {
 				var unit = army[i];
-				var el = $(sformat("<div class='unit_stack' title='{1} (lv.{2})'><img class='unit_stack_image' src='{4}'><span class'unit_stack_text'>{3}</span></div>", 
+				var el = $(sformat("<div class='unit_stack army_added_unit' title='{1} (lv.{2})'><img class='unit_stack_image' src='{4}'><span class'unit_stack_text'>{3}</span></div>", 
 					unit.unit, unit.level, unit.count, sim.get_unit_info(unit.unit).image));
+				
+				el.click((function(i) { return function() { show_army_edit_dialog(current_army, i); }; })(i));
 
 				var button = $("<button>x</button>");
+				button.click((function(i) { return function() { remove_current_army_unit(i); }; })(i));
+
 				el.prepend(button)
 				$("#army_dialog_army_unit_list").append(el);
-				button.click((function(i) { return function() { remove_current_army_unit(i); }; })(i));
 			}
 
 			var cost = sim.get_army_cost(army);
@@ -229,13 +258,21 @@ $(function() {
 			$("#army_add_dialog_unit_upkeep").text(lv.upkeep || "N/A");
 		}
 
-		function show_army_add_dialog(unit) {
+		function show_army_edit_dialog(army, index) {
+			show_army_add_dialog(army[index].unit, army[index].level, army[index].count, index);
+
+		}
+
+		function show_army_add_dialog(unit, level, count, edit_index) {
 			// fill level drop down
 			$("#army_add_dialog_unit_level").empty();
 			for (var i = 1; i <= sim.get_unit_info(unit).levels.length; ++i) {
 				var el = $(sformat("<option value='{1}'>{1}</option>", i));
 				$("#army_add_dialog_unit_level").append(el);
 			}
+			
+			$("#army_add_dialog_unit_level").val(level || 1);
+			$("#army_add_dialog_unit_amount").val(count || 1);
 
 			// fill unit data
 			var ui = sim.get_unit_info(unit)
@@ -245,6 +282,11 @@ $(function() {
 
 			$("#fullscreen_modal_background").css("z-index", 2);
 			$("#army_add_dialog").show();
+
+			$("#army_add_dialog_unit_amount")[0].focus();
+			$("#army_add_dialog_unit_amount")[0].select();
+
+			army_add_edit_index = edit_index;
 		}
 
 		function add_current_army_unit(unit, level, count) {
@@ -254,6 +296,13 @@ $(function() {
 				count: count	
 			};
 			current_army.push(unitdef);
+			populate_army_dialog_army(current_army);
+			reset_battle();
+		}
+
+		function edit_current_army_unit(index, level, count) {
+			current_army[index].level = level;
+			current_army[index].count = count;
 			populate_army_dialog_army(current_army);
 			reset_battle();
 		}
@@ -271,7 +320,7 @@ $(function() {
 		for (var i in sim.unit_db) {
 			var unit = sim.unit_db[i];
 			if (unit.name) {
-				var button = $(sformat("<div class='army_available_unit'><img class='army_available_unit_image' src='{2}'><br>{1}</div>", unit.name, unit.image));
+				var button = $(sformat("<div class='army_available_unit_container'><div class='army_available_unit'><img class='army_available_unit_image' src='{2}'><br>{1}</div></div>", unit.name, unit.image));
 				button.click((function(unit) { return function() { show_army_add_dialog(unit.name); } })(unit));
 
 				$(unit.type == "structure" ? "#army_dialog_available_structure_list" : "#army_dialog_available_unit_list").append(button); 
@@ -284,6 +333,7 @@ $(function() {
 		function reset_battle() { 
 			sim.set_attacker(attacker);
 			sim.set_defender(defender);
+			sim.reset_combat_time();
 
 			update_battle_display();
 			
@@ -342,12 +392,7 @@ $(function() {
 		});
 
 		$("#army_add_dialog_add_button").click(function() {
-			var name = $("#army_add_dialog_unit_name").text();
-			var level = $("#army_add_dialog_unit_level").val();
-			var count = $("#army_add_dialog_unit_amount").val();
-
-			add_current_army_unit(name, level, count);
-			close_toplevel_dialog();
+			accept_toplevel_dialog();
 		});
 
 		$("#army_add_dialog_cancel_button").click(function() {
@@ -362,6 +407,9 @@ $(function() {
 			// esc
 			if (e.which == 27) {
 				close_toplevel_dialog();
+			}
+			else if (e.which == 13) {
+				accept_toplevel_dialog();
 			}
 		});
 	});

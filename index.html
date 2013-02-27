@@ -10,13 +10,18 @@
 	<link rel="icon" href="favicon.png">
 </head>
 <body>
-	<div id="controls" style="position: absolute; left: 900px">
-		<button id="play_all_button">play all</button>
-		<button id="next_round_button">next round</button>
-		<button id="reset_button">reset</button>
-		<br>
-		<button id="edit_attacker_button">edit attacker</button>
-		<button id="edit_defender_button">edit defender</butotn>
+	<div style="position: absolute; left: 900px">
+		<div id="controls">
+			<button id="play_all_button">play all</button>
+			<button id="next_round_button">next round</button>
+			<button id="reset_button">reset</button>
+			<br>
+			<button id="edit_attacker_button">edit attacker</button>
+			<button id="edit_defender_button">edit defender</butotn>
+		</div>
+		<div>
+			Battle time: <span id="combat_time"></span>
+		</div>
 	</div>
 
 	<div id="battle">
@@ -48,7 +53,7 @@
 
 	<!-- Fullscreen dialogs -->
 	<div id="army_dialog">
-		<b><span id="army_dialog_type"></span> army</b>
+		<b><span id="army_dialog_type"></span>army</b>
 		<span>
 			<a style="text-decoration: underline;color:blue;cursor:pointer" onclick="$('#army_dialog_available_unit_list').show();$('#army_dialog_available_structure_list').hide();">Units</a>
 			<a style="text-decoration: underline;color:blue;cursor:pointer" onclick="$('#army_dialog_available_unit_list').hide();$('#army_dialog_available_structure_list').show();">Structures</a>
