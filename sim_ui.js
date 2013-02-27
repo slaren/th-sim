@@ -223,10 +223,10 @@ $(function() {
 				var el = $(sformat("<div class='unit_stack army_added_unit' title='{1} (lv.{2})'><img class='unit_stack_image' src='{4}'><span class'unit_stack_text'>{3}</span></div>", 
 					unit.unit, unit.level, unit.count, sim.get_unit_info(unit.unit).image));
 				
-				el.click((function(i) { return function() { show_army_edit_dialog(current_army, i); }; })(i));
+				el.click((function(_i) { return function() { show_army_edit_dialog(current_army, _i); }; })(i));
 
 				var button = $("<button>x</button>");
-				button.click((function(i) { return function() { remove_current_army_unit(i); }; })(i));
+				button.click((function(_i) { return function() { remove_current_army_unit(_i); }; })(i));
 
 				el.prepend(button)
 				$("#army_dialog_army_unit_list").append(el);
@@ -296,21 +296,21 @@ $(function() {
 				count: count	
 			};
 			current_army.push(unitdef);
-			populate_army_dialog_army(current_army);
 			reset_battle();
+			populate_army_dialog_army(current_army);
 		}
 
 		function edit_current_army_unit(index, level, count) {
 			current_army[index].level = level;
 			current_army[index].count = count;
-			populate_army_dialog_army(current_army);
 			reset_battle();
+			populate_army_dialog_army(current_army);
 		}
 
 		function remove_current_army_unit(index) {
 			current_army.splice(index, 1);
-			populate_army_dialog_army(current_army);
 			reset_battle();
+			populate_army_dialog_army(current_army);
 		}
 
 		// load state
