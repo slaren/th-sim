@@ -55,6 +55,7 @@ $(function() {
 		// ui stuff
 		var current_army;
 		var prev_ser_state;
+		var army_add_edit_index;
 
 		function update_url() {
 			prev_ser_state = serialize_state();
@@ -149,6 +150,8 @@ $(function() {
 
 			display_losses(sim.get_army_losses(sim.get_attacker_stacks()), $("#attacker_summary"));
 			display_losses(sim.get_army_losses(sim.get_defender_stacks()), $("#defender_summary"));
+
+			$("#combat_time").text(format_time(sim.get_combat_time()));
 		}
 
 		function close_toplevel_dialog() {
@@ -166,10 +169,22 @@ $(function() {
 			if ($("#army_add_dialog:visible").length > 0) {
 				var name = $("#army_add_dialog_unit_name").text();
 				var level = $("#army_add_dialog_unit_level").val();
-				var count = $("#army_add_dialog_unit_amount").val();
+				var count = parseInt($("#army_add_dialog_unit_amount").val(), 10);
 
-				add_current_army_unit(name, level, count);
-				close_toplevel_dialog();
+				if (isNaN(count)) {
+					$("#army_add_dialog_unit_amount")[0].focus();
+					$("#army_add_dialog_unit_amount")[0].select();
+					return;
+				}
+
+				if (army_add_edit_index != undefined) {
+					edit_current_army_unit(army_add_edit_index, level, count);
+					close_toplevel_dialog();
+				}
+				else {
+					add_current_army_unit(name, level, count);
+					close_toplevel_dialog();
+				}
 			}
 		}
 
@@ -244,10 +259,11 @@ $(function() {
 		}
 
 		function show_army_edit_dialog(army, index) {
-			show_army_add_dialog(army[index].unit, army[index].level, army[index].count);
+			show_army_add_dialog(army[index].unit, army[index].level, army[index].count, index);
+
 		}
 
-		function show_army_add_dialog(unit, level, count) {
+		function show_army_add_dialog(unit, level, count, edit_index) {
 			// fill level drop down
 			$("#army_add_dialog_unit_level").empty();
 			for (var i = 1; i <= sim.get_unit_info(unit).levels.length; ++i) {
@@ -269,6 +285,8 @@ $(function() {
 
 			$("#army_add_dialog_unit_amount")[0].focus();
 			$("#army_add_dialog_unit_amount")[0].select();
+
+			army_add_edit_index = edit_index;
 		}
 
 		function add_current_army_unit(unit, level, count) {
@@ -278,6 +296,13 @@ $(function() {
 				count: count	
 			};
 			current_army.push(unitdef);
+			populate_army_dialog_army(current_army);
+			reset_battle();
+		}
+
+		function edit_current_army_unit(index, level, count) {
+			current_army[index].level = level;
+			current_army[index].count = count;
 			populate_army_dialog_army(current_army);
 			reset_battle();
 		}
@@ -308,6 +333,7 @@ $(function() {
 		function reset_battle() { 
 			sim.set_attacker(attacker);
 			sim.set_defender(defender);
+			sim.reset_combat_time();
 
 			update_battle_display();
 			

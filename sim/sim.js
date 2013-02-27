@@ -42,9 +42,10 @@ function simulator() {
 				}
 			}
 
-			if (sim.ready_fn)
-					sim.ready_fn();
-				sim.is_ready = true;
+			if (sim.ready_fn) {
+				sim.ready_fn();
+			}
+			sim.is_ready = true;
 		}
 	}
 
@@ -72,14 +73,20 @@ simulator.prototype = {
 
 	set_attacker: function(attacker) {
 		var r = this.make_stacks(attacker);
-		this.attacker_stacks = r[0]
-		this.shuffled_attacker_stacks = r[1]
+		this.attacker_stacks = r[0];
+		this.shuffled_attacker_stacks = r[1];
 	},
 
 	set_defender: function(defender) {
 		var r = this.make_stacks(defender);
 		this.defender_stacks = r[0];
 		this.shuffled_defender_stacks = r[1];
+	},
+
+	reset_combat_time: function() {
+		this.combat_time = 0;
+		this.attack_interval = this.get_attack_interval();
+
 	},
 
 	get_attacker_stacks: function () {
@@ -104,7 +111,7 @@ simulator.prototype = {
 				if (!losses[stack.unit])
 					losses[stack.unit] = [];
 				if (!losses[stack.unit][stack.level])
-					losses[stack.unit][stack.level] = 0; 
+					losses[stack.unit][stack.level] = 0;
 				losses[stack.unit][stack.level] += stack.count_max - stack.count;
 			}
 		}
@@ -115,7 +122,7 @@ simulator.prototype = {
 				var stack = {
 					"unit": unit,
 					"level": level,
-					"count": losses[unit][level] 
+					"count": losses[unit][level]
 				};
 				losses_army.push(stack);
 			}
@@ -165,6 +172,12 @@ simulator.prototype = {
 		return upkeep;
 	},
 
+	get_attack_interval: function() {
+		var stack_count = this.count_active_stacks(this.attacker_stacks) + this.count_active_stacks(this.defender_stacks);
+		var adjusted_time = 20 * 100 / (100 + Math.min(400, stack_count));
+		return Math.max(4, adjusted_time);
+	},
+
 	get_miss_chance: function(is_attacker) {
 		if (is_attacker)
 			return this.get_army_miss_chance(this.attacker_stacks, this.defender_stacks);
@@ -201,7 +214,13 @@ simulator.prototype = {
 		return (miss * effectiveness).toFixed(0) / 100.0;
 	},
 
+	get_combat_time: function() {
+		return this.combat_time;
+	},
+
 	do_round: function() {
+		var attack_interval = this.attack_interval;
+
 		// alternating ordered attack order
 		var ia = 0, id = 0;
 		function get_next_valid_stack(stacks, pos) {
@@ -220,75 +239,19 @@ simulator.prototype = {
 			// defender attack
 			id = get_next_valid_stack(this.defender_stacks, id);
 			if (id !== null) {
+				if (this.combat_time != 0)
+					this.combat_time += attack_interval;
 				this.do_attack(this.defender_stacks[id], this.shuffled_attacker_stacks, false);
 				++id;
 			}
 			// attacker attack
 			ia = get_next_valid_stack(this.attacker_stacks, ia);
-			if (ia !== null) { 
+			if (ia !== null) {
+				this.combat_time += attack_interval;
 				this.do_attack(this.attacker_stacks[ia], this.shuffled_defender_stacks, true);
 				++ia;
 			}
 		}
-
-
-		/*
-		Attack order:
-		1 Fighter
-		2 Bowmen
-		3 Swordsmen
-		4 Archer
-		5 Hoplite
-		6 Gladiator
-		7 Cavalry
-		8 Knight
-		9 Helepolis
-		10 Catapult
-		11 Ox Wagon
-		*/
-
-		/*
-		// random attack order
-		shuffle_array(this.attacker_stacks);
-		shuffle_array(this.defender_stacks);
-
-		var order = []
-		for (var i = 0; i < (this.attacker_stacks.length + this.defender_stacks.length); ++i)
-			order[i] = i;
-		shuffle_array(order);
-
-		for (var i = 0; i < order.length; ++i) {
-			var nstack = order[i];
-			if (nstack < this.attacker_stacks.length) {
-				var stack = this.attacker_stacks[nstack];
-				if (stack.count > 0) {
-					this.do_attack(stack, this.defender_stacks, true);
-				}
-			}
-			else {
-				var stack = this.defender_stacks[nstack - this.attacker_stacks.length];
-				if (stack.count > 0) {
-					this.do_attack(stack, this.attacker_stacks, false);
-				}
-			}
-		}
-		*/
-
-		/*
-		// sequential order of attacks
-		for (var i = 0; i < this.attacker_stacks.length; ++i) {
-			var stack = this.attacker_stacks[i];
-			if (stack.count > 0) {
-				this.do_attack(stack, this.defender_stacks, true);
-			}
-		}
-		for (var i = 0; i < this.defender_stacks.length; ++i) {
-			var stack = this.defender_stacks[i];
-			if (stack.count > 0) {
-				this.do_attack(stack, this.attacker_stacks, false);
-			}
-		}
-		*/
 	},
 
 	get_unit_info: function(unit) {
@@ -351,9 +314,9 @@ simulator.prototype = {
 					if (d_stack.count == 0 || targets.indexOf(d_stack) != -1)
 						continue;
 
-					if (a_unit_lv.range >= d_unit_lv.position || mt_unit_lv.position >= d_unit_lv.position) { 
+					if (a_unit_lv.range >= d_unit_lv.position || mt_unit_lv.position >= d_unit_lv.position) {
 						if (
-							!t_stack || 
+							!t_stack ||
 							// choose by range
 							(a_unit_lv.range < t_unit_lv.position && a_unit_lv.range >= d_unit_lv.position) ||
 							// choose by damage modifier
@@ -425,7 +388,7 @@ simulator.prototype = {
 	},
 
 	is_in_combat: function() {
-		var a_stacks_active = this.count_active_stacks(this.attacker_stacks); 
+		var a_stacks_active = this.count_active_stacks(this.attacker_stacks);
 		var d_stacks_active = this.count_active_stacks(this.defender_stacks);
 
 		return a_stacks_active > 0 && d_stacks_active > 0;
@@ -446,7 +409,7 @@ simulator.prototype = {
 		var stacks = [];
 		for (var i = 0; i < units.length; ++i) {
 			var unit = units[i];
-			var stack_size = this.get_unit_info(unit.unit).stack_size[unit.level - 1]; 
+			var stack_size = this.get_unit_info(unit.unit).stack_size[unit.level - 1];
 			var count_left = unit.count;
 			while (count_left > 0) {
 				var count = (count_left > stack_size) ? stack_size : count_left;
