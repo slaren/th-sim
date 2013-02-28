@@ -179,6 +179,7 @@ table {
 	float: right;
 	text-align: right;
 	width: 280px;
+	height: 400px;
 	overflow: auto;
 }
 
