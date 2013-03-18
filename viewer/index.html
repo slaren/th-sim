@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title>TH Map viewer</title>
+	<link rel="stylesheet" href="mapviewer.css">
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="mapviewer.js"></script>
+</head>
+<body>
+	<div id="layout">
+		<div id="header">
+			<h2>TH Map Browser</h2>
+		</div>
+		<div id="main">
+			<div id="right">
+				<div id="content">
+					<svg id="map">
+						<symbol id="sym-city" overflow="visible" stroke="black">
+							<polygon points="-10,0 0,-5 10,0 0,5" />
+						</symbol>
+					</svg>
+				</div>
+			</div>
+			<div id="left-sidebar">
+				test
+				<input style="width: 190px;" type="text" placeholder="Search...">
+				<div id="search_results"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
