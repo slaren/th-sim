@@ -18,20 +18,46 @@
 		
 	var map_width = 13600;
 	var map_height = 6200;
-	var cur_trans;
+	var cur_trans = [ 0, 0 ];
 	var cur_scale;
-	var svg;
+	var canvas;
+	var canvas_ctx;
 	var content;
 	var map_data;
 
 	function on_zoom(force_transition) {
-		var trans = zoom.translate();
+		var trans = zoom.translate().slice()
 		var scale = zoom.scale();
-		var target = content;
-		if (force_transition || scale != cur_scale)
-			target = content.transition();
 
-		target.attr("transform", "translate(" + trans + ")" + " scale(" + scale + ")");
+		// console.log(".", cur_scale, cur_trans, "=>", scale, trans)
+
+		if (force_transition || scale != cur_scale) {
+			var t1 = cur_trans.slice();
+			var t2 = trans.slice();
+			var s1 = cur_scale;
+			var s2 = scale;
+
+			console.log("transition:", s1, "=>", s2, t1,"=>", t2);
+
+			d3.transition()
+				.duration(500)
+				//.ease("quad-in-out")
+				.tween("zoom", function() {
+					itrans = d3.interpolate(t1, t2);
+					iscale = d3.interpolate(s1, s2);
+					return function(t) {
+						var trans = itrans(t);
+						var scale = iscale(t);
+						draw(trans, scale);
+						cur_trans = trans;
+						cur_scale = scale;
+					}
+				})
+
+		} else {
+			d3.transition().duration(0);
+			draw(cur_trans, cur_scale);
+		}
 
 		cur_scale = scale;
 		cur_trans = trans;
@@ -140,99 +166,177 @@
 	function center_map_tile(x, y, scale) {
 		scale = scale || zoom.scale();
 
-		var svg_width = parseInt(svg.style("width"));
-		var svg_height = parseInt(svg.style("height"));
+		var canvas_width = parseInt(canvas.style("width"));
+		var canvas_height = parseInt(canvas.style("height"));
 
 		zoom.scale(scale);
-		zoom.translate([(-x * 4) * scale + svg_width / 2, (-y) * scale + svg_height / 2])
+		zoom.translate([(-x * 4) * scale + canvas_width / 2, (-y) * scale + canvas_height / 2])
 
 		on_zoom(true);
 	}
 
 	function get_min_zoom_scale() {
-		var svg_width = parseInt(svg.style("width"));
-		var svg_height = parseInt(svg.style("height"));
-		return Math.min(svg_width/map_width, svg_height/map_height)
+		var canvas_width = parseInt(canvas.style("width"));
+		var canvas_height = parseInt(canvas.style("height"));
+		return Math.min(canvas_width/map_width, canvas_height/map_height)
 	}
+
+	var influence_image;// = new Image();
+	//influence_image.src = "influence_bitmap_small.png";
+
 
 	function init_map(data) {
 		map_data = data;
-		svg = d3.select("svg");
+		content = d3.select("#content");
+		canvas = d3.select("canvas");
+		canvas_ctx = canvas.node().getContext("2d");
 
 		cur_scale = get_min_zoom_scale();
- 		cur_trans = [0, 0];
 
 		zoom = d3.behavior.zoom()
 			.translate(cur_trans)
     		.scale(cur_scale)
     		.scaleExtent([get_min_zoom_scale(), 1])
     		.on("zoom", on_zoom);
+		
+		canvas.call(zoom);
+
+		canvas.attr("width", content.style("width"));
+		canvas.attr("height", content.style("height"));
 
 		d3.select(window).on("resize", function() {
+			canvas.attr("width", content.style("width"));
+			canvas.attr("height", content.style("height"));
+
 			var min_scale = get_min_zoom_scale() 
     		if(zoom.scale() < min_scale || zoom.scale() == zoom.scaleExtent()[0]) {
     			zoom.scale(min_scale);
     			on_zoom();
     		}
     		zoom.scaleExtent([min_scale, 1])
+
+    		on_zoom();
 		})
 
-		zoom_container = svg.append("g")
-			.call(zoom)
+		influence_image = new Image();
+		influence_image.onload = function() { on_zoom(); };
+		influence_image.src = "influence_bitmap_small.png";
+		on_zoom();
 
-		// map content
-		content = zoom_container.append("g")
-			.attr("transform", "scale("+cur_scale+")")
-			.on("mousemove", update_cursor);
+		// search
+		search_input = d3.select("#search");
+		search_input.on("input", do_search);
 
-		// background
-		content.append("rect")
-			.attr("width", map_width)
-			.attr("height", map_height)
-			.attr("fill", "white");
+		search_results = d3.select("#search_results");
+
+		// filters
+		function update_visibility(selector, checkbox) {
+			// content.selectAll(selector).attr("visibility", checkbox.checked ? "visible" : "hidden")
+		}
+
+		d3.select("#filter_cities").on("change", function() { update_visibility(".city", d3.event.target); })
+		d3.select("#filter_forests").on("change", function() { update_visibility(".forest", d3.event.target); })
+		d3.select("#filter_strongholds").on("change", function() { update_visibility(".stronghold", d3.event.target); })
+		d3.select("#filter_troops").on("change", function() { update_visibility(".troop", d3.event.target); })
+		d3.select("#filter_barbarians").on("change", function() { update_visibility(".barbarian", d3.event.target); })
+		d3.select("#filter_influence").on("change", function() { update_visibility(".influence", d3.event.target); })
+		
+		update_visibility(".city", d3.select("#filter_cities").node());
+		update_visibility(".forest", d3.select("#filter_forests").node());
+		update_visibility(".stronghold", d3.select("#filter_strongholds").node());
+		update_visibility(".troop", d3.select("#filter_troops").node());
+		update_visibility(".barbarian", d3.select("#filter_barbarians").node());
+		update_visibility(".influence", d3.select("#filter_influence").node());
+
+		// other stuff
+		d3.select("#snapshot_timestamp").text("Using data from " + new Date(map_data.SnapshotBegin));
+	}
+
+	function draw(trans, scale) {
+		var canvas_width = parseInt(canvas.style("width"));
+		var canvas_height = parseInt(canvas.style("height"));
+
+		var xmin = -trans[0] / scale, xmax = xmin + canvas_width / scale;
+		var ymin = -trans[1] / scale, ymax = ymin + canvas_height / scale;
+
+		function in_viewport(x, y) {
+			return x > xmin && x < xmax && y > ymin && y < ymax;
+		}
+
+
+		console.log(xmin, ymin, xmax, ymax)
+
+		canvas_ctx.save();
+
+		canvas_ctx.clearRect(0, 0, canvas_width, canvas_height);
+
+		canvas_ctx.translate(trans[0], trans[1]);
+		canvas_ctx.scale(scale, scale);
+
+
+		var start_time = window.performance.now();
 
 		// influence image
-		content.append("image")
-			.attr("class", "influence")
-			.attr("width", map_width)
-			.attr("height", map_height)
-			.attr("xlink:href", "influence_bitmap_small.png");
+		canvas_ctx.drawImage(influence_image, 0, 0, map_width, map_height);
+
+		canvas_ctx.font = '10pt Arial';
 
 		// cities
-		var cities = content.selectAll(".city")
-			.data(data.Cities);
+		for (var i = 0; i < map_data.Cities.length; ++i) {
+			var city = map_data.Cities[i];
+			var x = city.x * 4;
+			var y = city.y;
 
-		var c = cities.enter().append("g")
-			.attr("class", "city")
+			if (in_viewport(x, y)) {
+				canvas_ctx.beginPath();
+				canvas_ctx.moveTo(x + -7, y + 0);
+				canvas_ctx.lineTo(x + 0, y + -4);
+				canvas_ctx.lineTo(x + 7, y + 0);
+				canvas_ctx.lineTo(x + 0, y + 4);
+				canvas_ctx.closePath();
 
-		c.append("polygon")
-			.attr("points", "-7,0 0,-4 7,0 0,4") // this is faster than a symbol/use pattern
-			.attr("stroke", "black")
-			.attr("transform", function(d, i) { return "translate(" + (d.x*4) + "," + (d.y*1) + ")" /* + " scale(" + Math.min(2, Math.max(1, (d.value/70))) + ")"*/; })
-			.attr("fill", function(d, i) { return get_tribe_color(d.tribeId); })
+				canvas_ctx.strokeStyle = "black";
+				canvas_ctx.fillStyle = get_tribe_color(city.tribeId);
 
-		c.append("text")
-			.text(function(d) { return d.name; })
-			.attr("transform", function(d, i) { return "translate(" + (d.x*4) + "," + (d.y*1+20) + ")"; })
-			.attr("text-anchor", "middle")
+				canvas_ctx.fill();
+				canvas_ctx.stroke();
+			
+				canvas_ctx.fillStyle = "black";
+				canvas_ctx.textAlign = "center";
+				canvas_ctx.fillText(city.name, x, y + 20);
+			}
+		}
 
 		// strongholds
-		var strongholds = content.selectAll(".stronghold")
-			.data(data.Strongholds);
+		for (var i = 0; i < map_data.Strongholds.length; ++i) {
+			var sh = map_data.Strongholds[i];
+			var x = sh.x * 4;
+			var y = sh.y;
 
-		c = strongholds.enter().append("g")
-			.attr("class", "stronghold")
+			if (in_viewport(x, y)) {
+				canvas_ctx.beginPath();
+				// canvas_ctx.moveTo(x, y);
+				canvas_ctx.arc(x, y, sh.level * 2, 0, 2 * Math.PI)
+				canvas_ctx.closePath();
 
-		c.append("circle")
-			.attr("r", function(d) { return d.level * 2; } )
-			.attr("transform", function(d, i) { return "translate(" + (d.x*4) + "," + (d.y*1) + ")"  })
-			.attr("stroke", "black")
-			.attr("fill", function(d, i) { return get_tribe_color(d.tribeId); })
-		
-		c.append("text")
-			.text(function(d) { return d.name; })
-			.attr("transform", function(d, i) { return "translate(" + (d.x*4) + "," + (d.y*1+20+d.level*2) + ")"; })
-			.attr("text-anchor", "middle")
+				canvas_ctx.strokeStyle = "black";
+				canvas_ctx.fillStyle = get_tribe_color(sh.tribeId);
+				canvas_ctx.fill();
+				canvas_ctx.stroke();
+	/*		
+			c.append("text")
+				.text(function(d) { return d.name; })
+				.attr("transform", function(d, i) { return "translate(" + (d.x*4) + "," + (d.y*1+20+d.level*2) + ")"; })
+				.attr("text-anchor", "middle")
+				*/
+				canvas_ctx.fillStyle = "black";
+				canvas_ctx.textAlign = "center";
+				canvas_ctx.fillText(sh.name, x, y + 20 + sh.level * 2);
+			}
+
+		}
+
+		/*
 
 		// forests
 		var forests = content.selectAll(".forest")
@@ -292,14 +396,14 @@
 				for(xi = -w; xi <= w; ++xi) {
 					if(xi == 0 && yi == 0) continue;
 					g.append("text")
-						.attr("class", "svg_static_text_outline")
+						.attr("class", "canvas_static_text_outline")
 						.attr("x", x + xi)
 						.attr("y", y + yi);
 				}
 			}
 
 			g.append("text")
-				.attr("class", "svg_static_text")
+				.attr("class", "canvas_static_text")
 				.attr("x", x)
 				.attr("y", y)
 
@@ -325,34 +429,10 @@
 		common_events(troops);
 		common_events(forests);
 		common_events(barbarians);
-
-		// search
-		search_input = d3.select("#search");
-		search_input.on("input", do_search);
-
-		search_results = d3.select("#search_results");
-
-		// filters
-		function update_visibility(selector, checkbox) {
-			content.selectAll(selector).attr("visibility", checkbox.checked ? "visible" : "hidden")
-		}
-
-		d3.select("#filter_cities").on("change", function() { update_visibility(".city", d3.event.target); })
-		d3.select("#filter_forests").on("change", function() { update_visibility(".forest", d3.event.target); })
-		d3.select("#filter_strongholds").on("change", function() { update_visibility(".stronghold", d3.event.target); })
-		d3.select("#filter_troops").on("change", function() { update_visibility(".troop", d3.event.target); })
-		d3.select("#filter_barbarians").on("change", function() { update_visibility(".barbarian", d3.event.target); })
-		d3.select("#filter_influence").on("change", function() { update_visibility(".influence", d3.event.target); })
-		
-		update_visibility(".city", d3.select("#filter_cities")[0][0]);
-		update_visibility(".forest", d3.select("#filter_forests")[0][0]);
-		update_visibility(".stronghold", d3.select("#filter_strongholds")[0][0]);
-		update_visibility(".troop", d3.select("#filter_troops")[0][0]);
-		update_visibility(".barbarian", d3.select("#filter_barbarians")[0][0]);
-		update_visibility(".influence", d3.select("#filter_influence")[0][0]);
-
-		// other stuff
-		d3.select("#snapshot_timestamp").text("Using data from " + new Date(map_data.SnapshotBegin));
+		*/
+		canvas_ctx.restore();
+		var frame_time = window.performance.now() - start_time;
+		// console.log(frame_time + "ms (" + (1000.0/frame_time) + " fps)");
 	}
 
 	d3.json("map.json", function(error, data) {
