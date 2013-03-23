@@ -233,9 +233,8 @@
 	function on_canvas_click() {
 		var obj = get_object_by_location(mouse_x, mouse_y);
 		
-		set_selection(obj && obj[1]);
-		
 		if (obj) {
+			set_selection(obj[1]);
 			center_map_tile(obj[1].x, obj[1].y);
 		}
 		else {
