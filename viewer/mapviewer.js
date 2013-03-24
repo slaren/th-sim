@@ -205,6 +205,9 @@
 		else if (filters.influence) {
 			mouseover_timer = setTimeout(update_mouseover_influence, 30);
 		}
+		else {
+			info_text.text("");
+		}
 	}
 
 	function update_mouseover_influence() {
