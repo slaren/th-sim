@@ -211,6 +211,7 @@
 	}
 
 	var selected_objects = [];
+	var selection_radius = 0, selection_center = [];
 
 	function set_selection(obj) {
 		if(obj) {
@@ -219,11 +220,43 @@
 		else {
 			selected_objects = [];	
 		}
+		update_selection();
 	}
 
 	function add_selection(obj) {
 		selected_objects.push(obj);
+		update_selection();
 	}
+
+	function update_selection() {
+		selection_center = calc_selection_center();
+		selection_radius = calc_selection_radius();
+	}
+
+	function get_selection_center() {
+		return selection_center;
+	}
+
+	function get_selection_radius() {
+		return selection_radius;
+	}
+
+	function calc_selection_center() {
+		var sum_x = 0, sum_y = 0;
+		_(selected_objects).each(function(c) { sum_x += c.x; sum_y += c.y; })
+		return [sum_x / selected_objects.length, sum_y / selected_objects.length];
+	}
+
+	function calc_selection_radius() {
+		var center = get_selection_center();
+		var dists_sq = _(selected_objects).map(function(c) {
+			var xd = c.x * 4 - center[0] * 4;
+			var yd = c.y - center[1];
+			return xd*xd + yd*yd;
+		});
+		return Math.sqrt(_(dists_sq).max());
+	}
+
 
 	function is_selected(obj) {
 		// console.log(selected_objects);
@@ -352,22 +385,6 @@
 		var scale = scale;
 
 		transition_zoom(trans, scale, 1000);
-	}
-
-	function get_selection_center() {
-		var sum_x = 0, sum_y = 0;
-		_(selected_objects).each(function(c) { sum_x += c.x; sum_y += c.y; })
-		return [sum_x / selected_objects.length, sum_y / selected_objects.length];
-	}
-
-	function get_selection_radius() {
-		var center = get_selection_center();
-		var dists_sq = _(selected_objects).map(function(c) {
-			var xd = c.x * 4 - center[0] * 4;
-			var yd = c.y - center[1];
-			return xd*xd + yd*yd;
-		});
-		return Math.sqrt(_(dists_sq).max());
 	}
 
 	function center_map_selection() {
