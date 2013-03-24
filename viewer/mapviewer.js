@@ -656,11 +656,17 @@
 
 		var start_time = window.performance.now();
 
-		frame_objects.forests = [];
-		frame_objects.troops = [];
-		frame_objects.barbarians = [];
-		frame_objects.cities = [];
-		frame_objects.strongholds = [];
+		frame_objects.forests.length = 0;
+		frame_objects.troops.length = 0;
+		frame_objects.barbarians.length = 0;
+		frame_objects.cities.length = 0;
+		frame_objects.strongholds.length = 0;
+
+		// frame_objects.forests = [];
+		// frame_objects.troops = [];
+		// frame_objects.barbarians = [];
+		// frame_objects.cities = [];
+		// frame_objects.strongholds = [];
 
 		// clear canvas
 		canvas_ctx.clearRect(-cur_trans[0] / cur_scale, -cur_trans[1] / cur_scale, canvas_width / cur_scale, canvas_height / cur_scale);
@@ -810,7 +816,7 @@
 						// black border
 						var cw_bb = cw + 1;
 						var ch_bb = ch + 0.5;
-						canvas_ctx.lineWidth = 1;
+						canvas_ctx.lineWidth = 1.25;
 						canvas_ctx.strokeStyle = "black";
 						canvas_ctx.beginPath();
 						canvas_ctx.moveTo(x - cw_bb, y + 0);
