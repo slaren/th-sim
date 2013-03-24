@@ -9,10 +9,13 @@
 	};
 
 	function get_random_color(list, id) {
-		if (!list[id]) {
+		var c = list[id];
+		if (c) {
+			return c;
+		}
+		else {
 			return list[id] = ("#" + Math.floor(Math.random()*16).toString(16) + Math.floor(Math.random()*16).toString(16) + Math.floor(Math.random()*16).toString(16));
 		}
-		return list[id];
 	}
 
 	var tribe_colors = { 0: "#fff" }
@@ -412,10 +415,14 @@
 	}
 
 	function resize_canvas() {
-		canvas.attr("width", content.style("width"));
-		canvas.attr("height", content.style("height"));
-		canvas_width = parseInt(canvas.style("width"));
-		canvas_height = parseInt(canvas.style("height"));
+		var w = parseInt(content.style("width")) - 0;
+		var h = parseInt(content.style("height")) - 0;
+		canvas.attr("width", w);
+		canvas.attr("height", h);
+		canvas.style("width", w + "px");
+		canvas.style("height", h + "px");
+		canvas_width = w;
+		canvas_height = h;
 	}
 
 	function init_map(data) {
@@ -501,7 +508,7 @@
 		resize_canvas();
 
 		// init zoom
-		cur_scale = prev_scale = get_min_zoom_scale();
+		cur_scale = get_min_zoom_scale();
 
 		zoom = d3.behavior.zoom()
 			.translate(cur_trans)
