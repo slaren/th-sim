@@ -103,7 +103,7 @@
 		// set canvas transformation
 		canvas_ctx.restore();
 		canvas_ctx.save();
-		canvas_ctx.translate(trans[0], trans[1]);
+		canvas_ctx.translate(trans[0] + 0.5, trans[1] + 0.5);
 		canvas_ctx.scale(scale, scale);
 
 		// update viewport extents
@@ -425,13 +425,6 @@
 		canvas_height = h;
 	}
 
-	function init_map(data) {
-		map_data = data;
-
-		d3.select("#snapshot_timestamp").text("Using data from " + new Date(map_data.SnapshotBegin));
-
-		draw();
-	}
 	function init_tribe_colors(data) {
 		for (var i = 0; i < data.length; ++i) {
 			var tcol = data[i];
@@ -441,8 +434,12 @@
 		draw();
 	}
 
-	var do_search_timeout;
-	function init() {
+	function init_map(data) {
+		map_data = data;
+
+		// static info
+		d3.select("#snapshot_timestamp").text("Using data from " + new Date(map_data.SnapshotBegin));
+
 		// search
 		search_input = d3.select("#search");
 		search_input.on("input", function() {
@@ -452,6 +449,12 @@
 
 		search_results = d3.select("#search_results");
 
+		// first draw
+		draw();
+	}
+
+	var do_search_timeout;
+	function init() {
 		// filters
 		function update_visibility(selector, checkbox) {
 			filters[selector] = checkbox.checked;
@@ -777,6 +780,13 @@
 						var ch = 4;
 						canvas_ctx.fillStyle = get_tribe_color(city.tribeId);
 						canvas_ctx.fillRect(x - cw, y - ch, cw * 2, ch * 2);
+
+						// selection border
+						if (is_selected(city)) {
+							canvas_ctx.strokeStyle = "cyan";
+							canvas_ctx.lineWidth = 3;
+							canvas_ctx.strokeRect(x - (cw + 1), y - (ch + 1), (cw + 1) * 2, (ch + 1) * 2);
+						}
 					}
 					else {
 						var cw = 8;
