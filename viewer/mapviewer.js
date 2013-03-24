@@ -113,6 +113,7 @@
 		return x > xmin && x < xmax && y > ymin && y < ymax;
 	}
 
+	var mouse_raw;
 	var mouse_x = 0, mouse_y = 0;
 	var last_frame_time = 0;
 	function update_cursor_text() {
@@ -169,15 +170,18 @@
 			}
 		}
 	}
-	
+
+	var mouseover_timer;	
 	function on_canvas_mousemove() {
 		// update mouse coords
 		var pos = d3.mouse(this);
+		mouse_raw = pos
 		mouse_x = (pos[0] - cur_trans[0]) / cur_scale;
 		mouse_y = (pos[1] - cur_trans[1]) / cur_scale;
 		update_cursor_text();
 
-		// show mouseover object info
+		clearTimeout(mouseover_timer);
+
 		var obj = get_object_by_location(mouse_x, mouse_y);
 		canvas.style("cursor", obj ? "pointer" : "auto")
 		if (obj) {
@@ -198,15 +202,20 @@
 			}
 			info_text.text(text);
 		}
+		else if (filters.influence) {
+			mouseover_timer = setTimeout(update_mouseover_influence, 30);
+		}
+	}
+
+	function update_mouseover_influence() {
+		// show mouseover object info
+		var img_data = canvas_ctx.getImageData(mouse_raw[0], mouse_raw[1], 1, 1).data;
+		var tribeid = get_tribe_by_color(img_data[0], img_data[1], img_data[2]);
+		if (tribeid) {
+			info_text.text(get_tribe(tribeid).name);
+		}
 		else {
-			var img_data = canvas_ctx.getImageData(pos[0], pos[1], 1, 1).data;
-			var tribeid = get_tribe_by_color(img_data[0], img_data[1], img_data[2]);
-			if (tribeid) {
-				info_text.text(get_tribe(tribeid).name);
-			}
-			else {
-				info_text.text("");
-			}
+			info_text.text("");
 		}
 	}
 
@@ -641,6 +650,7 @@
 		if (!map_data) {
 			return;
 		}
+
 		var start_time = window.performance.now();
 
 		frame_objects.forests = [];
@@ -672,10 +682,14 @@
 					canvas_ctx.arc(x, y, 4, 0, 2 * Math.PI)
 					canvas_ctx.closePath();
 
-					canvas_ctx.strokeStyle = "black";
 					canvas_ctx.fillStyle = "green";
 					canvas_ctx.fill();
-					canvas_ctx.stroke();
+
+					if (cur_scale > min_small_text_scale) {
+						canvas_ctx.lineWidth = 1;
+						canvas_ctx.strokeStyle = "black";
+						canvas_ctx.stroke();
+					}
 				}
 			}
 		}
@@ -694,10 +708,14 @@
 					canvas_ctx.arc(x, y, 4, 0, 2 * Math.PI)
 					canvas_ctx.closePath();
 
-					canvas_ctx.strokeStyle = "black";
 					canvas_ctx.fillStyle = "blue";
 					canvas_ctx.fill();
-					canvas_ctx.stroke();
+
+					if (cur_scale > min_small_text_scale) {
+						canvas_ctx.lineWidth = 1;
+						canvas_ctx.strokeStyle = "black";
+						canvas_ctx.stroke();
+					}
 				}
 			}
 		}
@@ -716,10 +734,14 @@
 					canvas_ctx.arc(x, y, 4, 0, 2 * Math.PI)
 					canvas_ctx.closePath();
 
-					canvas_ctx.strokeStyle = "black";
 					canvas_ctx.fillStyle = get_tribe_color(troop.tribeId);;
 					canvas_ctx.fill();
-					canvas_ctx.stroke();
+	
+					if (cur_scale > min_small_text_scale) {
+						canvas_ctx.lineWidth = 1;
+						canvas_ctx.strokeStyle = "black";
+						canvas_ctx.stroke();
+					}
 				}
 			}
 		}
@@ -735,7 +757,7 @@
 					frame_objects.cities.push(city);
 				
 					if (cur_scale < min_normal_text_scale) {
-						var cw = 8;
+						var cw = 7;
 						var ch = 4;
 						canvas_ctx.fillStyle = get_tribe_color(city.tribeId);
 						canvas_ctx.fillRect(x - cw, y - ch, cw * 2, ch * 2);
@@ -751,7 +773,6 @@
 						canvas_ctx.lineTo(x + cw, y + 0);
 						canvas_ctx.lineTo(x + 0,  y + ch);
 						canvas_ctx.closePath();
-						
 						canvas_ctx.fillStyle = get_tribe_color(city.tribeId);
 						canvas_ctx.fill();
 
@@ -773,27 +794,27 @@
 						// player color border
 						var cw_pb = cw;
 						var ch_pb = ch;
+						canvas_ctx.lineWidth = 2;
+						canvas_ctx.strokeStyle = get_player_color(city.playerId);
 						canvas_ctx.beginPath();
 						canvas_ctx.moveTo(x - cw_pb, y + 0);
 						canvas_ctx.lineTo(x + 0,  y - ch_pb);
 						canvas_ctx.lineTo(x + cw_pb, y + 0);
 						canvas_ctx.lineTo(x + 0,  y + ch_pb);
 						canvas_ctx.closePath();
-						canvas_ctx.strokeStyle = get_player_color(city.playerId);
-						canvas_ctx.lineWidth = 2;
 						canvas_ctx.stroke();
 
 						// black border
 						var cw_bb = cw + 1;
 						var ch_bb = ch + 0.5;
+						canvas_ctx.lineWidth = 1;
+						canvas_ctx.strokeStyle = "black";
 						canvas_ctx.beginPath();
 						canvas_ctx.moveTo(x - cw_bb, y + 0);
 						canvas_ctx.lineTo(x + 0,  y - ch_bb);
 						canvas_ctx.lineTo(x + cw_bb, y + 0);
 						canvas_ctx.lineTo(x + 0,  y + ch_bb);
 						canvas_ctx.closePath();
-						canvas_ctx.strokeStyle = "black";
-						canvas_ctx.lineWidth = 1.25;
 						canvas_ctx.stroke();
 					}
 				}
@@ -818,9 +839,11 @@
 					canvas_ctx.fillStyle = get_tribe_color(sh.tribeId);
 					canvas_ctx.fill();
 
-					canvas_ctx.lineWidth = 1;
-					canvas_ctx.strokeStyle = "black";
-					canvas_ctx.stroke();
+					if (cur_scale > min_small_text_scale) {
+						canvas_ctx.lineWidth = 1;
+						canvas_ctx.strokeStyle = "black";
+						canvas_ctx.stroke();
+					}
 
 					draw_circumference(x, y, 10 + sh.level * 5, 4, "black", get_tribe_color(sh.tribeId))
 				}
