@@ -348,10 +348,22 @@
 		
 		if(q && q.length > 0) {
 			q = q.toLowerCase();
-			match_cities = map_data.Cities.filter(function(c) { return c.name.toLowerCase().indexOf(q) != -1; }).sort();
-			match_players = map_data.Players.filter(function(c) { return c.name.toLowerCase().indexOf(q) != -1; });
-			match_tribes = map_data.Tribes.filter(function(c) { return c.name.toLowerCase().indexOf(q) != -1; });
-			match_strongholds = map_data.Strongholds.filter(function(c) { return c.name.toLowerCase().indexOf(q) != -1; });
+			var filter_fn = function(c) { return c.name.toLowerCase().indexOf(q) != -1; };
+			var exact_filter_fn = function(c) { return c.name.toLowerCase() == q; };
+
+			match_cities = map_data.Cities.filter(filter_fn);
+			match_players = map_data.Players.filter(filter_fn);
+			match_tribes = map_data.Tribes.filter(filter_fn);
+			match_strongholds = map_data.Strongholds.filter(filter_fn);
+
+			// if there is only one result or an exact result, jump to it
+			var num_results = match_cities.length + match_players.length + match_tribes.length + match_strongholds.length;
+			var exact = _(match_cities).find(exact_filter_fn) || _(match_players).find(exact_filter_fn) || _(match_tribes).find(exact_filter_fn) || _(match_strongholds).find(exact_filter_fn);
+			if (num_results == 1 || exact) {
+				var obj = exact || match_cities[0] || match_players[0] || match_tribes[0] || match_strongholds[0];
+				select_object(obj);
+				update_url();
+			}
 		}
 
 		// cities
@@ -393,14 +405,6 @@
 			.attr("class", "search_result stronghold_search_result")
 			.text(function(d) { return "Stronghold: " + d.name; })
 			.on("click", select_object);
-
-		// if there is only one result, jump to it
-		var num_results = match_cities.length + match_players.length + match_tribes.length + match_strongholds.length;
-		if (num_results == 1) {
-			var obj = match_cities[0] || match_players[0] || match_tribes[0] || match_strongholds[0];
-			select_object(obj);
-			update_url();
-		}
 	}
 
 	function center_map_tile(x, y, scale) {
@@ -962,23 +966,9 @@
 		var frame_time = window.performance.now() - start_time;
 		last_frame_time = frame_time;
 		update_cursor_text();
-		/*
-		if(frame_time > 50) {
-	 		if(scale > min_small_text_scale) {
-				min_small_text_scale += 0.1;
-				console.log("min_small_text_scale", min_small_text_scale);
-			} else
-			{
-				min_small_text_scale += 0.1;
-				min_normal_text_scale += 0.1;
-				console.log("min_normal_text_scale", min_normal_text_scale);
-				console.log("min_small_text_scale", min_small_text_scale);
-			}
-		}
-		*/
 	}
 
-	//
+	// state serialization
 	function serialize_state() {
 		return search_input.property("value");
 	}
