@@ -107,8 +107,6 @@
 		var margin_x = 100, margin_y = 100;
 		xmin = (-trans[0] - margin_x) / scale; xmax = (-trans[0] + canvas_width + margin_x) / scale;
 		ymin = (-trans[1] - margin_y) / scale; ymax = (-trans[1] + canvas_height + margin_y) / scale;
-
-		update_cursor_text();
 	}
 
 	function is_inside_viewport(x, y) {
@@ -116,9 +114,11 @@
 	}
 
 	var mouse_x = 0, mouse_y = 0;
+	var last_frame_time = 0;
 	function update_cursor_text() {
-		var text = Math.max(0, Math.min(tiles_width, Math.floor(mouse_x / 4))) + " " + Math.max(0, Math.min(tiles_height, Math.floor(mouse_y)));
-		cursor_text.text(text + " " + Math.round(cur_scale * 100) + "%");
+		var x = Math.max(0, Math.min(tiles_width, Math.floor(mouse_x / 4)));
+		var y = Math.max(0, Math.min(tiles_height, Math.floor(mouse_y)));
+		cursor_text.text(sformat("{1} {2} {3}% {4} ms", x, y, Math.round(cur_scale * 100), last_frame_time.toFixed(0)));
 	}
 
 	var frame_objects = {
@@ -256,7 +256,6 @@
 		});
 		return Math.sqrt(_(dists_sq).max());
 	}
-
 
 	function is_selected(obj) {
 		// console.log(selected_objects);
@@ -617,21 +616,23 @@
 		canvas_ctx.lineWidth = 8;
 		canvas_ctx.stroke();
 
-		// circunference borders
-		canvas_ctx.strokeStyle = stroke;
-		canvas_ctx.lineWidth = 2;
+		if (cur_scale > min_normal_text_scale) {
+			// circunference borders
+			canvas_ctx.strokeStyle = stroke;
+			canvas_ctx.lineWidth = 2;
 
-		canvas_ctx.moveTo(x, y);
-		canvas_ctx.beginPath();
-		canvas_ctx.arc(x, y, rad + width, 0, 2 * Math.PI)
-		canvas_ctx.closePath();
-		canvas_ctx.stroke();
+			canvas_ctx.moveTo(x, y);
+			canvas_ctx.beginPath();
+			canvas_ctx.arc(x, y, rad + width, 0, 2 * Math.PI)
+			canvas_ctx.closePath();
+			canvas_ctx.stroke();
 
-		canvas_ctx.moveTo(x, y);
-		canvas_ctx.beginPath();
-		canvas_ctx.arc(x, y, rad - width, 0, 2 * Math.PI)
-		canvas_ctx.closePath();
-		canvas_ctx.stroke();
+			canvas_ctx.moveTo(x, y);
+			canvas_ctx.beginPath();
+			canvas_ctx.arc(x, y, rad - width, 0, 2 * Math.PI)
+			canvas_ctx.closePath();
+			canvas_ctx.stroke();
+		}
 	}
 
 	var draw_text_timeout;
@@ -731,62 +732,70 @@
 				var y = city.y;
 
 				if (is_inside_viewport(x, y)) {
-					var cw = 8;
-					var ch = 4;
-
 					frame_objects.cities.push(city);
+				
+					if (cur_scale < min_normal_text_scale) {
+						var cw = 8;
+						var ch = 4;
+						canvas_ctx.fillStyle = get_tribe_color(city.tribeId);
+						canvas_ctx.fillRect(x - cw, y - ch, cw * 2, ch * 2);
+					}
+					else {
+						var cw = 8;
+						var ch = 4;
 
-					// fill
-					canvas_ctx.beginPath();
-					canvas_ctx.moveTo(x - cw, y + 0);
-					canvas_ctx.lineTo(x + 0,  y - ch);
-					canvas_ctx.lineTo(x + cw, y + 0);
-					canvas_ctx.lineTo(x + 0,  y + ch);
-					canvas_ctx.closePath();
-					
-					canvas_ctx.fillStyle = get_tribe_color(city.tribeId);
-					canvas_ctx.fill();
-
-					// selection border
-					if (is_selected(city)) {
-						var cw_sb = cw + 6;
-						var ch_sb = ch + 3;
+						// fill
 						canvas_ctx.beginPath();
-						canvas_ctx.moveTo(x - cw_sb, y + 0);
-						canvas_ctx.lineTo(x + 0,  y - ch_sb);
-						canvas_ctx.lineTo(x + cw_sb, y + 0);
-						canvas_ctx.lineTo(x + 0,  y + ch_sb);
+						canvas_ctx.moveTo(x - cw, y + 0);
+						canvas_ctx.lineTo(x + 0,  y - ch);
+						canvas_ctx.lineTo(x + cw, y + 0);
+						canvas_ctx.lineTo(x + 0,  y + ch);
 						canvas_ctx.closePath();
-						canvas_ctx.strokeStyle = "cyan";
-						canvas_ctx.lineWidth = 3;
+						
+						canvas_ctx.fillStyle = get_tribe_color(city.tribeId);
+						canvas_ctx.fill();
+
+						// selection border
+						if (is_selected(city)) {
+							var cw_sb = cw + 6;
+							var ch_sb = ch + 3;
+							canvas_ctx.beginPath();
+							canvas_ctx.moveTo(x - cw_sb, y + 0);
+							canvas_ctx.lineTo(x + 0,  y - ch_sb);
+							canvas_ctx.lineTo(x + cw_sb, y + 0);
+							canvas_ctx.lineTo(x + 0,  y + ch_sb);
+							canvas_ctx.closePath();
+							canvas_ctx.strokeStyle = "cyan";
+							canvas_ctx.lineWidth = 3;
+							canvas_ctx.stroke();
+						}
+
+						// player color border
+						var cw_pb = cw;
+						var ch_pb = ch;
+						canvas_ctx.beginPath();
+						canvas_ctx.moveTo(x - cw_pb, y + 0);
+						canvas_ctx.lineTo(x + 0,  y - ch_pb);
+						canvas_ctx.lineTo(x + cw_pb, y + 0);
+						canvas_ctx.lineTo(x + 0,  y + ch_pb);
+						canvas_ctx.closePath();
+						canvas_ctx.strokeStyle = get_player_color(city.playerId);
+						canvas_ctx.lineWidth = 2;
+						canvas_ctx.stroke();
+
+						// black border
+						var cw_bb = cw + 1;
+						var ch_bb = ch + 0.5;
+						canvas_ctx.beginPath();
+						canvas_ctx.moveTo(x - cw_bb, y + 0);
+						canvas_ctx.lineTo(x + 0,  y - ch_bb);
+						canvas_ctx.lineTo(x + cw_bb, y + 0);
+						canvas_ctx.lineTo(x + 0,  y + ch_bb);
+						canvas_ctx.closePath();
+						canvas_ctx.strokeStyle = "black";
+						canvas_ctx.lineWidth = 1.25;
 						canvas_ctx.stroke();
 					}
-
-					// player color border
-					var cw_pb = cw;
-					var ch_pb = ch;
-					canvas_ctx.beginPath();
-					canvas_ctx.moveTo(x - cw_pb, y + 0);
-					canvas_ctx.lineTo(x + 0,  y - ch_pb);
-					canvas_ctx.lineTo(x + cw_pb, y + 0);
-					canvas_ctx.lineTo(x + 0,  y + ch_pb);
-					canvas_ctx.closePath();
-					canvas_ctx.strokeStyle = get_player_color(city.playerId);
-					canvas_ctx.lineWidth = 2;
-					canvas_ctx.stroke();
-
-					// black border
-					var cw_bb = cw + 1;
-					var ch_bb = ch + 0.5;
-					canvas_ctx.beginPath();
-					canvas_ctx.moveTo(x - cw_bb, y + 0);
-					canvas_ctx.lineTo(x + 0,  y - ch_bb);
-					canvas_ctx.lineTo(x + cw_bb, y + 0);
-					canvas_ctx.lineTo(x + 0,  y + ch_bb);
-					canvas_ctx.closePath();
-					canvas_ctx.strokeStyle = "black";
-					canvas_ctx.lineWidth = 1.25;
-					canvas_ctx.stroke();
 				}
 			}
 		}
@@ -823,10 +832,6 @@
 		var r = get_selection_radius();
 		draw_circumference(pos[0] * 4, pos[1], r + 100, 4, "black", "cyan");
 
-
-		var frame_time = window.performance.now() - start_time;
-		// console.log(frame_time + "ms (" + (1000.0/frame_time) + " fps)");
-
 		if (cur_scale > min_normal_text_scale) {
 			draw_text();
 		}
@@ -835,6 +840,9 @@
 			draw_text_timeout = setTimeout(draw_text, 10);
 		}
 
+		var frame_time = window.performance.now() - start_time;
+		last_frame_time = frame_time;
+		update_cursor_text();
 		/*
 		if(frame_time > 50) {
 	 		if(scale > min_small_text_scale) {
