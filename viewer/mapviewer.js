@@ -278,6 +278,8 @@
 	}
 
 	function on_canvas_click() {
+		canvas.node().focus();
+
 		var obj = get_object_by_location(mouse_x, mouse_y);
 		
 		if (obj) {
@@ -321,8 +323,24 @@
 		return x.name < y.name ? -1 : 1;
 	}
 
-	function do_search() {
-		var q = search_input.property("value");
+	function filter_object(obj) {
+		if (obj.x) {
+			return obj;
+		}
+		else {
+			return map_data.Cities.filter(
+				function(c) {
+					return (obj.tribeId && (obj.tribeId == c.tribeId)) || (obj.playerId && (obj.playerId == c.playerId));
+				});
+		}
+	}
+
+	function select_object(obj) { 
+		set_selection(filter_object(obj));
+		center_map_selection();
+	}	
+
+	function do_search(q) {
 		var match_cities = [];
 		var match_players = [];
 		var match_tribes = [];
@@ -344,10 +362,7 @@
 			.sort(object_name_sort_comparer)
 			.attr("class", "search_result city_search_result")
 			.text(function(d) { return "City: " + d.name; })
-			.on("click", function(d) { 
-				set_selection(d);
-				center_map_selection();
-			});
+			.on("click", select_object);
 
 		// players
 		search_results_players = search_results.selectAll(".player_search_result").data(match_players);
@@ -357,11 +372,7 @@
 			.sort(object_name_sort_comparer)
 			.attr("class", "search_result player_search_result")
 			.text(function(d) { return "Player: " + d.name; })
-			.on("click", function(d) { 
-				var cities = map_data.Cities.filter(function(c) { return c.playerId == d.playerId; });
-				set_selection(cities);
-				center_map_selection();
-			});
+			.on("click", select_object);
 
 		// tribes
 		search_results_tribes = search_results.selectAll(".tribe_search_result").data(match_tribes);
@@ -371,12 +382,7 @@
 			.sort(object_name_sort_comparer)
 			.attr("class", "search_result tribe_search_result")
 			.text(function(d) { return "Tribe: " + d.name; })
-			.on("click", function(d) { 
-				var cities = map_data.Cities.filter(function(c) { return c.tribeId == d.tribeId; });
-				set_selection(cities);
-				center_map_selection();
-			});
-
+			.on("click", select_object);
 
 		// strongholds
 		search_results_strongholds = search_results.selectAll(".stronghold_search_result").data(match_strongholds);
@@ -386,10 +392,15 @@
 			.sort(object_name_sort_comparer)
 			.attr("class", "search_result stronghold_search_result")
 			.text(function(d) { return "Stronghold: " + d.name; })
-			.on("click", function(d) { 
-				set_selection(d);
-				center_map_selection();
-			});
+			.on("click", select_object);
+
+		// if there is only one result, jump to it
+		var num_results = match_cities.length + match_players.length + match_tribes.length + match_strongholds.length;
+		if (num_results == 1) {
+			var obj = match_cities[0] || match_players[0] || match_tribes[0] || match_strongholds[0];
+			select_object(obj);
+			update_url();
+		}
 	}
 
 	function center_map_tile(x, y, scale) {
@@ -408,7 +419,6 @@
 
 		center_map_tile(pos[0], pos[1], scale);
 	}
-
 
 	function get_min_zoom_scale() {
 		return Math.min(canvas_width / map_width, canvas_height / map_height)
@@ -444,10 +454,23 @@
 		search_input = d3.select("#search");
 		search_input.on("input", function() {
 			clearTimeout(do_search_timeout)
-			do_search_timeout = setTimeout(do_search, 50);
+			do_search_timeout = setTimeout(function() { 
+				do_search(search_input.property("value"))
+			}, 50);
 		});
 
+		search_input.node().focus();
+		search_input.node().select();
+
 		search_results = d3.select("#search_results");
+
+		// canvas events
+		canvas.on("mousemove", on_canvas_mousemove);
+		canvas.on("click", on_canvas_click);
+
+		// load state
+		d3.select(window).on("hashchange", update_from_url);
+		update_from_url();
 
 		// first draw
 		draw();
@@ -478,6 +501,8 @@
 		// info texts
 		cursor_text = d3.select("#cursor_text");
 		info_text = d3.select("#info_text");
+
+		cursor_text.text("Loading..");
 
 		// load resources
 		d3.json("tribe_colors.json", function(error, data) {
@@ -520,6 +545,52 @@
 			.on("zoom", on_zoom);
 		
 		canvas.call(zoom);
+		
+		canvas.on("keydown", function() {
+			var step = 100;
+			var x = cur_trans[0], y = cur_trans[1];
+			var scale = cur_scale;
+			switch (d3.event.keyCode) {
+				// +
+				case 187:
+					var pos = false;
+					var k = Math.log(cur_scale) / Math.LN2;
+					var scale = Math.pow(2, pos ? Math.ceil(k) - 1 : Math.floor(k) + 1);
+					break;
+
+				// -
+				case 189:
+					var pos = true;
+					var k = Math.log(cur_scale) / Math.LN2;
+					var scale = Math.pow(2, pos ? Math.ceil(k) - 1 : Math.floor(k) + 1);
+					break;
+
+				// DOM_VK_LEFT	0x25 (37)	Left arrow.
+				case 37:
+					x += step * cur_scale;
+					set_zoom([x, y], cur_scale);
+					draw();
+					break;
+				
+				// DOM_VK_UP	0x26 (38)	Up arrow.
+				case 38:
+					y += step * cur_scale;
+					break;
+				
+				// DOM_VK_RIGHT	0x27 (39)	Right arrow.
+				case 39:
+					x -= step * cur_scale;
+					break;
+				
+				// DOM_VK_DOWN	0x28 (40)	Down arrow.
+				case 40:
+					y -= step * cur_scale;
+					break;
+			}
+
+			transition_zoom([x, y], scale);
+		});
+		
 		on_zoom();
 
 		d3.select(window).on("resize", function() {
@@ -533,10 +604,6 @@
 
 			on_zoom();
 		})
-
-		// canvas events
-		canvas.on("mousemove", on_canvas_mousemove);
-		canvas.on("click", on_canvas_click);
 	}
 
 	var min_small_text_scale = 0.5;
@@ -545,7 +612,6 @@
 	var font_big = "bold 10pt Arial";
 	var font_normal = "10pt Arial";
 	var font_small = "8pt Arial";
-
 
 	function draw_outlined_text(text, x, y, w, outline, fill) {
 		canvas_ctx.fillStyle = outline;
@@ -672,15 +738,10 @@
 		frame_objects.cities.length = 0;
 		frame_objects.strongholds.length = 0;
 
-		// frame_objects.forests = [];
-		// frame_objects.troops = [];
-		// frame_objects.barbarians = [];
-		// frame_objects.cities = [];
-		// frame_objects.strongholds = [];
-
 		// clear canvas
 		canvas_ctx.clearRect(-cur_trans[0] / cur_scale, -cur_trans[1] / cur_scale, canvas_width / cur_scale, canvas_height / cur_scale);
-
+		canvas_ctx.lineCap = "butt";
+		canvas_ctx.lineJoin = "miter";
 
 		// influence image
 		if (filters.influence) {
@@ -779,13 +840,22 @@
 						var cw = 7;
 						var ch = 4;
 						canvas_ctx.fillStyle = get_tribe_color(city.tribeId);
-						canvas_ctx.fillRect(x - cw, y - ch, cw * 2, ch * 2);
+						//canvas_ctx.fillRect(x - cw, y - ch, cw * 2, ch * 2);
+						canvas_ctx.beginPath();
+						canvas_ctx.rect(x - cw, y - ch, cw * 2, ch * 2);
+						canvas_ctx.closePath();
+						canvas_ctx.fill();
 
 						// selection border
 						if (is_selected(city)) {
 							canvas_ctx.strokeStyle = "cyan";
 							canvas_ctx.lineWidth = 3;
 							canvas_ctx.strokeRect(x - (cw + 1), y - (ch + 1), (cw + 1) * 2, (ch + 1) * 2);
+						}
+						else {
+							canvas_ctx.lineWidth = 1;
+							canvas_ctx.strokeStyle = "black";
+							canvas_ctx.stroke();//strokeRect(x - (cw + 1), y - (ch + 1), (cw + 1) * 2, (ch + 1) * 2);
 						}
 					}
 					else {
@@ -906,6 +976,32 @@
 			}
 		}
 		*/
+	}
+
+	//
+	function serialize_state() {
+		return search_input.property("value");
+	}
+
+	function deserialize_state(data) {
+		search_input.property("value", data);
+		search_input.node().focus();
+		search_input.node().select();
+		do_search(data);
+	}
+
+	var prev_ser_state;
+	function update_url() {
+		prev_ser_state = serialize_state();
+		window.location.hash = encodeURIComponent(prev_ser_state);
+	};
+
+	function update_from_url() {
+		var data = decodeURIComponent(window.location.hash.substr(1));
+		if (data != prev_ser_state) {
+			prev_ser_state = data;
+			deserialize_state(data);
+		}
 	}
 
 	d3.select(window).on("load", init);
