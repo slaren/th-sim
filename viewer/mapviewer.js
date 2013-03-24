@@ -257,9 +257,16 @@
 	}
 
 	function calc_selection_center() {
-		var sum_x = 0, sum_y = 0;
-		_(selected_objects).each(function(c) { sum_x += c.x; sum_y += c.y; })
-		return [sum_x / selected_objects.length, sum_y / selected_objects.length];
+		var min_x = tiles_width, max_x  = 0;
+		var min_y = tiles_height, max_y = 0;
+		_(selected_objects).each(function(c) {
+			min_x = Math.min(min_x, c.x);
+			min_y = Math.min(min_y, c.y);
+			max_x = Math.max(max_x, c.x);
+			max_y = Math.max(max_y, c.y);
+		})
+
+		return [(max_x + min_x) / 2, (max_y + min_y) / 2];
 	}
 
 	function calc_selection_radius() {
