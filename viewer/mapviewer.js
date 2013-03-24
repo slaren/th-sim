@@ -362,6 +362,16 @@
 				select_object(obj);
 				update_url();
 			}
+
+			// check if the user entered coordinates
+			var coords_regexp = /^\s*(\d+)[\s,]+(\d+)\s*$/
+			var match = coords_regexp.exec(q);
+			if (match) {
+				var x = match[1], y = match[2];
+				if (x >= 0 && x <= tiles_width && y >= 0 && y <= tiles_height) { 
+					center_map_tile(x, y);
+				}
+			}
 		}
 
 		// cities
