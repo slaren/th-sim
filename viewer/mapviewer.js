@@ -141,6 +141,14 @@
 		
 		min_dist_sq = 10 * 10;
 
+		for (var i = 0; i < frame_objects.strongholds.length; ++i) {
+			var obj = frame_objects.strongholds[i];
+			var dist_sq = get_dist_sq(obj.x * 4, obj.y);
+			if (dist_sq < min_dist_sq) {
+				return [ "stronghold", obj ];
+			}
+		}
+
 		for (var i = 0; i < frame_objects.troops.length; ++i) {
 			var obj = frame_objects.troops[i];
 			var dist_sq = get_dist_sq(obj.x * 4, obj.y);
@@ -149,27 +157,11 @@
 			}
 		}
 
-		for (var i = 0; i < frame_objects.barbarians.length; ++i) {
-			var obj = frame_objects.barbarians[i];
-			var dist_sq = get_dist_sq(obj.x * 4, obj.y);
-			if (dist_sq < min_dist_sq) {
-				return [ "barbarian", obj ];
-			}
-		}
-
 		for (var i = 0; i < frame_objects.cities.length; ++i) {
 			var obj = frame_objects.cities[i];
 			var dist_sq = get_dist_sq(obj.x * 4, obj.y);
 			if (dist_sq < min_dist_sq) {
 				return [ "city", obj ];
-			}
-		}
-
-		for (var i = 0; i < frame_objects.strongholds.length; ++i) {
-			var obj = frame_objects.strongholds[i];
-			var dist_sq = get_dist_sq(obj.x * 4, obj.y);
-			if (dist_sq < min_dist_sq) {
-				return [ "stronghold", obj ];
 			}
 		}
 	}
@@ -183,8 +175,8 @@
 		mouse_y = (pos[1] - cur_trans[1]) / cur_scale;
 		update_cursor_text();
 
+		// show mouseover object info
 		clearTimeout(mouseover_timer);
-
 		var obj = get_object_by_location(mouse_x, mouse_y);
 		canvas.style("cursor", obj ? "pointer" : "auto")
 		if (obj) {
@@ -214,7 +206,6 @@
 	}
 
 	function update_mouseover_influence() {
-		// show mouseover object info
 		var img_data = canvas_ctx.getImageData(mouse_raw[0], mouse_raw[1], 1, 1).data;
 		var tribeid = get_tribe_by_color(img_data[0], img_data[1], img_data[2]);
 		if (tribeid) {
@@ -311,7 +302,7 @@
 	}
 
 	function show_city_info(city) {
-		return sformat("City: {1} / Level {2} / Player: {3}{4}", city.name, city.level, get_player(city.playerId).name, city.tribeId != 0 && " (" + get_tribe(city.tribeId).name + ")" || "");
+		return sformat("City: {1} / Level {2} ({3} IP) / Player: {4}{5}", city.name, city.level, city.value, get_player(city.playerId).name, city.tribeId != 0 && " (" + get_tribe(city.tribeId).name + ")" || "");
 	}
 
 	function show_troop_info(troop) {
